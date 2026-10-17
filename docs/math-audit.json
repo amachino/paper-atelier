@@ -1,0 +1,125 @@
+{
+  "renderer": "KaTeX 0.19.0 (JavaScript, build time)",
+  "input": "Versioned arXiv HTML article snapshots and their original TeX annotations",
+  "papers": [
+    {
+      "paper": "bswap",
+      "source": "https://arxiv.org/html/2610.21936v1",
+      "mathCount": 895,
+      "converted": 895,
+      "repaired": 1,
+      "nativeFallbacks": 0,
+      "repairs": [
+        {
+          "id": "A7.E64.m1",
+          "originalTex": "R(\\bar{\\Omega})=\\begin{cases}\\dfrac{2\\bar{\\Omega}}{\\sqrt{\\Delta^{2}+\\bar{\\Omega}^{2}}},&\\bar{\\Omega}\\leq\\Delta,\\\\\n\\vskip 10.0pt\\cr\\dfrac{\\sqrt{\\Delta^{2}+\\bar{\\Omega}^{2}}}{\\bar{\\Omega}},&\\bar{\\Omega}>\\Delta.\\end{cases}",
+          "renderInput": "R(\\bar{\\Omega})=\\begin{cases}\\dfrac{2\\bar{\\Omega}}{\\sqrt{\\Delta^{2}+\\bar{\\Omega}^{2}}},&\\bar{\\Omega}\\leq\\Delta,\\\\[10pt]\n\\dfrac{\\sqrt{\\Delta^{2}+\\bar{\\Omega}^{2}}}{\\bar{\\Omega}},&\\bar{\\Omega}>\\Delta.\\end{cases}",
+          "reason": "Convert the source row-spacing command to equivalent cases-row spacing"
+        }
+      ],
+      "fallbacks": []
+    },
+    {
+      "paper": "qubex",
+      "source": "https://arxiv.org/html/2606.13010v1",
+      "mathCount": 325,
+      "converted": 322,
+      "repaired": 11,
+      "nativeFallbacks": 3,
+      "repairs": [
+        {
+          "id": "S3.F6.m12",
+          "originalTex": "t=$100\\text{\\,}\\mathrm{ns}$",
+          "renderInput": "t=100\\text{\\,}\\mathrm{ns}",
+          "reason": "Remove nested math delimiters inside an existing math expression"
+        },
+        {
+          "id": "S3.SS3.p1.m3",
+          "originalTex": "0.219\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
+          "renderInput": "\\def\\SIUnitSymbolDegree{\\text{°}}0.219\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
+          "reason": "Supply the source SI degree symbol macro locally"
+        },
+        {
+          "id": "S3.SS3.p1.m4",
+          "originalTex": "0.302\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
+          "renderInput": "\\def\\SIUnitSymbolDegree{\\text{°}}0.302\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
+          "reason": "Supply the source SI degree symbol macro locally"
+        },
+        {
+          "id": "S3.SS3.p1.m5",
+          "originalTex": "0.456\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
+          "renderInput": "\\def\\SIUnitSymbolDegree{\\text{°}}0.456\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
+          "reason": "Supply the source SI degree symbol macro locally"
+        },
+        {
+          "id": "S3.SS3.p2.m2",
+          "originalTex": "t=$100\\text{\\,}\\mathrm{ns}$",
+          "renderInput": "t=100\\text{\\,}\\mathrm{ns}",
+          "reason": "Remove nested math delimiters inside an existing math expression"
+        },
+        {
+          "id": "S4.SS3.p4.m1",
+          "originalTex": "\\Delta_{\\mathrm{ct}}=$-729.284\\text{\\,}\\mathrm{MHz}$",
+          "renderInput": "\\Delta_{\\mathrm{ct}}=-729.284\\text{\\,}\\mathrm{MHz}",
+          "reason": "Remove nested math delimiters inside an existing math expression"
+        },
+        {
+          "id": "S4.SS3.p4.m2",
+          "originalTex": "\\alpha_{\\mathrm{t}}=$-475.3\\text{\\,}\\mathrm{MHz}$",
+          "renderInput": "\\alpha_{\\mathrm{t}}=-475.3\\text{\\,}\\mathrm{MHz}",
+          "reason": "Remove nested math delimiters inside an existing math expression"
+        },
+        {
+          "id": "S4.SS3.p4.m3",
+          "originalTex": "\\alpha_{\\mathrm{c}}=$-362.9\\text{\\,}\\mathrm{MHz}$",
+          "renderInput": "\\alpha_{\\mathrm{c}}=-362.9\\text{\\,}\\mathrm{MHz}",
+          "reason": "Remove nested math delimiters inside an existing math expression"
+        },
+        {
+          "id": "A3.SS2.p3.m2",
+          "originalTex": "\\pm$200\\text{\\,}\\mathrm{MHz}$",
+          "renderInput": "\\pm200\\text{\\,}\\mathrm{MHz}",
+          "reason": "Remove nested math delimiters inside an existing math expression"
+        },
+        {
+          "id": "A3.SS2.p3.m3",
+          "originalTex": "\\pm$600\\text{\\,}\\mathrm{MHz}$",
+          "renderInput": "\\pm600\\text{\\,}\\mathrm{MHz}",
+          "reason": "Remove nested math delimiters inside an existing math expression"
+        },
+        {
+          "id": "A3.SS3.p5.m3",
+          "originalTex": "0.456\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
+          "renderInput": "\\def\\SIUnitSymbolDegree{\\text{°}}0.456\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
+          "reason": "Supply the source SI degree symbol macro locally"
+        }
+      ],
+      "fallbacks": [
+        {
+          "id": "S4.T1.m8",
+          "originalTex": "\\mathrm{\\SIUnitSymbolMicro s}",
+          "renderInput": "\\mathrm{\\SIUnitSymbolMicro s}",
+          "reason": "KaTeX parse error: Undefined control sequence: \\SIUnitSymbolMicro at position 9: \\mathrm{\\̲S̲I̲U̲n̲i̲t̲S̲y̲m̲b̲o̲l̲M̲i̲c̲r̲o̲ ̲s}"
+        },
+        {
+          "id": "S4.T1.m10",
+          "originalTex": "\\mathrm{\\SIUnitSymbolMicro s}",
+          "renderInput": "\\mathrm{\\SIUnitSymbolMicro s}",
+          "reason": "KaTeX parse error: Undefined control sequence: \\SIUnitSymbolMicro at position 9: \\mathrm{\\̲S̲I̲U̲n̲i̲t̲S̲y̲m̲b̲o̲l̲M̲i̲c̲r̲o̲ ̲s}"
+        },
+        {
+          "id": "A3.SS4.p1.m4",
+          "originalTex": "1.024\\text{\\,}\\mathrm{\\SIUnitSymbolMicro s}",
+          "renderInput": "1.024\\text{\\,}\\mathrm{\\SIUnitSymbolMicro s}",
+          "reason": "KaTeX parse error: Undefined control sequence: \\SIUnitSymbolMicro at position 23: …ext{\\,}\\mathrm{\\̲S̲I̲U̲n̲i̲t̲S̲y̲m̲b̲o̲l̲M̲i̲c̲r̲o̲ ̲s}"
+        }
+      ]
+    }
+  ],
+  "total": {
+    "math": 1220,
+    "converted": 1217,
+    "repaired": 12,
+    "nativeFallbacks": 3
+  }
+}

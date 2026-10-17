@@ -1,0 +1,3 @@
+// Correct only initial fragment positioning after fonts settle. Do not move a
+// reader who has already started interacting with the document.
+(()=>{if(!location.hash)return;let touched=false;for(const event of ['wheel','touchstart','pointerdown','keydown'])window.addEventListener(event,()=>{touched=true},{once:true,passive:true});window.addEventListener('load',async()=>{await document.fonts.ready;requestAnimationFrame(()=>requestAnimationFrame(()=>{if(touched)return;let id;try{id=decodeURIComponent(location.hash.slice(1))}catch{return}document.getElementById(id)?.scrollIntoView({block:'start',behavior:'instant'})}))},{once:true})})();

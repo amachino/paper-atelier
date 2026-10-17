@@ -1,0 +1,215 @@
+[
+  {
+    "slug": "bswap",
+    "arxivId": "2610.21936v1",
+    "url": "https://arxiv.org/html/2610.21936v1",
+    "retrieved": "2026-10-17",
+    "snapshot": "sources/bswap.html",
+    "snapshotSha256": "be8f3936f60b8401c6602587320c0db8016a3c24e97cf5dae62d51e459a87a89",
+    "originalHtmlSha256": "d93a0d03d54a63387c2111c543010fd146c68ad5042d0d02042852ca1af37bd0",
+    "sourceLicense": "arXiv.org perpetual non-exclusive license",
+    "sourceLicenseUrl": "https://info.arxiv.org/help/license/index.html#licenses-available",
+    "mathCount": 895,
+    "figures": [
+      {
+        "source": "2610.21936v1/fig01.svg",
+        "file": "assets/figures/bswap-fig01.svg",
+        "sha256": "27ea3e80c14927529ca952e164b92497164673799330daca307e84fd175dae06"
+      },
+      {
+        "source": "2610.21936v1/fig02.svg",
+        "file": "assets/figures/bswap-fig02.svg",
+        "sha256": "27fef7618e3a26ccaa390c4741b893947f561c196ef4a2efe9a39917d9504042"
+      },
+      {
+        "source": "2610.21936v1/fig03.svg",
+        "file": "assets/figures/bswap-fig03.svg",
+        "sha256": "55f2593d822f7960095416d13eb4fa3540d65d92406a50ae2f1ee3ffc13621d6"
+      },
+      {
+        "source": "2610.21936v1/fig04.png",
+        "file": "assets/figures/bswap-fig04.png",
+        "sha256": "41031365109df54213516b7462318d31b9a4f571ffdf284a525376871d450570"
+      },
+      {
+        "source": "2610.21936v1/fig05.png",
+        "file": "assets/figures/bswap-fig05.png",
+        "sha256": "9fddddb2125440ab4df699e988080f7b20b30ee1d9da1b9ad84e2896d7e2e786"
+      },
+      {
+        "source": "2610.21936v1/fig06.svg",
+        "file": "assets/figures/bswap-fig06.svg",
+        "sha256": "586f3c90e5791e254f3284fa27de47cfccc6b1b83cc4fa84ba608fabea6b6e61"
+      },
+      {
+        "source": "2610.21936v1/fig07.svg",
+        "file": "assets/figures/bswap-fig07.svg",
+        "sha256": "11627873988454ff3dc55ae5b76d0a863760d7aafc1274eba4438bdbf6f1b4bc"
+      },
+      {
+        "source": "2610.21936v1/fig08.svg",
+        "file": "assets/figures/bswap-fig08.svg",
+        "sha256": "0bdd747a907042b3486443df5ab28b42a9e435b126210a137288a6c7637ddc4f"
+      },
+      {
+        "source": "2610.21936v1/fig09.svg",
+        "file": "assets/figures/bswap-fig09.svg",
+        "sha256": "4f55c4e50918a2d80f05d4c7256e74e4553efd6e7c5462047ecd60aade34f512"
+      },
+      {
+        "source": "2610.21936v1/fig10.png",
+        "file": "assets/figures/bswap-fig10.png",
+        "sha256": "2ac5eb2c07dada4d94475a5bada3780ffe01ae5d81e1740dabda4e04fda0851d"
+      },
+      {
+        "source": "2610.21936v1/fig11.svg",
+        "file": "assets/figures/bswap-fig11.svg",
+        "sha256": "5b3a5eca5eb5fa5bd2e7b31ccc5f0eb10ee3e7c38ab159408e0b47bc5055ac63"
+      },
+      {
+        "source": "2610.21936v1/fig12.svg",
+        "file": "assets/figures/bswap-fig12.svg",
+        "sha256": "033369ec7e0732117409c777314f3c3780348cec1c0f9dd14b263fc7e24f2f14"
+      },
+      {
+        "source": "2610.21936v1/fig13.svg",
+        "file": "assets/figures/bswap-fig13.svg",
+        "sha256": "bf428384fd03d7d9b8ea2cf9eecd7b4058e30adf76e4104c7b04b76b90191cf6"
+      },
+      {
+        "source": "2610.21936v1/fig14.svg",
+        "file": "assets/figures/bswap-fig14.svg",
+        "sha256": "43680b3afb3e2c3738a73d0d8070c005ceb85b5a144c405f8858b03421de87c0"
+      },
+      {
+        "source": "2610.21936v1/fig15.svg",
+        "file": "assets/figures/bswap-fig15.svg",
+        "sha256": "3ed07817fe99fd6a87cdf2fd25e52e430bf2adc1ae6a36fee66fa169932a2d2a"
+      },
+      {
+        "source": "2610.21936v1/fig16.png",
+        "file": "assets/figures/bswap-fig16.png",
+        "sha256": "e9492fcbbce4ab819684701c1dc5f2a6f4da4f69bde9cdac6f106b61df9f6202"
+      },
+      {
+        "source": "2610.21936v1/fig17.svg",
+        "file": "assets/figures/bswap-fig17.svg",
+        "sha256": "136cbd21ea8252a89a2254abfd8bc34805aeced1ba1181aad32076d00ed0c03c"
+      },
+      {
+        "source": "2610.21936v1/fig18.svg",
+        "file": "assets/figures/bswap-fig18.svg",
+        "sha256": "55264ae388418ef7854f8715997eaa51927d0890a840d75eb9f74eb61972a3e9"
+      }
+    ]
+  },
+  {
+    "slug": "qubex",
+    "arxivId": "2606.13010v1",
+    "url": "https://arxiv.org/html/2606.13010v1",
+    "retrieved": "2026-10-17",
+    "snapshot": "sources/qubex.html",
+    "snapshotSha256": "947900fd471fc41f82326107d54feee4f87491368e32e2f2c946e1de1e70eb8f",
+    "originalHtmlSha256": "5b642248a5c4918730ce8c7acf0be1c0333507892318c69528e2a9bc94a6a03a",
+    "sourceLicense": "arXiv.org perpetual non-exclusive license",
+    "sourceLicenseUrl": "https://info.arxiv.org/help/license/index.html#licenses-available",
+    "mathCount": 325,
+    "figures": [
+      {
+        "source": "2606.13010v1/system-overview.png",
+        "file": "assets/figures/qubex-system-overview.png",
+        "sha256": "8aba1f6f557763a543ce547c31f38404b0c7ee43f69216be6b52e288ba96453f"
+      },
+      {
+        "source": "2606.13010v1/hardware-architecture.svg",
+        "file": "assets/figures/qubex-hardware-architecture.svg",
+        "sha256": "ab436532fa24f63572faccca80760ceed21531f3f39cdb1bc7fd406cc07cc262"
+      },
+      {
+        "source": "2606.13010v1/hardware-setting-resolution.svg",
+        "file": "assets/figures/qubex-hardware-setting-resolution.svg",
+        "sha256": "7fafd9f048dc7fd516da598df610824479cc30e2c120ec01e86515761475412e"
+      },
+      {
+        "source": "2606.13010v1/broadband-output.svg",
+        "file": "assets/figures/qubex-broadband-output.svg",
+        "sha256": "df4090983b8351d8fb23d1146eb41fbeba7c29039cd1acb643b9fcf725d0bcd9"
+      },
+      {
+        "source": "2606.13010v1/signal-integrity.svg",
+        "file": "assets/figures/qubex-signal-integrity.svg",
+        "sha256": "aec4ca1a4eec2a65c3eb3e86711a9fe1757b526ae568b6909374197abedbecc8"
+      },
+      {
+        "source": "2606.13010v1/synchronization-stability.svg",
+        "file": "assets/figures/qubex-synchronization-stability.svg",
+        "sha256": "8955b078ba0ad25470b059434b2f9ae1b40332005862403fedc972a6edf1c497"
+      },
+      {
+        "source": "2606.13010v1/experimental-wiring.svg",
+        "file": "assets/figures/qubex-experimental-wiring.svg",
+        "sha256": "de10bf0564086af61b0e8d2132687be6256cd9316a7fb86a7d172c43185eafd6"
+      },
+      {
+        "source": "2606.13010v1/chip-frequency-map.png",
+        "file": "assets/figures/qubex-chip-frequency-map.png",
+        "sha256": "49beb138863996b2301e5428cae2f924f44debfa1cdde3974424ac7f923cefba"
+      },
+      {
+        "source": "2606.13010v1/frequency-identification.png",
+        "file": "assets/figures/qubex-frequency-identification.png",
+        "sha256": "8d4a4c82e201a084136c3928f9945918412628daa27c50bb6883f1a90bf1bba5"
+      },
+      {
+        "source": "2606.13010v1/coherence-summary.svg",
+        "file": "assets/figures/qubex-coherence-summary.svg",
+        "sha256": "18372f66dce3ba8dd5093d40b11aa19b40d3861c3e4605e3d79199a4c5c0704a"
+      },
+      {
+        "source": "2606.13010v1/1q-rb.svg",
+        "file": "assets/figures/qubex-1q-rb.svg",
+        "sha256": "8623dc55397776b0dd8d43756d96e017de37cc36140ae6e08357eb0a913d1e0d"
+      },
+      {
+        "source": "2606.13010v1/cross-resonance.svg",
+        "file": "assets/figures/qubex-cross-resonance.svg",
+        "sha256": "bd4b57c04b2fa1f3098cc0f38a1ee15d9dde1cdc5c104e3ee0e93b5b5ac49513"
+      },
+      {
+        "source": "2606.13010v1/multilevel-readout.png",
+        "file": "assets/figures/qubex-multilevel-readout.png",
+        "sha256": "f7bb65e4bcf2147dffd6ddc73558561f187d53650f5ec83092fbb88ecb8f88f0"
+      },
+      {
+        "source": "2606.13010v1/fig/qube-unit-internal/qube-unit-internal.png",
+        "file": "assets/figures/qubex-qube-unit-internal.png",
+        "sha256": "8bc7687d88e78bd6da36c64adb1546b7817a845fa786ac67b27ba0710f7bf29c"
+      },
+      {
+        "source": "2606.13010v1/qube-microwave-components-a.svg",
+        "file": "assets/figures/qubex-qube-microwave-components-a.svg",
+        "sha256": "58748638939e317562f5e81631fdd6775e631e844270ca0d421cd4ae069fdfb8"
+      },
+      {
+        "source": "2606.13010v1/qube-microwave-components-b.svg",
+        "file": "assets/figures/qubex-qube-microwave-components-b.svg",
+        "sha256": "0d78e3ae757042345f9e0350ff4a60be082317468232ab09bb92ba209d1d398f"
+      },
+      {
+        "source": "2606.13010v1/qube-fpga-dsp.svg",
+        "file": "assets/figures/qubex-qube-fpga-dsp.svg",
+        "sha256": "42b780da98d8c5ed00afe2c0c46d77807156fac40b4aaef041276fac6b44e423"
+      },
+      {
+        "source": "2606.13010v1/qubex-software-details.svg",
+        "file": "assets/figures/qubex-qubex-software-details.svg",
+        "sha256": "02e7ecc24d062de8b9788f06032eb4103896d62956d51607de31211733b059b6"
+      },
+      {
+        "source": "2606.13010v1/cryostat-wiring.svg",
+        "file": "assets/figures/qubex-cryostat-wiring.svg",
+        "sha256": "87c9d44f21e6f067e9eaaa7fa7f8252a6243907e09689d060f01cac614435539"
+      }
+    ]
+  }
+]
