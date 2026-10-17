@@ -187,3 +187,8 @@ assert(readerCss.includes('.katex{font-size:1.05em!important}'));
 console.log('Reading preferences passed: controls, size bounds, persistence, cross-page restore, reset, storage failure, Escape focus, and unchanged math-font rules. Browser layout is not asserted.');
 
 for (const name of ['index.html','bswap.html','qubex.html']) { const html = fs.readFileSync('docs/'+name,'utf8'); assert(!/Paper Atelier|PAPER ATELIER|PHYSICS, WITH ROOM|Made for reading/.test(html), 'No promotional branding: '+name); }
+
+for (const file of ["index.html","bswap.html","qubex.html"]) {
+ const html=fs.readFileSync(`docs/${file}`,"utf8");
+ assert(/assets\/reader\.css\?v=[a-f0-9]{12}/.test(html), `${file}: CSS must be content-versioned`);
+}
