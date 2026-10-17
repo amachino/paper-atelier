@@ -192,3 +192,9 @@ for (const file of ["index.html","bswap.html","qubex.html"]) {
  const html=fs.readFileSync(`docs/${file}`,"utf8");
  assert(/assets\/reader\.css\?v=[a-f0-9]{12}/.test(html), `${file}: CSS must be content-versioned`);
 }
+
+for (const file of ["bswap.html","qubex.html"]) {
+ const {document}=parseHTML(fs.readFileSync(`docs/${file}`,"utf8"));
+ const other=file==="bswap.html"?"qubex.html":"bswap.html";
+ assert(![...document.querySelectorAll(".topbar a")].some(a=>a.getAttribute("href")===other), `${file}: no cross-paper navigation`);
+}

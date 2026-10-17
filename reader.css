@@ -38,3 +38,9 @@ body{font-family:var(--reader-text-font);font-size:var(--reader-font-size,var(--
 
 /* Match the paper and navigation gutters on phones. */
 @media(max-width:480px){.paper-list{margin:28px auto;padding:0 18px}}
+
+/* Abstract prose follows the body alignment and narrow-screen fallback. */
+article .ltx_abstract p{text-align:justify;text-align-last:start;hyphens:auto;word-spacing:normal;hyphenate-limit-chars:auto}
+@media(max-width:350px){article .ltx_abstract p{text-align:start}}
+/* Keep long paper titles proportionate to the compact mobile text. */
+@media(max-width:600px){article > h1.ltx_title_document{font-size:24px;line-height:1.22;letter-spacing:-.015em;margin-bottom:22px;text-wrap:pretty}}
