@@ -1,4 +1,4 @@
-# Paper Atelier
+# Papers
 
 Two responsive reading editions of quantum computing papers, with JavaScript KaTeX run **at build time**. The public site contains only an index and the recommended reader for each paper:
 

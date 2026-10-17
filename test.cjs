@@ -185,3 +185,5 @@ assert(readerCss.includes('font-size:var(--reader-font-size,var(--reader-default
 assert(readerCss.includes('math{font-family:'));
 assert(readerCss.includes('.katex{font-size:1.05em!important}'));
 console.log('Reading preferences passed: controls, size bounds, persistence, cross-page restore, reset, storage failure, Escape focus, and unchanged math-font rules. Browser layout is not asserted.');
+
+for (const name of ['index.html','bswap.html','qubex.html']) { const html = fs.readFileSync('docs/'+name,'utf8'); assert(!/Paper Atelier|PAPER ATELIER|PHYSICS, WITH ROOM|Made for reading/.test(html), 'No promotional branding: '+name); }
