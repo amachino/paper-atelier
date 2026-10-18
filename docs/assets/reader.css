@@ -69,3 +69,8 @@ article a.ltx_href,.author-details{overflow-wrap:anywhere}
 /* Appearance reads as the adjacent PDF link, with an invisible touch target. */
 .topbar .reader-settings-trigger{border:0;background:transparent;border-radius:0;box-shadow:none;color:var(--accent);font:inherit;min-height:48px;padding:0 4px;cursor:pointer}
 @media(max-width:480px){.topbar nav{max-width:none;flex-wrap:nowrap;gap:8px;align-items:center}.topbar{align-items:center;gap:12px}}
+/* Prose last-line alignment must not leak into KaTeX accent positioning. */
+article .katex{text-align-last:auto}
+
+/* Match KaTeX relation spacing when an aligned RHS is a separate math input. */
+.ltx_eqn_table .relation-start > .katex{padding-left:.2778em}

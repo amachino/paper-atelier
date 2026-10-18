@@ -17,7 +17,244 @@
           "reason": "Convert the source row-spacing command to equivalent cases-row spacing"
         }
       ],
-      "fallbacks": []
+      "fallbacks": [],
+      "layoutAdjustments": [
+        {
+          "id": "S2.E1X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E1Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E2X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E2Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E4X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E4Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E5X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E5Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E5Xb.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E5Xc.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E8X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E8Xa.m2",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E9X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "S2.E9Xa.m2",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E20X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E22X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E22Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E23X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E27X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E27Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E27Xb.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E28X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E30X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E30Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E31X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E31Xa.m2",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E31Xb.m2",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E32X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E32Xa.m2",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E38X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E38Xb.m2",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E44X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E44Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E47X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E47Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E50X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E50Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E51X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A1.E51Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A3.E53X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A3.E53Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A3.E53Xb.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A4.E55X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A4.E55Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A7.E60X.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A7.E60Xa.m3",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        },
+        {
+          "id": "A7.E61Xa.m2",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
+        }
+      ]
     },
     {
       "paper": "qubex",
@@ -112,6 +349,13 @@
           "originalTex": "1.024\\text{\\,}\\mathrm{\\SIUnitSymbolMicro s}",
           "renderInput": "1.024\\text{\\,}\\mathrm{\\SIUnitSymbolMicro s}",
           "reason": "KaTeX parse error: Undefined control sequence: \\SIUnitSymbolMicro at position 23: …ext{\\,}\\mathrm{\\̲S̲I̲U̲n̲i̲t̲S̲y̲m̲b̲o̲l̲M̲i̲c̲r̲o̲ ̲s}"
+        }
+      ],
+      "layoutAdjustments": [
+        {
+          "id": "A3.Ex1.m2",
+          "kind": "split-cell-leading-relation-spacing",
+          "space": "0.2778em"
         }
       ]
     }

@@ -130,3 +130,14 @@ for (const file of ["bswap.html","qubex.html"]) {
  const other=file==="bswap.html"?"qubex.html":"bswap.html";
  assert(![...document.querySelectorAll(".topbar a")].some(a=>a.getAttribute("href")===other), `${file}: no cross-paper navigation`);
 }
+
+assert.deepEqual(audit.papers.map(p=>p.layoutAdjustments.length), [47,1]);
+for(const paper of audit.papers){
+ const doc=documents.get(`${paper.paper}.html`);
+ for(const item of paper.layoutAdjustments){
+  const node=doc.getElementById(item.id);
+  assert(node.classList.contains('relation-start'));
+  assert(node.closest('td.ltx_align_left') && node.closest('.ltx_eqn_table'));
+ }
+}
+assert(readerCss.includes('article .katex{text-align-last:auto}'));

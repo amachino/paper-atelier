@@ -73,7 +73,7 @@ for (const paper of provenance) {
   for (const br of titleNode.querySelectorAll('br')) br.replaceWith(document.createTextNode(' '));
   const title = titleNode.textContent.replace(/\s+/g, ' ').trim();
   const nav = [...article.querySelectorAll('h2')].filter(h => h.id || h.parentNode.id).map(h => `<a href="#${escape(h.id || h.parentNode.id)}">${escape(h.textContent.trim())}</a>`).join('');
-  const report = {paper: paper.slug, source: paper.url, mathCount: article.querySelectorAll('math').length, converted: 0, repaired: 0, nativeFallbacks: 0, repairs: [], fallbacks: []};
+  const report = {paper: paper.slug, source: paper.url, mathCount: article.querySelectorAll('math').length, converted: 0, repaired: 0, nativeFallbacks: 0, repairs: [], fallbacks: [], layoutAdjustments: []};
   for (const math of [...article.querySelectorAll('math')]) {
     const originalTex = math.querySelector('annotation[encoding="application/x-tex"]')?.textContent || math.getAttribute('alttext');
     const repair = repairMap.get(`${paper.slug}:${math.id}`);
@@ -86,6 +86,15 @@ for (const paper of provenance) {
       span.className = 'rendered-math';
       if (math.id) span.id = math.id;
       span.innerHTML = markup;
+      // Recover the relation spacing omitted when LaTeXML splits the LHS and
+      // RHS into separate cells. Inspect the rendered atom; never rewrite TeX.
+      const firstBase = span.querySelector('.katex-html > .katex-base');
+      const firstAtom = firstBase && [...firstBase.children].find(child => !child.classList.contains('katex-strut'));
+      if (math.closest('.ltx_eqn_table') && math.closest('td.ltx_align_left') && firstAtom?.classList.contains('mrel')) {
+        span.classList.add('relation-start');
+        report.layoutAdjustments.push({id: math.id, kind: 'split-cell-leading-relation-spacing', space: '0.2778em'});
+      }
+
       // Accessibility/source annotation remains the exact original, even when
       // rendering requires an explicitly audited compatibility adjustment.
       span.querySelector('annotation[encoding="application/x-tex"]').textContent = originalTex;
