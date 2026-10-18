@@ -108,7 +108,7 @@ article .paper-numbered-heading{display:grid;grid-template-columns:max-content m
 @media(max-width:900px){.reader-toc-trigger:not([hidden]){display:block}}
 @keyframes toc-enter{from{transform:translateX(-100%)}to{transform:translateX(0)}}
 @media(prefers-reduced-motion:reduce){.reader-toc-dialog[open]{animation:none}}
-.topbar .reader-toc-dialog nav{display:block}
+.topbar .reader-toc-dialog nav{display:block;font-size:14px}
 /* A compact navigation strip keeps full-size invisible touch targets. */
 .topbar{min-height:52px;padding:2px 5vw}
 html{scroll-padding-top:56px}
