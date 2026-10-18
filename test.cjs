@@ -40,6 +40,8 @@ for (const [file, document] of documents) {
   for (const script of document.querySelectorAll('script')) assert(['assets/anchor.js','assets/settings.js','assets/toc.js'].includes(script.getAttribute('src').split('?')[0]), `${file}: unexpected script`);
   assert.equal(document.querySelectorAll('script[src^="assets/settings.js"]').length, 1, `${file}: reading preferences script`);
   assert.equal(document.getElementById('reader-settings').tagName.toLowerCase(), 'dialog', `${file}: native settings dialog`);
+  assert.equal(document.querySelector('.reader-settings-help').textContent,'Preferences are saved in this browser.');
+  assert(!/both papers|two papers|Paper Atelier/i.test(document.querySelector('.topbar').textContent));
   assert.equal(document.getElementById('reader-settings-open').getAttribute('aria-haspopup'), 'dialog');
   assert.equal(document.getElementById('reader-settings').getAttribute('aria-labelledby'), 'reader-settings-title');
   assert.equal(document.getElementById('reader-settings-reset').getAttribute('type'), 'button');
