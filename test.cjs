@@ -81,9 +81,11 @@ for (const paper of provenance) {
   for(const [i, author] of [...output.querySelectorAll('.paper-author-list .ltx_creator')].entries()) assert.deepEqual([...author.querySelectorAll('.paper-author-markers a')].map(a=>a.textContent), [...header.authors[i][1].map(String), ...(header.authors[i][2]?[header.authors[i][2]]:[])]);
   for(const h of output.querySelectorAll('.paper-numbered-heading')) assert(/[.:]$/.test(h.querySelector('.ltx_tag').textContent.trim()));
   assert.equal(output.querySelector('.topbar a.home-link'), null, 'Reader Papers link removed');
+  assert.equal(output.querySelectorAll('a.all-papers-link[href="index.html"]').length,3);
+  assert.equal(output.querySelector('#reader-toc nav').firstElementChild.textContent,'← All papers');
   assert.equal(output.getElementById('reader-toc').tagName, 'DIALOG');
   assert.equal(output.querySelectorAll('#reader-toc-open').length, 1);
-  assert.equal(output.querySelectorAll('#reader-toc nav a').length, output.querySelectorAll('article h2,article h3').length);
+  assert.equal(output.querySelectorAll('#reader-toc nav a[href^="#"]').length, output.querySelectorAll('article h2,article h3').length);
   assert.equal(output.querySelectorAll('script[src^="assets/toc.js?v="]').length, 1);
   const sourceMath = [...source.querySelectorAll('math')];
   assert.equal(sourceMath.length, paper.mathCount);

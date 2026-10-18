@@ -117,3 +117,7 @@ html{scroll-padding-top:56px}
 /* Align the icon strokes, not just its invisible touch box, with prose. */
 @media(max-width:900px){.topbar{padding-inline:24px}.reader-toc-trigger{margin-left:-16px}}
 @media(max-width:480px){.topbar{padding-inline:18px}}
+/* Return to the collection from contents or after finishing a paper. */
+aside a.all-papers-link{margin:0 0 18px;color:var(--accent)}
+.reader-toc-dialog nav a.all-papers-link{margin-bottom:8px;border-bottom:1px solid var(--rule)}
+footer a.all-papers-link{display:inline-flex;align-items:center;min-height:48px;text-decoration:none}
