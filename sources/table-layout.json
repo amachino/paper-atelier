@@ -138,7 +138,6 @@
             }
           ],
           "visual_verification": {
-            "rendered_page": "/tmp/paper-tables/bswap-p4.png",
             "inspected": true
           },
           "html_data_fingerprint_sha256": "ee926c81d78ce517bd656ae786d5fd38e221413834bce21e03bd94a87b0ad007",
@@ -242,7 +241,6 @@
             }
           ],
           "visual_verification": {
-            "rendered_page": "/tmp/paper-tables/bswap-p7.png",
             "inspected": true
           },
           "html_data_fingerprint_sha256": "02bc5572f70aa027857da01fe1e88d5362640c39e773e46b704720d75dc07706",
@@ -346,7 +344,6 @@
             }
           ],
           "visual_verification": {
-            "rendered_page": "/tmp/paper-tables/bswap-p15.png",
             "inspected": true
           },
           "html_data_fingerprint_sha256": "75972a4295784288d973279e95bb51193b36ab78bae564d15619da66d49efa33",
@@ -483,7 +480,6 @@
             }
           ],
           "visual_verification": {
-            "rendered_page": "/tmp/paper-tables/qubex-p8.png",
             "inspected": true
           },
           "html_data_fingerprint_sha256": "af84139d0c615b1e6c4ef8ae14a194ec2e126096e45bf72ab100ce2f169e4b23",
@@ -587,7 +583,6 @@
             }
           ],
           "visual_verification": {
-            "rendered_page": "/tmp/paper-tables/qubex-p18.png",
             "inspected": true
           },
           "html_data_fingerprint_sha256": "a7b24de36a17d61d6b29a64681d895b4f315c275c02590d3bcb0b1ab4719866f",
@@ -691,7 +686,6 @@
             }
           ],
           "visual_verification": {
-            "rendered_page": "/tmp/paper-tables/qubex-p18.png",
             "inspected": true
           },
           "html_data_fingerprint_sha256": "11372e793cfd5419fb1d304d412e64002b76c351befc54b1f7d7418d85c97e88",
@@ -795,7 +789,6 @@
             }
           ],
           "visual_verification": {
-            "rendered_page": "/tmp/paper-tables/qubex-p18.png",
             "inspected": true
           },
           "html_data_fingerprint_sha256": "06264b0f5a0c698a69ff00f9e0934473cdff1d56707889f62eda8bff0f668f66",

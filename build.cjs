@@ -76,6 +76,7 @@ for (const paper of provenance) {
     const node=article.querySelector(`[id="${table.html_id}"]`);
     if(!node||!node.classList.contains('ltx_table'))throw new Error(`Missing classified table: ${table.html_id}`);
     node.classList.add(table.classification==='single-column'?'table-single':'table-wide');
+    if(table.classification==='single-column' && [...node.querySelectorAll('tr')].some(row=>row.querySelectorAll('td,th').length>=7))node.classList.add('table-dense');
     node.setAttribute('data-original-column-span',table.classification==='single-column'?'1':'2');
   }
   const titleNode = article.querySelector('h1').cloneNode(true);

@@ -133,3 +133,6 @@ figure.ltx_table .ltx_tabular{width:100%;table-layout:auto}
   article figure.table-single{float:right;width:46%;max-width:420px;margin:8px 0 24px 30px;padding:16px;clear:right}
   article figure.table-wide{float:none;width:auto;max-width:none;clear:both}
 }
+/* Dense count/probability matrices keep all columns legible at default size. */
+figure.table-dense .ltx_tabular{font-size:max(13px,.8em)}
+figure.table-dense .ltx_tabular td,figure.table-dense .ltx_tabular th{padding-inline:2px}
