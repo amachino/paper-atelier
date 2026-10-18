@@ -1,0 +1,1756 @@
+{
+  "schema_version": 1,
+  "coordinate_system": {
+    "units": "PDF points (1/72 inch)",
+    "origin": "page top left",
+    "bounds_order": [
+      "x0",
+      "y0",
+      "x1",
+      "y1"
+    ],
+    "page_dimensions_pt": [
+      612,
+      792
+    ]
+  },
+  "methodology": "Classified original rendered PDF figure placement against the two body-text columns, with matching numbered captions and original HTML IDs. No image-aspect-ratio threshold was used. Form XObject page-placement transforms supply artwork bounds; caption anchors and visual rendering verify alignment. TeX source environment names were not inspected, so two-column means observed physical spanning, not a verified literal figure* declaration.",
+  "papers": {
+    "bswap": {
+      "arxiv_id": "2610.21936v1",
+      "html_url": "https://arxiv.org/html/2610.21936v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.21936v1",
+      "pdf_sha256": "1f32ad72778adeefb515fecb56d767f95cd9d0f883838aedaec66764475162dd",
+      "body_column_bounds_x_pt": [
+        [
+          54,
+          299.09
+        ],
+        [
+          317.01,
+          562.1
+        ]
+      ],
+      "nominal_body_column_width_pt": 245.09,
+      "nominal_two_column_span_pt": 508.1,
+      "figures": [
+        {
+          "number": 1,
+          "html_id": "S2.F1",
+          "html_top_level_id": "S2.F1",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 2,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=2",
+          "artwork_bounds_pt": [
+            317.01,
+            52.07,
+            562.09,
+            277.91
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im1",
+              "bounds_pt": [
+                317.01,
+                52.07,
+                562.09,
+                277.91
+              ],
+              "embedded_source_name": "./figures/fig01.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 1: Schematic of Stark bSWAP. (a) Two capacitively coupled transmons with coupling g. \\mathrm{Q}_{\\mathrm{A}} is driven with amplitude \\Omega_{\\mathrm{A}} at frequency \\omega_{\\mathrm{d}}, while \\mathrm{Q}_{\\mathrm{B}} is undriven. (b) Dressed transition frequency \\widetilde{\\omega}_{\\mathrm{A}} of \\mathrm{Q}_{\\mathrm{A}}, shifted from the bare frequency \\omega_{\\mathrm{A}} (dashed). At the two-photon resonance, \\widetilde{\\omega}_{\\mathrm{A}} and \\omega_{\\mathrm{B}} are equally spaced about \\omega_{\\mathrm{d}}, as indicated by the matching interval marks.",
+          "caption_anchor_bounds_pt": [
+            317.01,
+            291.25,
+            563.66,
+            363.05
+          ],
+          "caption_anchor_text": "FIG. 1. Schematic of Stark bSWAP. (a) Two capacitively coupled transmons with coupling g. QA is driven with ampli- tude ΩA at frequency ωd, while QB is undriven. (b) Dressed transition frequency eωA of QA, shifted from the bare frequency ωA (dashed). At the two-photon resonance, eωA and ωB are equally spaced about ωd, as indicated by the matching interval marks.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 2,
+          "html_id": "S2.F2",
+          "html_top_level_id": "S2.F2",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 3,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=3",
+          "artwork_bounds_pt": [
+            317.01,
+            52.07,
+            562.09,
+            235.11
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im2",
+              "bounds_pt": [
+                317.01,
+                52.07,
+                562.09,
+                235.11
+              ],
+              "embedded_source_name": "./figures/fig02.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 2: Calculated bSWAP resonances in the two-level and multilevel transmon models. (a) Drive amplitude \\Omega_{\\mathrm{A}} versus drive frequency \\omega_{\\mathrm{d}} along the resonance. (b) Exchange coefficient J_{XY} along each resonance curve. Dashed green and solid blue lines show the values obtained from the two-level and multilevel models, respectively. Dotted vertical lines mark the midpoint between the bare qubit frequencies. The model parameters are \\omega_{\\mathrm{A}}/2\\pi=4.4\\,\\mathrm{GHz}, \\omega_{\\mathrm{B}}/2\\pi=5.0\\,\\mathrm{GHz}, \\alpha_{\\mathrm{A}}/2\\pi=-200\\,\\mathrm{MHz}, and g/2\\pi=6\\,\\mathrm{MHz}. The full-cosine calculation uses 12 levels in \\mathrm{Q}_{\\mathrm{A}}.",
+          "caption_anchor_bounds_pt": [
+            317.01,
+            248.45,
+            563.66,
+            351.98
+          ],
+          "caption_anchor_text": "FIG. 2. Calculated bSWAP resonances in the two-level and multilevel transmon models. (a) Drive amplitude ΩA ver- sus drive frequency ωd along the resonance. (b) Exchange coefficient JXY along each resonance curve. Dashed green and solid blue lines show the values obtained from the two- level and multilevel models, respectively. Dotted vertical lines mark the midpoint between the bare qubit frequencies. The model parameters are ωA/2π = 4.4 GHz, ωB/2π = 5.0 GHz, αA/2π = −200 MHz, and g/2π = 6 MHz. The full-cosine cal- culation uses 12 levels in QA.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 3,
+          "html_id": "S2.F3",
+          "html_top_level_id": "S2.F3",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 4,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=4",
+          "artwork_bounds_pt": [
+            317.01,
+            52.07,
+            562.09,
+            348.92
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im3",
+              "bounds_pt": [
+                317.01,
+                52.07,
+                562.09,
+                348.92
+              ],
+              "embedded_source_name": "./figures/fig03.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 3: Two-tone bSWAP control. (a) Exchange drive on \\mathrm{Q}_{\\mathrm{A}} and siZZle tone on \\mathrm{Q}_{\\mathrm{B}}. (b) Pulse envelopes of the \\mathrm{Q}_{\\mathrm{A}}–\\mathrm{Q}_{\\mathrm{B}} bSWAP pulse. Solid and dashed curves show the in-phase (I) and quadrature (Q) components, respectively, with separate vertical scales for \\mathrm{Q}_{\\mathrm{A}} and \\mathrm{Q}_{\\mathrm{B}}. Shading and dotted boundaries mark the ramps that adiabatically connect the undriven and dressed states.",
+          "caption_anchor_bounds_pt": [
+            316.77,
+            362.41,
+            563.18,
+            434.07
+          ],
+          "caption_anchor_text": "FIG. 3. Two-tone bSWAP control. (a) Exchange drive on QA and siZZle tone on QB. (b) Pulse envelopes of the QA–QB bSWAP pulse. Solid and dashed curves show the in-phase (I) and quadrature (Q) components, respectively, with separate vertical scales for QA and QB. Shading and dotted boundaries mark the ramps that adiabatically connect the undriven and dressed states.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 4,
+          "html_id": "S3.F4",
+          "html_top_level_id": "S3.F4",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 5,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=5",
+          "artwork_bounds_pt": [
+            54.0,
+            52.07,
+            299.08,
+            226.26
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im4",
+              "bounds_pt": [
+                54.0,
+                52.07,
+                299.08,
+                226.26
+              ],
+              "embedded_source_name": "./figures/fig04.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 4: Drive-amplitude dependence of the \\mathrm{Q}_{\\mathrm{A}}–\\mathrm{Q}_{\\mathrm{B}} resonance. The normalized readout responses of (a) \\mathrm{Q}_{\\mathrm{A}} and (b) \\mathrm{Q}_{\\mathrm{B}} to a drive on \\mathrm{Q}_{\\mathrm{A}} are plotted. Dotted vertical lines mark the midpoint between the undriven qubit frequencies, and open circles mark the benchmarked drive setting (\\omega_{\\mathrm{d}}/2\\pi=4.324\\,\\mathrm{GHz}, \\Omega_{\\mathrm{A}}/2\\pi\\simeq 419\\,\\mathrm{MHz}). Orange dashed curves show the prediction from the multilevel transmon model. Drive amplitude is normalized to the maximum amplitude of the control electronics.",
+          "caption_anchor_bounds_pt": [
+            53.67,
+            239.75,
+            300.87,
+            332.33
+          ],
+          "caption_anchor_text": "FIG. 4. Drive-amplitude dependence of the QA–QB resonance. The normalized readout responses of (a) QA and (b) QB to a drive on QA are plotted. Dotted vertical lines mark the midpoint between the undriven qubit frequencies, and open circles mark the benchmarked drive setting (ωd/2π = 4.324 GHz, ΩA/2π ≃419 MHz). Orange dashed curves show the prediction from the multilevel transmon model. Drive amplitude is normalized to the maximum amplitude of the control electronics.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 5,
+          "html_id": "S3.F5",
+          "html_top_level_id": "S3.F5",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 5,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=5",
+          "artwork_bounds_pt": [
+            317.01,
+            52.07,
+            562.09,
+            226.26
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im5",
+              "bounds_pt": [
+                317.01,
+                52.07,
+                562.09,
+                226.26
+              ],
+              "embedded_source_name": "./figures/fig05.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 5: \\lvert 00\\rangle\\mathord{\\leftrightarrow}\\lvert 11\\rangle exchange. (a) Chevron pattern of the \\lvert 11\\rangle population after preparing \\lvert 00\\rangle, as a function of the drive-frequency offset and pulse duration. (b) Populations of \\lvert 00\\rangle and \\lvert 11\\rangle at zero drive-frequency offset, indicated by the dotted horizontal line in (a).",
+          "caption_anchor_bounds_pt": [
+            317.01,
+            239.56,
+            563.65,
+            290.49
+          ],
+          "caption_anchor_text": "FIG. 5. |00⟩↔|11⟩exchange. (a) Chevron pattern of the |11⟩ population after preparing |00⟩, as a function of the drive- frequency offset and pulse duration. (b) Populations of |00⟩ and |11⟩at zero drive-frequency offset, indicated by the dotted horizontal line in (a).",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 6,
+          "html_id": "S3.F7.fig1",
+          "html_top_level_id": "S3.F7",
+          "html_parent_figure_id": "S3.F7",
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 6,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=6",
+          "artwork_bounds_pt": [
+            54.0,
+            52.07,
+            299.08,
+            286.16
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im6",
+              "bounds_pt": [
+                54.0,
+                52.07,
+                299.08,
+                286.16
+              ],
+              "embedded_source_name": "./figures/fig06.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 6: ZZ-phase control with an additional siZZle tone. Accumulated phase versus (a) relative phase \\varphi and (b) ratio of the amplitude settings for the siZZle and bSWAP tones. Circles denote bSWAP and squares denote \\sqrt{\\mathrm{bSWAP}}. Bars show 95\\% statistical intervals. Dotted lines mark zero accumulated phase.",
+          "caption_anchor_bounds_pt": [
+            54.0,
+            299.57,
+            300.67,
+            339.9
+          ],
+          "caption_anchor_text": "FIG. 6. ZZ-phase control with an additional siZZle tone. Ac- cumulated phase versus (a) relative phase φ and (b) ratio of the amplitude settings for the siZZle and bSWAP tones. Cir- cles denote bSWAP and squares denote √",
+          "confidence": "high",
+          "latex_environment": null,
+          "group_note": "Individually single-column artwork and separate single-column caption, paired beside another individually single-column figure. The original HTML outer container groups the pair; its literal TeX environment is unverified."
+        },
+        {
+          "number": 7,
+          "html_id": "S3.F7.fig2",
+          "html_top_level_id": "S3.F7",
+          "html_parent_figure_id": "S3.F7",
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 6,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=6",
+          "artwork_bounds_pt": [
+            317.01,
+            52.07,
+            562.09,
+            286.16
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im7",
+              "bounds_pt": [
+                317.01,
+                52.07,
+                562.09,
+                286.16
+              ],
+              "embedded_source_name": "./figures/fig07.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 7: Benchmarking of ZZ-compensated gates. (a) Interleaved randomized benchmarking of bSWAP. (b) Interleaved XEB of \\sqrt{\\mathrm{bSWAP}}. Filled circles and squares denote reference and interleaved data, respectively. Bars show one standard error. Solid lines are exponential fits with free offsets. Faint open circles in (b) show reference-model predictions.",
+          "caption_anchor_bounds_pt": [
+            316.67,
+            299.5,
+            563.65,
+            330.61
+          ],
+          "caption_anchor_text": "FIG. 7. Benchmarking of ZZ-compensated gates. (a) Inter- leaved randomized benchmarking of bSWAP. (b) Interleaved XEB of √",
+          "confidence": "high",
+          "latex_environment": null,
+          "group_note": "Individually single-column artwork and separate single-column caption, paired beside another individually single-column figure. The original HTML outer container groups the pair; its literal TeX environment is unverified."
+        },
+        {
+          "number": 8,
+          "html_id": "S4.F8",
+          "html_top_level_id": "S4.F8",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 7,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=7",
+          "artwork_bounds_pt": [
+            54.0,
+            52.07,
+            299.08,
+            181.07
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im8",
+              "bounds_pt": [
+                54.0,
+                52.07,
+                299.08,
+                181.07
+              ],
+              "embedded_source_name": "./figures/fig08.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 8: Excess error relative to the coherence limit for bSWAP without and with ZZ compensation and echoed CR, in percentage points. Bars show 95\\% statistical intervals with the Table 1 coherence values held fixed.",
+          "caption_anchor_bounds_pt": [
+            53.67,
+            194.56,
+            300.64,
+            234.83
+          ],
+          "caption_anchor_text": "FIG. 8. Excess error relative to the coherence limit for bSWAP without and with ZZ compensation and echoed CR, in per- centage points. Bars show 95% statistical intervals with the Table I coherence values held fixed.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 9,
+          "html_id": "S4.F9",
+          "html_top_level_id": "S4.F9",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 7,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=7",
+          "artwork_bounds_pt": [
+            317.01,
+            52.07,
+            562.09,
+            182.15
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im9",
+              "bounds_pt": [
+                317.01,
+                52.07,
+                562.09,
+                182.15
+              ],
+              "embedded_source_name": "./figures/fig09.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 9: Two-qubit spin squeezing. Data points show the Wineland spin-squeezing parameter \\xi_{\\mathrm{R}}^{2} versus analysis angle \\phi. This angle specifies the direction along which transverse spin fluctuations are measured, from x toward y in the plane perpendicular to the mean spin. The dashed curve is a sinusoidal fit used to determine the squeezed axis. Error bars show 95\\% statistical intervals. The dotted line at \\xi_{\\mathrm{R}}^{2}{}=1 marks the SQL for a coherent state.",
+          "caption_anchor_bounds_pt": [
+            316.54,
+            195.49,
+            563.89,
+            277.75
+          ],
+          "caption_anchor_text": "FIG. 9. Two-qubit spin squeezing. Data points show the Wineland spin-squeezing parameter ξ2 R versus analysis angle ϕ. This angle specifies the direction along which transverse spin fluctuations are measured, from x toward y in the plane per- pendicular to the mean spin. The dashed curve is a sinusoidal fit used to determine the squeezed axis. Error bars show 95% statistical intervals. The dotted line at ξ2 R = 1 marks the SQL for a coherent state.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 10,
+          "html_id": "A2.F10",
+          "html_top_level_id": "A2.F10",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 12,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=12",
+          "artwork_bounds_pt": [
+            54.0,
+            52.07,
+            299.08,
+            397.58
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im10",
+              "bounds_pt": [
+                54.0,
+                52.07,
+                299.08,
+                397.58
+              ],
+              "embedded_source_name": "./figures/fig10.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 10: Wide-band response to a drive on \\mathrm{Q}_{\\mathrm{A}}. (a) Qubit connectivity. (b) Normalized readout responses. Dotted lines mark the undriven two-photon midpoints: all four in the \\mathrm{Q}_{\\mathrm{A}} panel and the corresponding one in each neighbor panel. Dashed lines mark the \\mathrm{Q}_{\\mathrm{A}} transition.",
+          "caption_anchor_bounds_pt": [
+            54.0,
+            410.92,
+            300.89,
+            462.8
+          ],
+          "caption_anchor_text": "FIG. 10. Wide-band response to a drive on QA. (a) Qubit connectivity. (b) Normalized readout responses. Dotted lines mark the undriven two-photon midpoints: all four in the QA panel and the corresponding one in each neighbor panel. Dashed lines mark the QA transition.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 11,
+          "html_id": "A2.F12.fig1",
+          "html_top_level_id": "A2.F12",
+          "html_parent_figure_id": "A2.F12",
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 13,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=13",
+          "artwork_bounds_pt": [
+            54.0,
+            52.08,
+            299.08,
+            180.3
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im11",
+              "bounds_pt": [
+                54.0,
+                52.08,
+                299.08,
+                180.3
+              ],
+              "embedded_source_name": "./figures/fig11.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 11: Frequency-dependent drive-amplitude scale. Markers show the midpoints of \\Omega_{0}(\\omega_{\\mathrm{d}})/2\\pi inferred from Stark shifts at amplitude settings s=0.15 and 0.30. The solid curve is the shape-preserving piecewise cubic interpolation.",
+          "caption_anchor_bounds_pt": [
+            54.0,
+            193.79,
+            299.11,
+            234.07
+          ],
+          "caption_anchor_text": "FIG. 11. Frequency-dependent drive-amplitude scale. Markers show the midpoints of Ω0(ωd)/2π inferred from Stark shifts at amplitude settings s = 0.15 and 0.30. The solid curve is the shape-preserving piecewise cubic interpolation.",
+          "confidence": "high",
+          "latex_environment": null,
+          "group_note": "Individually single-column artwork and separate single-column caption, paired beside another individually single-column figure. The original HTML outer container groups the pair; its literal TeX environment is unverified."
+        },
+        {
+          "number": 12,
+          "html_id": "A2.F12.fig2",
+          "html_top_level_id": "A2.F12",
+          "html_parent_figure_id": "A2.F12",
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 13,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=13",
+          "artwork_bounds_pt": [
+            317.01,
+            52.07,
+            562.11,
+            180.3
+          ],
+          "artwork_width_pt": 245.1,
+          "artwork_evidence": [
+            {
+              "object_name": "Im12",
+              "bounds_pt": [
+                317.01,
+                52.07,
+                562.11,
+                180.3
+              ],
+              "embedded_source_name": "./figures/fig12.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 12: Local-phase corrections for the pulse implementations of (a) bSWAP and (b) \\sqrt{\\mathrm{bSWAP}}. The superscript ‘raw’ denotes the pulse before local-phase correction.",
+          "caption_anchor_bounds_pt": [
+            317.01,
+            193.65,
+            563.68,
+            213.14
+          ],
+          "caption_anchor_text": "FIG. 12. Local-phase corrections for the pulse implementa- tions of (a) bSWAP and (b) √",
+          "confidence": "high",
+          "latex_environment": null,
+          "group_note": "Individually single-column artwork and separate single-column caption, paired beside another individually single-column figure. The original HTML outer container groups the pair; its literal TeX environment is unverified."
+        },
+        {
+          "number": 13,
+          "html_id": "A5.F14.fig1",
+          "html_top_level_id": "A5.F14",
+          "html_parent_figure_id": "A5.F14",
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 14,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=14",
+          "artwork_bounds_pt": [
+            54.0,
+            54.23,
+            299.08,
+            183.22
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im13",
+              "bounds_pt": [
+                54.0,
+                54.23,
+                299.08,
+                183.22
+              ],
+              "embedded_source_name": "./figures/fig13.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 13: Interleaved randomized benchmarking of bSWAP composed of two \\sqrt{\\mathrm{bSWAP}} pulses. Markers show mean populations with one-standard-error bars. Lines are separate fits of the reference and interleaved means to an exponential decay with an offset.",
+          "caption_anchor_bounds_pt": [
+            54.0,
+            196.57,
+            299.11,
+            216.05
+          ],
+          "caption_anchor_text": "FIG. 13. Interleaved randomized benchmarking of bSWAP composed of two √",
+          "confidence": "high",
+          "latex_environment": null,
+          "group_note": "Individually single-column artwork and separate single-column caption, paired beside another individually single-column figure. The original HTML outer container groups the pair; its literal TeX environment is unverified."
+        },
+        {
+          "number": 14,
+          "html_id": "A5.F14.fig2",
+          "html_top_level_id": "A5.F14",
+          "html_parent_figure_id": "A5.F14",
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 14,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=14",
+          "artwork_bounds_pt": [
+            317.01,
+            52.07,
+            562.09,
+            183.22
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im14",
+              "bounds_pt": [
+                317.01,
+                52.07,
+                562.09,
+                183.22
+              ],
+              "embedded_source_name": "./figures/fig14.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 14: Preparation-time dependence of two-qubit spin squeezing. Blue circles show \\xi_{\\mathrm{R}}^{2} along the squeezed axis determined separately at each pulse duration. The green square shows the independent validation reported in Sec. IV.3. Error bars show 95\\% statistical intervals. The horizontal dotted line marks the SQL, and the vertical dashed line marks 98\\,\\mathrm{ns}.",
+          "caption_anchor_bounds_pt": [
+            317.01,
+            196.57,
+            563.63,
+            257.91
+          ],
+          "caption_anchor_text": "FIG. 14. Preparation-time dependence of two-qubit spin squeezing. Blue circles show ξ2 R along the squeezed axis deter- mined separately at each pulse duration. The green square shows the independent validation reported in Sec. IV C. Error bars show 95% statistical intervals. The horizontal dotted line marks the SQL, and the vertical dashed line marks 98 ns.",
+          "confidence": "high",
+          "latex_environment": null,
+          "group_note": "Individually single-column artwork and separate single-column caption, paired beside another individually single-column figure. The original HTML outer container groups the pair; its literal TeX environment is unverified."
+        },
+        {
+          "number": 15,
+          "html_id": "A7.F15",
+          "html_top_level_id": "A7.F15",
+          "html_parent_figure_id": null,
+          "classification": "two-column",
+          "recommended_desktop_layout": "full-width",
+          "observed_pdf_column": "both",
+          "pdf_page": 15,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=15",
+          "artwork_bounds_pt": [
+            54.0,
+            52.07,
+            562.13,
+            198.33
+          ],
+          "artwork_width_pt": 508.13,
+          "artwork_evidence": [
+            {
+              "object_name": "Im15",
+              "bounds_pt": [
+                54.0,
+                52.07,
+                562.13,
+                198.33
+              ],
+              "embedded_source_name": "./figures/fig15.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 15: Constructions from \\sqrt{\\mathrm{bSWAP}} pulses. (a) Echoed XX rotation. (b) CNOT with \\mathrm{Q}_{\\mathrm{A}} as control. (c) SWAP. Square-root Pauli labels denote positive \\pi/2 rotations, and daggers denote inverses.",
+          "caption_anchor_bounds_pt": [
+            54.0,
+            204.0,
+            177.46,
+            220.69
+          ],
+          "caption_anchor_text": "FIG. 15. Constructions from √",
+          "confidence": "high",
+          "latex_environment": null,
+          "caption_anchor_note": "Math extraction splits this full-width caption across several text blocks. The anchor bbox alone is not the full caption width; full caption and artwork visibly span both columns."
+        },
+        {
+          "number": 16,
+          "html_id": "A7.F16",
+          "html_top_level_id": "A7.F16",
+          "html_parent_figure_id": null,
+          "classification": "two-column",
+          "recommended_desktop_layout": "full-width",
+          "observed_pdf_column": "both",
+          "pdf_page": 16,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=16",
+          "artwork_bounds_pt": [
+            54.0,
+            52.07,
+            562.09,
+            241.68
+          ],
+          "artwork_width_pt": 508.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im16",
+              "bounds_pt": [
+                54.0,
+                52.07,
+                562.09,
+                241.68
+              ],
+              "embedded_source_name": "./figures/fig16.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 16: Calculated interaction rates under a common drive-amplitude limit. (a) and (b) Two-level model. (c) and (d) Multilevel model using the experimental device parameters. Panels (a) and (c) show the maximum interaction coefficients \\bar{J} for bSWAP and CR, normalized by g. Panels (b) and (d) show their ratio R. Gray dashed horizontal lines mark the thresholds for Bell-state preparation and SWAP (R=1), and for CNOT and CZ (R=2). (e) Multilevel R versus drive-amplitude limit and detuning \\Delta with qubit A fixed, with solid contours at R=1 and R=2. The dashed curve in (e) marks the maximum drive amplitude supporting bSWAP resonance between the qubit frequencies. The black dotted horizontal line in (e) marks the detuning used in (c) and (d). Dotted vertical lines mark the common experimental drive amplitude, \\bar{\\Omega}/\\Delta\\simeq 0.81.",
+          "caption_anchor_bounds_pt": [
+            52.92,
+            255.17,
+            562.89,
+            326.83
+          ],
+          "caption_anchor_text": "FIG. 16. Calculated interaction rates under a common drive-amplitude limit. (a) and (b) Two-level model. (c) and (d) Multilevel model using the experimental device parameters. Panels (a) and (c) show the maximum interaction coefficients ¯J for bSWAP and CR, normalized by g. Panels (b) and (d) show their ratio R. Gray dashed horizontal lines mark the thresholds for Bell-state preparation and SWAP (R = 1), and for CNOT and CZ (R = 2). (e) Multilevel R versus drive-amplitude limit and detuning ∆ with qubit A fixed, with solid contours at R = 1 and R = 2. The dashed curve in (e) marks the maximum drive amplitude supporting bSWAP resonance between the qubit frequencies. The black dotted horizontal line in (e) marks the detuning used in (c) and (d). Dotted vertical lines mark the common experimental drive amplitude, ¯Ω/∆≃0.81.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 17,
+          "html_id": "A7.F17",
+          "html_top_level_id": "A7.F17",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 16,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=16",
+          "artwork_bounds_pt": [
+            54.0,
+            349.03,
+            299.08,
+            478.03
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Im17",
+              "bounds_pt": [
+                54.0,
+                349.03,
+                299.08,
+                478.03
+              ],
+              "embedded_source_name": "./figures/fig17.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 17: Interaction coefficients versus drive amplitude. Circles and squares show measured bSWAP and CR coefficients, respectively. Solid blue and dashed green lines show the corresponding cosine-model predictions.",
+          "caption_anchor_bounds_pt": [
+            54.0,
+            491.43,
+            300.67,
+            531.79
+          ],
+          "caption_anchor_text": "FIG. 17. Interaction coefficients versus drive amplitude. Cir- cles and squares show measured bSWAP and CR coefficients, respectively. Solid blue and dashed green lines show the corre- sponding cosine-model predictions.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 18,
+          "html_id": "A7.SS3.fig1",
+          "html_top_level_id": "A7.SS3.fig1",
+          "html_parent_figure_id": null,
+          "classification": "two-column",
+          "recommended_desktop_layout": "full-width",
+          "observed_pdf_column": "both",
+          "pdf_page": 17,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=17",
+          "artwork_bounds_pt": [
+            54.0,
+            52.07,
+            562.09,
+            305.52
+          ],
+          "artwork_width_pt": 508.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im18",
+              "bounds_pt": [
+                54.0,
+                52.07,
+                562.09,
+                305.52
+              ],
+              "embedded_source_name": "./figures/fig18.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 18: IRB of CNOT and SWAP implementations. (a) \\sqrt{\\mathrm{bSWAP}}-based CNOT. (b) CR-based CNOT. (c) \\sqrt{\\mathrm{bSWAP}}-based SWAP. (d) CR-based SWAP. Markers show mean ground-state populations over 32 random sequences, with one-standard-error bars. Reference and interleaved circuits are shown in green and blue.",
+          "caption_anchor_bounds_pt": [
+            54.0,
+            311.19,
+            297.33,
+            327.91
+          ],
+          "caption_anchor_text": "FIG. 18. IRB of CNOT and SWAP implementations. (a) √",
+          "confidence": "high",
+          "latex_environment": null,
+          "caption_anchor_note": "Math extraction splits this full-width caption across several text blocks. The anchor bbox alone is not the full caption width; full caption and artwork visibly span both columns."
+        }
+      ],
+      "groups": [
+        {
+          "html_id": "S3.F7",
+          "classification": "paired-single-column",
+          "numbers": [
+            6,
+            7
+          ],
+          "child_ids": [
+            "S3.F7.fig1",
+            "S3.F7.fig2"
+          ],
+          "pdf_page": 6,
+          "pair_artwork_bounds_pt": [
+            54.0,
+            52.07,
+            562.09,
+            286.16
+          ],
+          "observed_layout": "Two separately numbered, individually one-column figures aligned side by side across the two columns.",
+          "latex_environment": null,
+          "desktop_wrapping_guidance": "Apply wrapping to the child figures. Keep the outer ID as an anchor or use a normal block with overflow:visible, clear:none, no flow-root/flex/grid/contain formatting context, and no paired border/background/padding/margins. Reset intermediate LaTeXML flex cells/breaks so they do not trap floats. A flow-root outer wrapper prevents following article paragraphs outside it from wrapping the child figures.",
+          "preserve_pair_alternative": "If the pair must be preserved as a single unit, display the outer container full-width, accurately labeled as a paired-single-column group rather than claiming a verified figure*."
+        },
+        {
+          "html_id": "A2.F12",
+          "classification": "paired-single-column",
+          "numbers": [
+            11,
+            12
+          ],
+          "child_ids": [
+            "A2.F12.fig1",
+            "A2.F12.fig2"
+          ],
+          "pdf_page": 13,
+          "pair_artwork_bounds_pt": [
+            54.0,
+            52.07,
+            562.11,
+            180.3
+          ],
+          "observed_layout": "Two separately numbered, individually one-column figures aligned side by side across the two columns.",
+          "latex_environment": null,
+          "desktop_wrapping_guidance": "Apply wrapping to the child figures. Keep the outer ID as an anchor or use a normal block with overflow:visible, clear:none, no flow-root/flex/grid/contain formatting context, and no paired border/background/padding/margins. Reset intermediate LaTeXML flex cells/breaks so they do not trap floats. A flow-root outer wrapper prevents following article paragraphs outside it from wrapping the child figures.",
+          "preserve_pair_alternative": "If the pair must be preserved as a single unit, display the outer container full-width, accurately labeled as a paired-single-column group rather than claiming a verified figure*."
+        },
+        {
+          "html_id": "A5.F14",
+          "classification": "paired-single-column",
+          "numbers": [
+            13,
+            14
+          ],
+          "child_ids": [
+            "A5.F14.fig1",
+            "A5.F14.fig2"
+          ],
+          "pdf_page": 14,
+          "pair_artwork_bounds_pt": [
+            54.0,
+            52.07,
+            562.09,
+            183.22
+          ],
+          "observed_layout": "Two separately numbered, individually one-column figures aligned side by side across the two columns.",
+          "latex_environment": null,
+          "desktop_wrapping_guidance": "Apply wrapping to the child figures. Keep the outer ID as an anchor or use a normal block with overflow:visible, clear:none, no flow-root/flex/grid/contain formatting context, and no paired border/background/padding/margins. Reset intermediate LaTeXML flex cells/breaks so they do not trap floats. A flow-root outer wrapper prevents following article paragraphs outside it from wrapping the child figures.",
+          "preserve_pair_alternative": "If the pair must be preserved as a single unit, display the outer container full-width, accurately labeled as a paired-single-column group rather than claiming a verified figure*."
+        }
+      ],
+      "single_column_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        17
+      ],
+      "two_column_numbers": [
+        15,
+        16,
+        18
+      ],
+      "single_column_html_ids": [
+        "S2.F1",
+        "S2.F2",
+        "S2.F3",
+        "S3.F4",
+        "S3.F5",
+        "S3.F7.fig1",
+        "S3.F7.fig2",
+        "S4.F8",
+        "S4.F9",
+        "A2.F10",
+        "A2.F12.fig1",
+        "A2.F12.fig2",
+        "A5.F14.fig1",
+        "A5.F14.fig2",
+        "A7.F17"
+      ],
+      "full_width_html_ids": [
+        "A7.F15",
+        "A7.F16",
+        "A7.SS3.fig1"
+      ]
+    },
+    "qubex": {
+      "arxiv_id": "2606.13010v1",
+      "html_url": "https://arxiv.org/html/2606.13010v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.13010v1",
+      "pdf_sha256": "3fc91ad6704936cf56da396f681e7518bd19676a2cfa137d01f8d7c4363e705d",
+      "body_column_bounds_x_pt": [
+        [
+          54,
+          299.09
+        ],
+        [
+          317.01,
+          562.1
+        ]
+      ],
+      "nominal_body_column_width_pt": 245.09,
+      "nominal_two_column_span_pt": 508.1,
+      "figures": [
+        {
+          "number": 1,
+          "html_id": "S2.F1",
+          "html_top_level_id": "S2.F1",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 2,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=2",
+          "artwork_bounds_pt": [
+            317.01,
+            52.08,
+            562.1,
+            509.33
+          ],
+          "artwork_width_pt": 245.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im1",
+              "bounds_pt": [
+                317.01,
+                52.08,
+                562.1,
+                509.33
+              ],
+              "embedded_source_name": "./fig/system-overview/system-overview.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 1: System overview. (a) Photograph of the implemented QuBE control system. (b) Schematic of the hardware–software control stack used in this work. The Qubex software framework maps user-facing workflows through its experiment, measurement, pulse, and system layers, while the QuBE hardware platform provides clock distribution and synchronization, microwave signal generation, and readout capture for quantum processing unit (QPU) operation.",
+          "caption_anchor_bounds_pt": [
+            317.01,
+            522.58,
+            563.65,
+            604.78
+          ],
+          "caption_anchor_text": "FIG. 1. System overview. (a) Photograph of the implemented QuBE control system. (b) Schematic of the hardware–software control stack used in this work. The Qubex software framework maps user-facing workflows through its experiment, measure- ment, pulse, and system layers, while the QuBE hardware platform provides clock distribution and synchronization, mi- crowave signal generation, and readout capture for quantum processing unit (QPU) operation.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 2,
+          "html_id": "S2.F2",
+          "html_top_level_id": "S2.F2",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 3,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=3",
+          "artwork_bounds_pt": [
+            317.01,
+            52.08,
+            562.1,
+            308.83
+          ],
+          "artwork_width_pt": 245.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im2",
+              "bounds_pt": [
+                317.01,
+                52.08,
+                562.1,
+                308.83
+              ],
+              "embedded_source_name": "./fig/hardware-architecture/hardware-architecture.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 2: Hardware-side organization of the QuBE platform. (a) Representative transmit (Tx) and receive (Rx) signal chains within one QuBE unit. The Tx chain combines waveform generation implemented in the FPGA, FNCO/CNCO frequency shifts, DAC conversion, and shared-LO upconversion, while the Rx chain performs shared-LO downconversion, ADC digitization, DDC processing, and capture in the FPGA. The RF DAC/ADC signal chains are implemented using AD9082 mixed-signal converters. (b) Clock-distribution scheme for synchronized multi-unit operation. A rubidium-based 10\\text{\\text{-}}\\mathrm{MHz} clock is distributed as 100\\text{\\text{-}}\\mathrm{MHz} PLL/LO references, 250\\text{\\text{-}}\\mathrm{MHz} FPGA clocks, and 62.5\\text{\\text{-}}\\mathrm{kHz} timing references for up to 12 QuBE units.",
+          "caption_anchor_bounds_pt": [
+            315.94,
+            322.08,
+            563.9,
+            456.58
+          ],
+          "caption_anchor_text": "FIG. 2. Hardware-side organization of the QuBE platform. (a) Representative transmit (Tx) and receive (Rx) signal chains within one QuBE unit. The Tx chain combines waveform gen- eration implemented in the FPGA, FNCO/CNCO frequency shifts, DAC conversion, and shared-LO upconversion, while the Rx chain performs shared-LO downconversion, ADC dig- itization, DDC processing, and capture in the FPGA. The RF DAC/ADC signal chains are implemented using AD9082 mixed-signal converters. (b) Clock-distribution scheme for synchronized multi-unit operation. A rubidium-based 10-MHz clock is distributed as 100-MHz PLL/LO references, 250-MHz FPGA clocks, and 62.5-kHz timing references for up to 12 QuBE units.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 3,
+          "html_id": "S2.F3",
+          "html_top_level_id": "S2.F3",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 4,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=4",
+          "artwork_bounds_pt": [
+            60.13,
+            52.08,
+            292.96,
+            236.86
+          ],
+          "artwork_width_pt": 232.83,
+          "artwork_evidence": [
+            {
+              "object_name": "Im3",
+              "bounds_pt": [
+                60.13,
+                52.08,
+                292.96,
+                236.86
+              ],
+              "embedded_source_name": "./fig/hardware-setting-resolution/hardware-setting-resolution.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 3: Hardware-setting resolution in Qubex. System information, including qubit and resonator frequencies, wiring maps, and port assignments, is resolved into an experiment model that maps the quantum system to the control system. Target frequencies are then resolved into QuBE frequency settings consisting of LO, CNCO, FNCO, and AWG waveform-frequency terms.",
+          "caption_anchor_bounds_pt": [
+            53.67,
+            250.11,
+            300.89,
+            321.84
+          ],
+          "caption_anchor_text": "FIG. 3. Hardware-setting resolution in Qubex. System information, including qubit and resonator frequencies, wiring maps, and port assignments, is resolved into an experiment model that maps the quantum system to the control system. Target frequencies are then resolved into QuBE frequency settings consisting of LO, CNCO, FNCO, and AWG waveform- frequency terms.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 4,
+          "html_id": "S3.F4",
+          "html_top_level_id": "S3.F4",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 5,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=5",
+          "artwork_bounds_pt": [
+            54.0,
+            52.08,
+            299.09,
+            336.06
+          ],
+          "artwork_width_pt": 245.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im4",
+              "bounds_pt": [
+                54.0,
+                52.08,
+                299.09,
+                336.06
+              ],
+              "embedded_source_name": "./fig/broadband-output/broadband-output.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 4: Broadband output capability of the QuBE controller. (a) Output power from representative control, readout, and pump ports across their operating bands. (b) Multi-tone output spectrum from one control output port, where two digital channels synthesize tones separated by 1.6\\text{\\,}\\mathrm{GHz} at the same physical output.",
+          "caption_anchor_bounds_pt": [
+            52.92,
+            349.31,
+            300.9,
+            410.58
+          ],
+          "caption_anchor_text": "FIG. 4. Broadband output capability of the QuBE controller. (a) Output power from representative control, readout, and pump ports across their operating bands. (b) Multi-tone output spectrum from one control output port, where two digital channels synthesize tones separated by 1.6 GHz at the same physical output.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 5,
+          "html_id": "S3.F5",
+          "html_top_level_id": "S3.F5",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 5,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=5",
+          "artwork_bounds_pt": [
+            317.01,
+            52.08,
+            562.1,
+            336.06
+          ],
+          "artwork_width_pt": 245.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im5",
+              "bounds_pt": [
+                317.01,
+                52.08,
+                562.1,
+                336.06
+              ],
+              "embedded_source_name": "./fig/signal-integrity/signal-integrity.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 5: Signal integrity and channel isolation of the QuBE controller. (a) Two-tone IMD measurement for a control channel. The programmed tones are placed around 9.75\\text{\\,}\\mathrm{GHz} with offsets of 5\\text{\\,}\\mathrm{MHz} and calibrated to approximately -6\\text{\\,}\\mathrm{dBm} per tone. The smaller side peaks are the third-order IMD products, which are at least 56.4\\text{\\,}\\mathrm{dB} below the driven tones. (b) Neighboring-port crosstalk measurement between driven P5 and adjacent P6 output ports. The P6 crosstalk peak is 88.0\\text{\\,}\\mathrm{dB} below the P5 target-port output.",
+          "caption_anchor_bounds_pt": [
+            315.94,
+            349.31,
+            563.88,
+            441.97
+          ],
+          "caption_anchor_text": "FIG. 5. Signal integrity and channel isolation of the QuBE controller. (a) Two-tone IMD measurement for a control channel. The programmed tones are placed around 9.75 GHz with offsets of 5 MHz and calibrated to approximately −6 dBm per tone. The smaller side peaks are the third-order IMD products, which are at least 56.4 dB below the driven tones. (b) Neighboring-port crosstalk measurement between driven P5 and adjacent P6 output ports. The P6 crosstalk peak is 88.0 dB below the P5 target-port output.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 6,
+          "html_id": "S3.F6",
+          "html_top_level_id": "S3.F6",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 6,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=6",
+          "artwork_bounds_pt": [
+            54.0,
+            52.08,
+            299.09,
+            378.86
+          ],
+          "artwork_width_pt": 245.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im6",
+              "bounds_pt": [
+                54.0,
+                52.08,
+                299.09,
+                378.86
+              ],
+              "embedded_source_name": "./fig/synchronization-stability/synchronization-stability.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 6: Phase stability and timing alignment of the QuBE controller. (a) Representative phase-stability traces measured at 10\\text{\\,}\\mathrm{GHz} from readout output port 0 and control output port 5 on the same QuBE unit. Both traces were acquired through monitor input port 4 over 3600\\text{\\,}\\mathrm{s}. The phases were unwrapped and mean-subtracted. Plotted traces are sampled every 10\\text{\\,}\\mathrm{s} for visibility, and shaded regions indicate \\pm 1 standard deviation of each mean-subtracted phase trace. (b) Multi-unit alignment measurement. Rectangular pulses of duration 128\\text{\\,}\\mathrm{ns} are launched at t=$100\\text{\\,}\\mathrm{ns}$ from output ports on multiple QuBE units and acquired through a monitor port on a single unit under shared clock and trigger conditions. Colored traces show measured monitor waveforms, and dashed gray steps show the rectangular timing models used to identify pulse positions.",
+          "caption_anchor_bounds_pt": [
+            53.76,
+            392.11,
+            300.67,
+            537.06
+          ],
+          "caption_anchor_text": "FIG. 6. Phase stability and timing alignment of the QuBE controller. (a) Representative phase-stability traces measured at 10 GHz from readout output port 0 and control output port 5 on the same QuBE unit. Both traces were acquired through monitor input port 4 over 3600 s. The phases were unwrapped and mean-subtracted. Plotted traces are sampled every 10 s for visibility, and shaded regions indicate ±1 standard deviation of each mean-subtracted phase trace. (b) Multi-unit align- ment measurement. Rectangular pulses of duration 128 ns are launched at t = 100 ns from output ports on multiple QuBE units and acquired through a monitor port on a single unit under shared clock and trigger conditions. Colored traces show measured monitor waveforms, and dashed gray steps show the rectangular timing models used to identify pulse positions.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 7,
+          "html_id": "S4.F7",
+          "html_top_level_id": "S4.F7",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 7,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=7",
+          "artwork_bounds_pt": [
+            54.0,
+            52.08,
+            299.08,
+            351.62
+          ],
+          "artwork_width_pt": 245.08,
+          "artwork_evidence": [
+            {
+              "object_name": "Fm1",
+              "bounds_pt": [
+                54.0,
+                52.08,
+                299.08,
+                351.62
+              ],
+              "embedded_source_name": null,
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 7: Wiring between the QuBE microwave hardware and the qubit chip for one four-qubit readout-multiplexing unit. Four QuBE control output ports drive dedicated qubit-control lines, while the readout-send, readout-return, and JPA-pump paths are shared within the unit. The readout-return path includes JPA and HEMT amplification before returning to the QuBE readout input. Representative frequencies indicate the qubit-drive tones, frequency-multiplexed readout tones, and JPA-pump tone.",
+          "caption_anchor_bounds_pt": [
+            53.76,
+            364.87,
+            300.9,
+            457.53
+          ],
+          "caption_anchor_text": "FIG. 7. Wiring between the QuBE microwave hardware and the qubit chip for one four-qubit readout-multiplexing unit. Four QuBE control output ports drive dedicated qubit-control lines, while the readout-send, readout-return, and JPA-pump paths are shared within the unit. The readout-return path includes JPA and HEMT amplification before returning to the QuBE readout input. Representative frequencies indicate the qubit-drive tones, frequency-multiplexed readout tones, and JPA-pump tone.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 8,
+          "html_id": "S4.F8",
+          "html_top_level_id": "S4.F8",
+          "html_parent_figure_id": null,
+          "classification": "two-column",
+          "recommended_desktop_layout": "full-width",
+          "observed_pdf_column": "both",
+          "pdf_page": 8,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=8",
+          "artwork_bounds_pt": [
+            54.0,
+            52.07,
+            562.12,
+            339.61
+          ],
+          "artwork_width_pt": 508.12,
+          "artwork_evidence": [
+            {
+              "object_name": "Im8",
+              "bounds_pt": [
+                54.0,
+                52.07,
+                562.12,
+                339.61
+              ],
+              "embedded_source_name": "./fig/chip-frequency-map/chip-frequency-map.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 8: Frequency allocation of the 64-qubit fixed-frequency transmon chip, measured using the QuBE/Qubex control stack. (a) Qubit frequencies, showing a checkerboard-like allocation of lower- and higher-frequency qubits with nearest-neighbor frequency differences of about 1\\text{\\,}\\mathrm{GHz}. (b) Readout-resonator frequencies. Cell labels follow the Qubex qubit identifiers, and thick grid lines indicate the four-qubit readout-multiplexing grouping used by the control-system configuration. Q59 is a defect site for which no resonator resonance was confirmed.",
+          "caption_anchor_bounds_pt": [
+            53.67,
+            352.86,
+            563.22,
+            403.67
+          ],
+          "caption_anchor_text": "FIG. 8. Frequency allocation of the 64-qubit fixed-frequency transmon chip, measured using the QuBE/Qubex control stack. (a) Qubit frequencies, showing a checkerboard-like allocation of lower- and higher-frequency qubits with nearest-neighbor frequency differences of about 1 GHz. (b) Readout-resonator frequencies. Cell labels follow the Qubex qubit identifiers, and thick grid lines indicate the four-qubit readout-multiplexing grouping used by the control-system configuration. Q59 is a defect site for which no resonator resonance was confirmed.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 9,
+          "html_id": "S4.F9",
+          "html_top_level_id": "S4.F9",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 9,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=9",
+          "artwork_bounds_pt": [
+            54.0,
+            52.08,
+            299.09,
+            336.06
+          ],
+          "artwork_width_pt": 245.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im9",
+              "bounds_pt": [
+                54.0,
+                52.08,
+                299.09,
+                336.06
+              ],
+              "embedded_source_name": "./fig/frequency-identification/frequency-identification.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 9: Frequency-identification measurements. (a) Readout-resonator spectroscopy for the Q00–Q03 readout-multiplexing unit, plotted as a normalized phase-response map versus probe frequency and relative probe power. The four resonator responses appear as bright ridges at the sharp phase-change points, and at high probe power the ridges shift toward the bare resonator frequencies. (b) Power-dependent qubit spectroscopy for Q37, plotted as the readout phase versus qubit-drive frequency and relative drive power. The computational g–e transition appears as a dominant feature, while increasing the drive power reveals the two-photon g–f response and the e–f transition.",
+          "caption_anchor_bounds_pt": [
+            54.0,
+            349.31,
+            300.66,
+            473.51
+          ],
+          "caption_anchor_text": "FIG. 9. Frequency-identification measurements. (a) Readout- resonator spectroscopy for the Q00–Q03 readout-multiplexing unit, plotted as a normalized phase-response map versus probe frequency and relative probe power. The four resonator re- sponses appear as bright ridges at the sharp phase-change points, and at high probe power the ridges shift toward the bare resonator frequencies. (b) Power-dependent qubit spec- troscopy for Q37, plotted as the readout phase versus qubit- drive frequency and relative drive power. The computational g–e transition appears as a dominant feature, while increasing the drive power reveals the two-photon g–f response and the e–f transition.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 10,
+          "html_id": "S4.F10",
+          "html_top_level_id": "S4.F10",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 9,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=9",
+          "artwork_bounds_pt": [
+            317.01,
+            52.08,
+            562.1,
+            336.06
+          ],
+          "artwork_width_pt": 245.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im10",
+              "bounds_pt": [
+                317.01,
+                52.08,
+                562.1,
+                336.06
+              ],
+              "embedded_source_name": "./fig/coherence-summary/coherence-summary.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 10: Coherence measurements for Q28. Markers show measured data, and solid lines show fitted model curves. (a) T_{1} relaxation measurement. (b) T_{2,\\mathrm{echo}} measurement. (c) Ramsey fringe measured with a drive detuning of 0.2\\text{\\,}\\mathrm{MHz}. The fitted oscillation is used to refine the qubit resonance frequency.",
+          "caption_anchor_bounds_pt": [
+            317.01,
+            349.31,
+            562.43,
+            400.12
+          ],
+          "caption_anchor_text": "FIG. 10. Coherence measurements for Q28. Markers show measured data, and solid lines show fitted model curves. (a) T1 relaxation measurement. (b) T2,echo measurement. (c) Ramsey fringe measured with a drive detuning of 0.2 MHz. The fitted oscillation is used to refine the qubit resonance frequency.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 11,
+          "html_id": "S4.F11",
+          "html_top_level_id": "S4.F11",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 9,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=9",
+          "artwork_bounds_pt": [
+            317.01,
+            412.0,
+            562.1,
+            534.54
+          ],
+          "artwork_width_pt": 245.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im11",
+              "bounds_pt": [
+                317.01,
+                412.0,
+                562.1,
+                534.54
+              ],
+              "embedded_source_name": "./fig/1q-rb/1q-rb.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 11: Single-qubit gate-validation measurement on the superconducting qubit platform. Interleaved randomized benchmarking (IRB) results for a calibrated Q22 X_{\\pi/2} gate are plotted together with the reference randomized benchmarking results. Each data point averages 30 random Clifford sequences at the corresponding sequence length. The error bars show the standard deviation across those sequences, and solid lines show exponential decay fits. The quoted fidelity uncertainty is the fit uncertainty from the IRB decay analysis.",
+          "caption_anchor_bounds_pt": [
+            317.01,
+            547.79,
+            563.67,
+            640.45
+          ],
+          "caption_anchor_text": "FIG. 11. Single-qubit gate-validation measurement on the su- perconducting qubit platform. Interleaved randomized bench- marking (IRB) results for a calibrated Q22 Xπ/2 gate are plotted together with the reference randomized benchmarking results. Each data point averages 30 random Clifford sequences at the corresponding sequence length. The error bars show the standard deviation across those sequences, and solid lines show exponential decay fits. The quoted fidelity uncertainty is the fit uncertainty from the IRB decay analysis.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 12,
+          "html_id": "S4.F12",
+          "html_top_level_id": "S4.F12",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 10,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=10",
+          "artwork_bounds_pt": [
+            54.0,
+            52.08,
+            299.09,
+            264.25
+          ],
+          "artwork_width_pt": 245.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im12",
+              "bounds_pt": [
+                54.0,
+                52.08,
+                299.09,
+                264.25
+              ],
+              "embedded_source_name": "./fig/cross-resonance/cross-resonance.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 12: Far-detuned cross-resonance calibration. (a) Schematic of multi-unit echoed CR pulse execution. QuBE #1 drives the control-qubit line with CR pulses at the target-qubit tone f_{\\mathrm{t}} and echo \\pi pulses at the control-qubit tone f_{\\mathrm{c}}, while QuBE #2 applies a target-side cancellation/rotary pulse at f_{\\mathrm{t}}. The cancellation component suppresses unwanted target rotations, and the rotary component intentionally adds the IX-like drive used during the echoed gate. Dashed vertical lines indicate pulse-boundary timing points that must remain aligned across multiple QuBE units. (b) Interleaved randomized benchmarking result for the calibrated Q28–Q25 far-detuned cross-resonance gate. Each data point averages 30 random Clifford sequences at the corresponding sequence length. The error bars show the standard deviation across those sequences. The quoted fidelity uncertainty is the fit uncertainty from the IRB decay analysis.",
+          "caption_anchor_bounds_pt": [
+            53.77,
+            277.5,
+            300.64,
+            443.38
+          ],
+          "caption_anchor_text": "FIG. 12. Far-detuned cross-resonance calibration. (a) Schematic of multi-unit echoed CR pulse execution. QuBE #1 drives the control-qubit line with CR pulses at the target- qubit tone ft and echo π pulses at the control-qubit tone fc, while QuBE #2 applies a target-side cancellation/rotary pulse at ft. The cancellation component suppresses unwanted target rotations, and the rotary component intentionally adds the IX-like drive used during the echoed gate. Dashed ver- tical lines indicate pulse-boundary timing points that must remain aligned across multiple QuBE units. (b) Interleaved randomized benchmarking result for the calibrated Q28–Q25 far-detuned cross-resonance gate. Each data point averages 30 random Clifford sequences at the corresponding sequence length. The error bars show the standard deviation across those sequences. The quoted fidelity uncertainty is the fit uncertainty from the IRB decay analysis.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 13,
+          "html_id": "S4.F13",
+          "html_top_level_id": "S4.F13",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 10,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=10",
+          "artwork_bounds_pt": [
+            317.01,
+            52.08,
+            562.1,
+            470.28
+          ],
+          "artwork_width_pt": 245.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im13",
+              "bounds_pt": [
+                317.01,
+                52.08,
+                562.1,
+                470.28
+              ],
+              "embedded_source_name": "./fig/multilevel-readout/multilevel-readout.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 13: Beyond-computational-subspace readout. (a) Q10 multilevel readout classification in the I/Q plane with the JPA pump disabled. The circle markers show single-shot measurements prepared in the \\ket{g}, \\ket{e}, and \\ket{f} states, crosses show empirical cluster centers, and shaded regions with black curves indicate the Qubex Gaussian-mixture-model decision regions and boundaries. (b) Same readout measurement with the JPA pump enabled; the average state-assignment fidelity \\bar{F} increases from 87.1\\% to 95.4\\%.",
+          "caption_anchor_bounds_pt": [
+            316.77,
+            483.53,
+            562.45,
+            576.34
+          ],
+          "caption_anchor_text": "FIG. 13. Beyond-computational-subspace readout. (a) Q10 multilevel readout classification in the I/Q plane with the JPA pump disabled. The circle markers show single-shot measurements prepared in the |g⟩, |e⟩, and |f⟩states, crosses show empirical cluster centers, and shaded regions with black curves indicate the Qubex Gaussian-mixture-model decision regions and boundaries. (b) Same readout measurement with the JPA pump enabled; the average state-assignment fidelity ¯F increases from 87.1% to 95.4%.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 14,
+          "html_id": "A1.F14",
+          "html_top_level_id": "A1.F14",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 11,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=11",
+          "artwork_bounds_pt": [
+            323.14,
+            52.07,
+            555.95,
+            300.8
+          ],
+          "artwork_width_pt": 232.81,
+          "artwork_evidence": [
+            {
+              "object_name": "Im14",
+              "bounds_pt": [
+                323.14,
+                52.07,
+                555.95,
+                300.8
+              ],
+              "method": "PDF image placement bounds."
+            }
+          ],
+          "caption": "Figure 14: Internal view of a QuBE unit. The upper region contains packaged analog microwave components such as filters, multiplexers, and combiners. The middle region contains the system board with the FPGA and mixed-signal resources, and the lower region contains the power-supply and thermal-control electronics.",
+          "caption_anchor_bounds_pt": [
+            317.01,
+            314.05,
+            563.67,
+            375.32
+          ],
+          "caption_anchor_text": "FIG. 14. Internal view of a QuBE unit. The upper region contains packaged analog microwave components such as filters, multiplexers, and combiners. The middle region contains the system board with the FPGA and mixed-signal resources, and the lower region contains the power-supply and thermal- control electronics.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 15,
+          "html_id": "A1.F15",
+          "html_top_level_id": "A1.F15",
+          "html_parent_figure_id": null,
+          "classification": "two-column",
+          "recommended_desktop_layout": "full-width",
+          "observed_pdf_column": "both",
+          "pdf_page": 13,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=13",
+          "artwork_bounds_pt": [
+            66.7,
+            62.83,
+            549.39,
+            494.36
+          ],
+          "artwork_width_pt": 482.69,
+          "artwork_evidence": [
+            {
+              "object_name": "Im15",
+              "bounds_pt": [
+                66.7,
+                62.83,
+                549.39,
+                269.4
+              ],
+              "embedded_source_name": "./fig/qube-microwave-components/qube-microwave-components-a.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            },
+            {
+              "object_name": "Im16",
+              "bounds_pt": [
+                66.7,
+                287.78,
+                549.39,
+                494.36
+              ],
+              "embedded_source_name": "./fig/qube-microwave-components/qube-microwave-components-b.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 15: Detailed microwave-component layouts in the QuBE half units. (a) Type-A half unit, including readout receive, readout output, monitor, pump, and control paths. (b) Type-B half unit, including control and monitor paths. The diagrams show the switches, couplers, filters, baluns, mixers, PLL synthesizers, and AD9082 connections used to realize the signal paths summarized in Fig. 2(a).",
+          "caption_anchor_bounds_pt": [
+            54.0,
+            504.87,
+            563.41,
+            545.22
+          ],
+          "caption_anchor_text": "FIG. 15. Detailed microwave-component layouts in the QuBE half units. (a) Type-A half unit, including readout receive, readout output, monitor, pump, and control paths. (b) Type-B half unit, including control and monitor paths. The diagrams show the switches, couplers, filters, baluns, mixers, PLL synthesizers, and AD9082 connections used to realize the signal paths summarized in Fig. 2(a).",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 16,
+          "html_id": "A1.F16",
+          "html_top_level_id": "A1.F16",
+          "html_parent_figure_id": null,
+          "classification": "two-column",
+          "recommended_desktop_layout": "full-width",
+          "observed_pdf_column": "both",
+          "pdf_page": 14,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=14",
+          "artwork_bounds_pt": [
+            66.7,
+            52.07,
+            549.4,
+            249.43
+          ],
+          "artwork_width_pt": 482.7,
+          "artwork_evidence": [
+            {
+              "object_name": "Im17",
+              "bounds_pt": [
+                66.7,
+                52.07,
+                549.4,
+                249.43
+              ],
+              "embedded_source_name": "./fig/qube-fpga-dsp/qube-fpga-dsp.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 16: Digital signal processing implemented in the FPGA for readout capture. The captured signal is digitally downconverted and demultiplexed into frequency components, filtered, decimated, multiplied by integration windows, and reduced to accumulated traces, integrated values, or threshold-classified outcomes for return to the host software.",
+          "caption_anchor_bounds_pt": [
+            54.0,
+            262.68,
+            562.12,
+            292.57
+          ],
+          "caption_anchor_text": "FIG. 16. Digital signal processing implemented in the FPGA for readout capture. The captured signal is digitally downconverted and demultiplexed into frequency components, filtered, decimated, multiplied by integration windows, and reduced to accumulated traces, integrated values, or threshold-classified outcomes for return to the host software.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 17,
+          "html_id": "A2.F17",
+          "html_top_level_id": "A2.F17",
+          "html_parent_figure_id": null,
+          "classification": "two-column",
+          "recommended_desktop_layout": "full-width",
+          "observed_pdf_column": "both",
+          "pdf_page": 14,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=14",
+          "artwork_bounds_pt": [
+            54.0,
+            302.48,
+            562.11,
+            560.71
+          ],
+          "artwork_width_pt": 508.11,
+          "artwork_evidence": [
+            {
+              "object_name": "Im18",
+              "bounds_pt": [
+                54.0,
+                302.48,
+                562.11,
+                560.71
+              ],
+              "embedded_source_name": "./fig/qubex-software-details/qubex-software-details.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 17: Implementation-level organization of Qubex v1.5.0 objects used during experiment execution. Box colors indicate object layers or responsibility groups: experiment, measurement, pulse, system, and backend. Solid lines indicate ownership or containment, solid arrows indicate execution flow, and dashed arrows indicate relationships in which one object builds or applies another.",
+          "caption_anchor_bounds_pt": [
+            54.0,
+            573.95,
+            562.25,
+            614.3
+          ],
+          "caption_anchor_text": "FIG. 17. Implementation-level organization of Qubex v1.5.0 objects used during experiment execution. Box colors indicate object layers or responsibility groups: experiment, measurement, pulse, system, and backend. Solid lines indicate ownership or containment, solid arrows indicate execution flow, and dashed arrows indicate relationships in which one object builds or applies another.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 18,
+          "html_id": "A2.F18",
+          "html_top_level_id": "A2.F18",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 15,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=15",
+          "artwork_bounds_pt": [
+            317.01,
+            52.27,
+            562.1,
+            114.14
+          ],
+          "artwork_width_pt": 245.09,
+          "artwork_evidence": [
+            {
+              "object_name": null,
+              "bounds_pt": [
+                317.01,
+                52.27,
+                562.1,
+                114.14
+              ],
+              "method": "Native PDF table text and top/bottom horizontal rules; this numbered figure is not an image."
+            }
+          ],
+          "caption": "Figure 18: Software packages used in the QuBE/Qubex control stack. Repository entries identify the corresponding GitHub repositories.",
+          "caption_anchor_bounds_pt": [
+            317.01,
+            128.59,
+            562.11,
+            158.48
+          ],
+          "caption_anchor_text": "FIG. 18. Software packages used in the QuBE/Qubex control stack. Repository entries identify the corresponding GitHub repositories.",
+          "confidence": "high",
+          "latex_environment": null
+        },
+        {
+          "number": 19,
+          "html_id": "A3.F19",
+          "html_top_level_id": "A3.F19",
+          "html_parent_figure_id": null,
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 16,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=16",
+          "artwork_bounds_pt": [
+            317.01,
+            52.08,
+            562.1,
+            402.2
+          ],
+          "artwork_width_pt": 245.09,
+          "artwork_evidence": [
+            {
+              "object_name": "Im19",
+              "bounds_pt": [
+                317.01,
+                52.08,
+                562.1,
+                402.2
+              ],
+              "embedded_source_name": "./fig/cryostat-wiring/cryostat-wiring.pdf",
+              "method": "PDF Form XObject /BBox transformed by page placement matrix (including non-zero BBox origin)."
+            }
+          ],
+          "caption": "Figure 19: Cryostat wiring for the 64-qubit experiment. Representative attenuation and filtering stages are distributed across the 50\\text{\\text{-}}\\mathrm{K}, 4\\text{\\text{-}}\\mathrm{K}, still (1\\text{\\text{-}}\\mathrm{K}), 100\\text{\\text{-}}\\mathrm{mK}, and MXC (10\\text{\\text{-}}\\mathrm{mK}) stages to suppress thermal noise from higher-temperature stages while spreading the associated heat load. The readout-return path includes circulators (circular-arrow), isolators (square-arrow), a band-pass filter (BPF), and a HEMT amplifier. IRF and LPF denote infrared and low-pass filters, respectively.",
+          "caption_anchor_bounds_pt": [
+            317.01,
+            415.45,
+            563.64,
+            497.64
+          ],
+          "caption_anchor_text": "FIG. 19. Cryostat wiring for the 64-qubit experiment. Repre- sentative attenuation and filtering stages are distributed across the 50-K, 4-K, still (1-K), 100-mK, and MXC (10-mK) stages to suppress thermal noise from higher-temperature stages while spreading the associated heat load. The readout-return path includes circulators (circular-arrow), isolators (square-arrow), a band-pass filter (BPF), and a HEMT amplifier. IRF and LPF denote infrared and low-pass filters, respectively.",
+          "confidence": "high",
+          "latex_environment": null
+        }
+      ],
+      "groups": [],
+      "single_column_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        18,
+        19
+      ],
+      "two_column_numbers": [
+        8,
+        15,
+        16,
+        17
+      ],
+      "single_column_html_ids": [
+        "S2.F1",
+        "S2.F2",
+        "S2.F3",
+        "S3.F4",
+        "S3.F5",
+        "S3.F6",
+        "S4.F7",
+        "S4.F9",
+        "S4.F10",
+        "S4.F11",
+        "S4.F12",
+        "S4.F13",
+        "A1.F14",
+        "A2.F18",
+        "A3.F19"
+      ],
+      "full_width_html_ids": [
+        "S4.F8",
+        "A1.F15",
+        "A1.F16",
+        "A2.F17"
+      ]
+    }
+  }
+}

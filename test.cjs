@@ -141,3 +141,11 @@ for(const paper of audit.papers){
  }
 }
 assert(readerCss.includes('article .katex{text-align-last:auto}'));
+
+for (const [paper,singles,wides] of [['bswap',15,3],['qubex',15,4]]) {
+ const doc=documents.get(`${paper}.html`);
+ assert.equal(doc.querySelectorAll('figure.figure-single').length,singles);
+ assert.equal(doc.querySelectorAll('figure.figure-wide').length,wides);
+ assert.equal(doc.querySelectorAll('figure.figure-pair').length,paper==='bswap'?3:0);
+ assert(!doc.querySelector('.figure-float'));
+}

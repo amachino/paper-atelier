@@ -7,6 +7,7 @@ const katex = require('katex');
 const root = __dirname;
 process.chdir(root);
 const provenance = JSON.parse(fs.readFileSync('sources/provenance.json', 'utf8'));
+const figureLayout = JSON.parse(fs.readFileSync('sources/figure-layout.json', 'utf8'));
 const repairs = JSON.parse(fs.readFileSync('sources/math-repairs.json', 'utf8'));
 const repairMap = new Map(repairs.map(r => [`${r.paper}:${r.id}`, r]));
 const reports = [];
@@ -67,8 +68,14 @@ for (const paper of provenance) {
     details.innerHTML = '<summary>Affiliations</summary>' + notes.innerHTML;
     notes.replaceWith(details);
   }
-  const firstFigure = article.querySelector('figure');
-  if (firstFigure) firstFigure.classList.add('figure-float');
+  const figurePlan = figureLayout.papers[paper.slug];
+  for (const figure of figurePlan.figures) {
+    const node = article.querySelector(`[id="${figure.html_id}"]`);
+    if (!node || !node.classList.contains('ltx_figure')) throw new Error(`Missing classified figure: ${paper.slug}:${figure.html_id}`);
+    node.classList.add(figure.classification === 'two-column' ? 'figure-wide' : 'figure-single');
+    node.setAttribute('data-original-column-span', figure.classification === 'two-column' ? '2' : '1');
+  }
+  for (const group of figurePlan.groups) article.querySelector(`[id="${group.html_id}"]`).classList.add('figure-pair');
   const titleNode = article.querySelector('h1').cloneNode(true);
   for (const br of titleNode.querySelectorAll('br')) br.replaceWith(document.createTextNode(' '));
   const title = titleNode.textContent.replace(/\s+/g, ' ').trim();
@@ -130,6 +137,7 @@ copy('anchor.js', 'docs/assets/anchor.js');
 copy('settings.js', 'docs/assets/settings.js');
 fs.writeFileSync('docs/index.html', fs.readFileSync('index.html', 'utf8').replace('<!-- reader-settings -->', settingsMarkup).replace('assets/reader.css', `assets/reader.css?v=${readerCssVersion}`).replace('assets/settings.js', `assets/settings.js?v=${readerSettingsVersion}`));
 copy('NOTICE.md', 'docs/NOTICE.md');
+copy('sources/figure-layout.json', 'docs/figure-layout.json');
 // Ship CSS and WOFF2 fonts only. KaTeX itself runs only in Node during build.
 let katexCss = fs.readFileSync('node_modules/katex/dist/katex.min.css', 'utf8');
 katexCss = katexCss.replace(/src:([^;}]+)/g, (_, value) => {

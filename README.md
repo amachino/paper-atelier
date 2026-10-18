@@ -49,3 +49,5 @@ For a project repository, choose **Deploy from a branch**, branch `main`, folder
 The scientific content and figures are not MIT-licensed by this repository. Both arXiv source pages identify the arXiv perpetual non-exclusive license; authors and other relevant rightsholders retain their rights. See `NOTICE.md` and the bundled dependency license copies under `docs/assets/`.
 
 Reader CSS and settings JavaScript URLs carry content hashes so HTML updates cannot silently reuse an older resource version. Equation-table baseline alignment preserves the source row alignment while row-spanning equation numbers remain vertically centered.
+
+At desktop widths of 1200 px and above, the 30 original single-column figures float beside text; the seven original two-column figures remain full-width. Classification is based on rendered public v1 PDF artwork positions and matching captions, not aspect ratio or an unverified literal figure* environment. Full evidence and IDs are versioned in sources/figure-layout.json and served as figure-layout.json. bSWAP paired single-column figures retain IDs/order and float individually. Phone layouts stay vertical.
