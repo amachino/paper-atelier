@@ -63,7 +63,7 @@ for (const cssFile of ['assets/reader.css', 'assets/katex/katex.min.css']) {
 }
 function scientificText(document) {
   const article = document.querySelector('article').cloneNode(true);
-  for (const element of article.querySelectorAll('.rendered-math,.fallback-math,math,script,summary,img,object')) element.remove();
+  for (const element of article.querySelectorAll('.rendered-math,.fallback-math,math,script,summary,img,object,.ltx_authors,.paper-author-header,.paper-affiliations,.paper-contact-notes,.ltx_title > .ltx_tag')) element.remove();
   return article.textContent.replace(/\s+/g, ' ').trim();
 }
 for (const paper of provenance) {
@@ -72,6 +72,14 @@ for (const paper of provenance) {
   const source = parseHTML(sourceBytes.toString()).document;
   const output = documents.get(`${paper.slug}.html`);
   const report = audit.papers.find(p => p.paper === paper.slug);
+  const header = require('./header-format.cjs').manifests[paper.slug];
+  const normalized = node => node.textContent.replace(/\s+/g, ' ').trim();
+  assert.equal(output.querySelectorAll('details.author-details').length, 0);
+  assert.deepEqual([...output.querySelectorAll('.paper-author-list .ltx_personname')].map(normalized), header.authors.map(a=>a[0]));
+  assert.deepEqual([...output.querySelectorAll('.paper-affiliation-text')].map(normalized), header.affiliations);
+  assert.deepEqual([...output.querySelectorAll('.paper-contact-notes a[href^="mailto:"]')].map(a=>a.getAttribute('href')), header.authors.filter(a=>a[3]).map(a=>'mailto:'+a[3]));
+  for(const [i, author] of [...output.querySelectorAll('.paper-author-list .ltx_creator')].entries()) assert.deepEqual([...author.querySelectorAll('.paper-author-markers a')].map(a=>a.textContent), [...header.authors[i][1].map(String), ...(header.authors[i][2]?[header.authors[i][2]]:[])]);
+  for(const h of output.querySelectorAll('.paper-numbered-heading')) assert(/[.:]$/.test(h.querySelector('.ltx_tag').textContent.trim()));
   const sourceMath = [...source.querySelectorAll('math')];
   assert.equal(sourceMath.length, paper.mathCount);
   assert.equal(output.querySelectorAll('math').length, paper.mathCount, `${paper.slug}: all expressions retained`);

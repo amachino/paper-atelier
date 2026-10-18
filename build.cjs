@@ -61,13 +61,7 @@ for (const paper of provenance) {
     table.parentNode.insertBefore(wrap, table);
     wrap.appendChild(table);
   }
-  for (const notes of article.querySelectorAll('.ltx_author_notes')) {
-    const details = document.createElement('details');
-    for (const attribute of notes.attributes) details.setAttribute(attribute.name, attribute.value);
-    details.classList.add('author-details');
-    details.innerHTML = '<summary>Affiliations</summary>' + notes.innerHTML;
-    notes.replaceWith(details);
-  }
+  require('./header-format.cjs')(document, article, paper.slug);
   const figurePlan = figureLayout.papers[paper.slug];
   for (const figure of figurePlan.figures) {
     const node = article.querySelector(`[id="${figure.html_id}"]`);
