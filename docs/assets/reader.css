@@ -65,3 +65,7 @@ article .ltx_abstract p{text-align:justify;text-align-last:start;hyphens:auto;wo
 /* Long DOI/URL labels must remain readable at Large on narrow phones. */
 article a.ltx_href,.author-details{overflow-wrap:anywhere}
 @media(max-width:350px){.reader-settings-sizes label{flex-direction:column;gap:4px;min-height:64px;padding:9px 4px}}
+
+/* Appearance reads as the adjacent PDF link, with an invisible touch target. */
+.topbar .reader-settings-trigger{border:0;background:transparent;border-radius:0;box-shadow:none;color:var(--accent);font:inherit;min-height:48px;padding:0 4px;cursor:pointer}
+@media(max-width:480px){.topbar nav{max-width:none;flex-wrap:nowrap;gap:8px;align-items:center}.topbar{align-items:center;gap:12px}}
