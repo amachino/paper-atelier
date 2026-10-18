@@ -1,0 +1,9 @@
+[
+  {
+    "paper": "bswap",
+    "id": "A7.E64.m1",
+    "originalTex": "R(\\bar{\\Omega})=\\begin{cases}\\dfrac{2\\bar{\\Omega}}{\\sqrt{\\Delta^{2}+\\bar{\\Omega}^{2}}},&\\bar{\\Omega}\\leq\\Delta,\\\\\n\\vskip 10.0pt\\cr\\dfrac{\\sqrt{\\Delta^{2}+\\bar{\\Omega}^{2}}}{\\bar{\\Omega}},&\\bar{\\Omega}>\\Delta.\\end{cases}",
+    "renderInput": "R(\\bar{\\Omega})=\\begin{cases}\\dfrac{2\\bar{\\Omega}}{\\sqrt{\\Delta^{2}+\\bar{\\Omega}^{2}}},&\\bar{\\Omega}\\leq\\Delta,\\\\[10pt]\n\\dfrac{\\sqrt{\\Delta^{2}+\\bar{\\Omega}^{2}}}{\\bar{\\Omega}},&\\bar{\\Omega}>\\Delta.\\end{cases}",
+    "reason": "Convert the source row-spacing command to equivalent cases-row spacing"
+  }
+]

@@ -16,7 +16,11 @@
           "id": "A7.E64.m1",
           "originalTex": "R(\\bar{\\Omega})=\\begin{cases}\\dfrac{2\\bar{\\Omega}}{\\sqrt{\\Delta^{2}+\\bar{\\Omega}^{2}}},&\\bar{\\Omega}\\leq\\Delta,\\\\\n\\vskip 10.0pt\\cr\\dfrac{\\sqrt{\\Delta^{2}+\\bar{\\Omega}^{2}}}{\\bar{\\Omega}},&\\bar{\\Omega}>\\Delta.\\end{cases}",
           "renderInput": "R(\\bar{\\Omega})=\\begin{cases}\\dfrac{2\\bar{\\Omega}}{\\sqrt{\\Delta^{2}+\\bar{\\Omega}^{2}}},&\\bar{\\Omega}\\leq\\Delta,\\\\[10pt]\n\\dfrac{\\sqrt{\\Delta^{2}+\\bar{\\Omega}^{2}}}{\\bar{\\Omega}},&\\bar{\\Omega}>\\Delta.\\end{cases}",
-          "reason": "Convert the source row-spacing command to equivalent cases-row spacing"
+          "reason": "Convert the source row-spacing command to equivalent cases-row spacing",
+          "ruleVersion": "legacy-cases-row-spacing/v1",
+          "legacy": true,
+          "macros": {},
+          "evidence": null
         }
       ],
       "fallbacks": [],
@@ -306,67 +310,163 @@
           "id": "S3.F6.m12",
           "originalTex": "t=$100\\text{\\,}\\mathrm{ns}$",
           "renderInput": "t=100\\text{\\,}\\mathrm{ns}",
-          "reason": "Remove nested math delimiters inside an existing math expression"
+          "reason": "latexml-redundant-quantity-delimiters/v1",
+          "ruleVersion": "latexml-redundant-quantity-delimiters/v1",
+          "legacy": false,
+          "macros": {},
+          "evidence": {
+            "quantity": "100",
+            "unit": "ns",
+            "prefix": "assignment"
+          }
         },
         {
           "id": "S3.SS3.p1.m3",
           "originalTex": "0.219\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
-          "renderInput": "\\def\\SIUnitSymbolDegree{\\text{°}}0.219\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
-          "reason": "Supply the source SI degree symbol macro locally"
+          "renderInput": "0.219\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
+          "reason": "latexml-semantic-degree-macro/v1",
+          "ruleVersion": "latexml-semantic-degree-macro/v1",
+          "legacy": false,
+          "macros": {
+            "\\SIUnitSymbolDegree": "\\text{°}"
+          },
+          "evidence": {
+            "quantity": "0.219",
+            "unit": "°",
+            "prefix": "quantity"
+          }
         },
         {
           "id": "S3.SS3.p1.m4",
           "originalTex": "0.302\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
-          "renderInput": "\\def\\SIUnitSymbolDegree{\\text{°}}0.302\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
-          "reason": "Supply the source SI degree symbol macro locally"
+          "renderInput": "0.302\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
+          "reason": "latexml-semantic-degree-macro/v1",
+          "ruleVersion": "latexml-semantic-degree-macro/v1",
+          "legacy": false,
+          "macros": {
+            "\\SIUnitSymbolDegree": "\\text{°}"
+          },
+          "evidence": {
+            "quantity": "0.302",
+            "unit": "°",
+            "prefix": "quantity"
+          }
         },
         {
           "id": "S3.SS3.p1.m5",
           "originalTex": "0.456\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
-          "renderInput": "\\def\\SIUnitSymbolDegree{\\text{°}}0.456\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
-          "reason": "Supply the source SI degree symbol macro locally"
+          "renderInput": "0.456\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
+          "reason": "latexml-semantic-degree-macro/v1",
+          "ruleVersion": "latexml-semantic-degree-macro/v1",
+          "legacy": false,
+          "macros": {
+            "\\SIUnitSymbolDegree": "\\text{°}"
+          },
+          "evidence": {
+            "quantity": "0.456",
+            "unit": "°",
+            "prefix": "quantity"
+          }
         },
         {
           "id": "S3.SS3.p2.m2",
           "originalTex": "t=$100\\text{\\,}\\mathrm{ns}$",
           "renderInput": "t=100\\text{\\,}\\mathrm{ns}",
-          "reason": "Remove nested math delimiters inside an existing math expression"
+          "reason": "latexml-redundant-quantity-delimiters/v1",
+          "ruleVersion": "latexml-redundant-quantity-delimiters/v1",
+          "legacy": false,
+          "macros": {},
+          "evidence": {
+            "quantity": "100",
+            "unit": "ns",
+            "prefix": "assignment"
+          }
         },
         {
           "id": "S4.SS3.p4.m1",
           "originalTex": "\\Delta_{\\mathrm{ct}}=$-729.284\\text{\\,}\\mathrm{MHz}$",
           "renderInput": "\\Delta_{\\mathrm{ct}}=-729.284\\text{\\,}\\mathrm{MHz}",
-          "reason": "Remove nested math delimiters inside an existing math expression"
+          "reason": "latexml-redundant-quantity-delimiters/v1",
+          "ruleVersion": "latexml-redundant-quantity-delimiters/v1",
+          "legacy": false,
+          "macros": {},
+          "evidence": {
+            "quantity": "-729.284",
+            "unit": "MHz",
+            "prefix": "assignment"
+          }
         },
         {
           "id": "S4.SS3.p4.m2",
           "originalTex": "\\alpha_{\\mathrm{t}}=$-475.3\\text{\\,}\\mathrm{MHz}$",
           "renderInput": "\\alpha_{\\mathrm{t}}=-475.3\\text{\\,}\\mathrm{MHz}",
-          "reason": "Remove nested math delimiters inside an existing math expression"
+          "reason": "latexml-redundant-quantity-delimiters/v1",
+          "ruleVersion": "latexml-redundant-quantity-delimiters/v1",
+          "legacy": false,
+          "macros": {},
+          "evidence": {
+            "quantity": "-475.3",
+            "unit": "MHz",
+            "prefix": "assignment"
+          }
         },
         {
           "id": "S4.SS3.p4.m3",
           "originalTex": "\\alpha_{\\mathrm{c}}=$-362.9\\text{\\,}\\mathrm{MHz}$",
           "renderInput": "\\alpha_{\\mathrm{c}}=-362.9\\text{\\,}\\mathrm{MHz}",
-          "reason": "Remove nested math delimiters inside an existing math expression"
+          "reason": "latexml-redundant-quantity-delimiters/v1",
+          "ruleVersion": "latexml-redundant-quantity-delimiters/v1",
+          "legacy": false,
+          "macros": {},
+          "evidence": {
+            "quantity": "-362.9",
+            "unit": "MHz",
+            "prefix": "assignment"
+          }
         },
         {
           "id": "A3.SS2.p3.m2",
           "originalTex": "\\pm$200\\text{\\,}\\mathrm{MHz}$",
           "renderInput": "\\pm200\\text{\\,}\\mathrm{MHz}",
-          "reason": "Remove nested math delimiters inside an existing math expression"
+          "reason": "latexml-redundant-quantity-delimiters/v1",
+          "ruleVersion": "latexml-redundant-quantity-delimiters/v1",
+          "legacy": false,
+          "macros": {},
+          "evidence": {
+            "quantity": "200",
+            "unit": "MHz",
+            "prefix": "sign"
+          }
         },
         {
           "id": "A3.SS2.p3.m3",
           "originalTex": "\\pm$600\\text{\\,}\\mathrm{MHz}$",
           "renderInput": "\\pm600\\text{\\,}\\mathrm{MHz}",
-          "reason": "Remove nested math delimiters inside an existing math expression"
+          "reason": "latexml-redundant-quantity-delimiters/v1",
+          "ruleVersion": "latexml-redundant-quantity-delimiters/v1",
+          "legacy": false,
+          "macros": {},
+          "evidence": {
+            "quantity": "600",
+            "unit": "MHz",
+            "prefix": "sign"
+          }
         },
         {
           "id": "A3.SS3.p5.m3",
           "originalTex": "0.456\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
-          "renderInput": "\\def\\SIUnitSymbolDegree{\\text{°}}0.456\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
-          "reason": "Supply the source SI degree symbol macro locally"
+          "renderInput": "0.456\\text{\\,}\\mathrm{\\SIUnitSymbolDegree}",
+          "reason": "latexml-semantic-degree-macro/v1",
+          "ruleVersion": "latexml-semantic-degree-macro/v1",
+          "legacy": false,
+          "macros": {
+            "\\SIUnitSymbolDegree": "\\text{°}"
+          },
+          "evidence": {
+            "quantity": "0.456",
+            "unit": "°",
+            "prefix": "quantity"
+          }
         }
       ],
       "fallbacks": [],

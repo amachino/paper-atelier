@@ -1,16 +1,19 @@
 'use strict';
 const katex=require('katex');
 const {inspect:inspectUnit}=require('./semantic-units.cjs');
-module.exports=function renderMathematics(document,article,paper,repairMap){
+const {inspect:inspectCompatibility}=require('./math-compat.cjs');
+const {lookup:lookupLegacy}=require('./legacy-math-adapter.cjs');
+module.exports=function renderMathematics(document,article,paper){
   const report = {paper: paper.slug, source: paper.url, mathCount: article.querySelectorAll('math').length, converted: 0, repaired: 0, nativeFallbacks: 0, semanticUnits: 0, normalizations: [], repairs: [], fallbacks: [], layoutAdjustments: []};
   for (const math of [...article.querySelectorAll('math')]) {
     const originalTex = math.querySelector('annotation[encoding="application/x-tex"]')?.textContent || math.getAttribute('alttext');
-    const repair = repairMap.get(`${paper.slug}:${math.id}`);
-    if (repair && repair.originalTex !== originalTex) throw new Error(`Repair source mismatch: ${paper.slug}:${math.id}`);
+    const compatibility = inspectCompatibility(math);
+    const generic = compatibility.result;
+    const repair = generic ? {...generic, reason:generic.ruleVersion, legacy:false} : lookupLegacy(paper.slug,math,originalTex);
     const renderInput = repair ? repair.renderInput : originalTex;
     try {
       if (!renderInput) throw new Error('No source TeX annotation');
-      const markup = katex.renderToString(renderInput, {throwOnError: true, strict: 'error', output: 'htmlAndMathml', displayMode: math.getAttribute('display') === 'block', trust: false, maxExpand: 1000});
+      const markup = katex.renderToString(renderInput, {macros:{...(repair?.macros || {})}, throwOnError: true, strict: 'error', output: 'htmlAndMathml', displayMode: math.getAttribute('display') === 'block', trust: false, maxExpand: 1000});
       const span = document.createElement('span');
       span.className = 'rendered-math';
       if (math.id) span.id = math.id;
@@ -30,7 +33,7 @@ module.exports=function renderMathematics(document,article,paper,repairMap){
       if (repair) {
         span.setAttribute('data-render-input', renderInput);
         span.setAttribute('data-math-repair', repair.reason);
-        report.repairs.push({id: math.id, originalTex, renderInput, reason: repair.reason});
+        report.repairs.push({id: math.id, originalTex, renderInput, reason: repair.reason, ruleVersion:repair.ruleVersion, legacy:!!repair.legacy, macros:repair.macros || {}, evidence:repair.evidence || null});
         report.repaired++;
       }
       math.replaceWith(span);
@@ -55,7 +58,7 @@ module.exports=function renderMathematics(document,article,paper,repairMap){
       span.setAttribute('data-fallback', 'Original MathML');
       math.parentNode.insertBefore(span, math);
       span.appendChild(math);
-      report.fallbacks.push({id: math.id, originalTex, renderInput, reason: error.message, semanticUnitReason: normalized.reason});
+      report.fallbacks.push({id: math.id, originalTex, renderInput, reason: error.message, semanticUnitReason: normalized.reason, compatibilityReason:compatibility.reason});
       report.nativeFallbacks++;
     }
   }
