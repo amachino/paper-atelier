@@ -14,6 +14,7 @@ const reports = [];
 const settingsMarkup = fs.readFileSync('settings.html', 'utf8').trim();
 const sha256 = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 const readerSettingsVersion = sha256(fs.readFileSync('settings.js')).slice(0,12);
+const readerTocVersion = sha256(fs.readFileSync('toc.js')).slice(0,12);
 const readerCssVersion = sha256(fs.readFileSync('reader.css')).slice(0,12);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const copy = (from, to) => { fs.mkdirSync(path.dirname(to), {recursive:true}); fs.copyFileSync(from, to); };
@@ -74,6 +75,8 @@ for (const paper of provenance) {
   for (const br of titleNode.querySelectorAll('br')) br.replaceWith(document.createTextNode(' '));
   const title = titleNode.textContent.replace(/\s+/g, ' ').trim();
   const nav = [...article.querySelectorAll('h2')].filter(h => h.id || h.parentNode.id).map(h => `<a href="#${escape(h.id || h.parentNode.id)}">${escape(h.textContent.trim())}</a>`).join('');
+  const tocLinks = [...article.querySelectorAll('h2,h3')].filter(h=>h.id||h.parentNode.id).map(h=>`<a class="toc-level-${h.tagName.toLowerCase()}" href="#${escape(h.id||h.parentNode.id)}">${escape(h.textContent.trim())}</a>`).join('');
+  const tocMarkup = `<button type="button" class="reader-toc-trigger" id="reader-toc-open" aria-label="Open table of contents" aria-haspopup="dialog" aria-controls="reader-toc" aria-expanded="false" hidden><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 5h2M10 5h10M4 12h2M10 12h10M4 19h2M10 19h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button><dialog class="reader-toc-dialog" id="reader-toc" aria-labelledby="reader-toc-title"><div class="reader-toc-heading"><h2 id="reader-toc-title">Contents</h2><button type="button" id="reader-toc-close" autofocus>Close</button></div><nav aria-label="Table of contents">${tocLinks}</nav></dialog>`;
   const report = {paper: paper.slug, source: paper.url, mathCount: article.querySelectorAll('math').length, converted: 0, repaired: 0, nativeFallbacks: 0, repairs: [], fallbacks: [], layoutAdjustments: []};
   for (const math of [...article.querySelectorAll('math')]) {
     const originalTex = math.querySelector('annotation[encoding="application/x-tex"]')?.textContent || math.getAttribute('alttext');
@@ -121,13 +124,14 @@ for (const paper of provenance) {
   }
   if (report.mathCount !== paper.mathCount) throw new Error(`Math count changed: ${paper.slug}`);
   const notice = report.nativeFallbacks ? `<p class="notice">${report.converted} of ${report.mathCount} expressions use build-time KaTeX. ${report.nativeFallbacks} unit expressions retain the original MathML, marked by a dotted underline. <a href="math-audit.json">Rendering audit</a>.</p>` : '';
-  const output = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="${escape(title)}. Responsive reading edition with build-time mathematics."><title>${escape(title)}</title><link rel="stylesheet" href="assets/reader.css?v=${readerCssVersion}"><link rel="stylesheet" href="assets/katex/katex.min.css"><script src="assets/settings.js?v=${readerSettingsVersion}"></script><script src="assets/anchor.js" defer></script></head><body><header class="topbar"><a class="home-link" href="index.html">Papers</a><nav><a href="https://arxiv.org/abs/${paper.arxivId}">arXiv</a><a href="https://arxiv.org/pdf/${paper.arxivId}">PDF</a>${settingsMarkup}</nav></header><div class="layout"><aside aria-label="On this page"><div class="eyebrow">ON THIS PAGE</div>${nav}<a href="#top">Back to top ↑</a></aside><main id="top">${notice}${article.outerHTML}<footer>Content and figures from <a href="${paper.url}">arXiv ${paper.arxivId}</a>. Original authors retain their rights. Presentation changed; scientific text and units preserved. <a href="math-audit.json">Rendering audit</a> · <a href="NOTICE.md">Rights and notices</a>.</footer></main></div></body></html>\n`;
+  const output = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="${escape(title)}. Responsive reading edition with build-time mathematics."><title>${escape(title)}</title><link rel="stylesheet" href="assets/reader.css?v=${readerCssVersion}"><link rel="stylesheet" href="assets/katex/katex.min.css"><script src="assets/settings.js?v=${readerSettingsVersion}"></script><script src="assets/anchor.js" defer></script><script src="assets/toc.js?v=${readerTocVersion}" defer></script></head><body><header class="topbar">${tocMarkup}<nav><a href="https://arxiv.org/abs/${paper.arxivId}">arXiv</a><a href="https://arxiv.org/pdf/${paper.arxivId}">PDF</a>${settingsMarkup}</nav></header><div class="layout"><aside aria-label="On this page"><div class="eyebrow">ON THIS PAGE</div>${nav}<a href="#top">Back to top ↑</a></aside><main id="top">${notice}${article.outerHTML}<footer>Content and figures from <a href="${paper.url}">arXiv ${paper.arxivId}</a>. Original authors retain their rights. Presentation changed; scientific text and units preserved. <a href="math-audit.json">Rendering audit</a> · <a href="NOTICE.md">Rights and notices</a>.</footer></main></div></body></html>\n`;
   fs.writeFileSync(`docs/${paper.slug}.html`, output);
   reports.push(report);
 }
 
 copy('reader.css', 'docs/assets/reader.css');
 copy('anchor.js', 'docs/assets/anchor.js');
+copy('toc.js', 'docs/assets/toc.js');
 copy('settings.js', 'docs/assets/settings.js');
 fs.writeFileSync('docs/index.html', fs.readFileSync('index.html', 'utf8').replace('<!-- reader-settings -->', settingsMarkup).replace('assets/reader.css', `assets/reader.css?v=${readerCssVersion}`).replace('assets/settings.js', `assets/settings.js?v=${readerSettingsVersion}`));
 copy('NOTICE.md', 'docs/NOTICE.md');

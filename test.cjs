@@ -37,7 +37,7 @@ for (const [file, document] of documents) {
       }
     }
   }
-  for (const script of document.querySelectorAll('script')) assert(['assets/anchor.js','assets/settings.js'].includes(script.getAttribute('src').split('?')[0]), `${file}: unexpected script`);
+  for (const script of document.querySelectorAll('script')) assert(['assets/anchor.js','assets/settings.js','assets/toc.js'].includes(script.getAttribute('src').split('?')[0]), `${file}: unexpected script`);
   assert.equal(document.querySelectorAll('script[src^="assets/settings.js"]').length, 1, `${file}: reading preferences script`);
   assert.equal(document.getElementById('reader-settings').tagName.toLowerCase(), 'dialog', `${file}: native settings dialog`);
   assert.equal(document.getElementById('reader-settings-open').getAttribute('aria-haspopup'), 'dialog');
@@ -80,6 +80,11 @@ for (const paper of provenance) {
   assert.deepEqual([...output.querySelectorAll('.paper-contact-notes a[href^="mailto:"]')].map(a=>a.getAttribute('href')), header.authors.filter(a=>a[3]).map(a=>'mailto:'+a[3]));
   for(const [i, author] of [...output.querySelectorAll('.paper-author-list .ltx_creator')].entries()) assert.deepEqual([...author.querySelectorAll('.paper-author-markers a')].map(a=>a.textContent), [...header.authors[i][1].map(String), ...(header.authors[i][2]?[header.authors[i][2]]:[])]);
   for(const h of output.querySelectorAll('.paper-numbered-heading')) assert(/[.:]$/.test(h.querySelector('.ltx_tag').textContent.trim()));
+  assert.equal(output.querySelector('.topbar a.home-link'), null, 'Reader Papers link removed');
+  assert.equal(output.getElementById('reader-toc').tagName, 'DIALOG');
+  assert.equal(output.querySelectorAll('#reader-toc-open').length, 1);
+  assert.equal(output.querySelectorAll('#reader-toc nav a').length, output.querySelectorAll('article h2,article h3').length);
+  assert.equal(output.querySelectorAll('script[src^="assets/toc.js?v="]').length, 1);
   const sourceMath = [...source.querySelectorAll('math')];
   assert.equal(sourceMath.length, paper.mathCount);
   assert.equal(output.querySelectorAll('math').length, paper.mathCount, `${paper.slug}: all expressions retained`);
