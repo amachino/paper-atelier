@@ -1,4 +1,4 @@
-# Papers
+# Scientific paper reader
 
 Start/resume work: [STATUS](STATUS.md). Product direction: [PRODUCT](PRODUCT.md), [ROADMAP](ROADMAP.md), [ARCHITECTURE](ARCHITECTURE.md). Individual tasks and progress live in the maintainer's task tracker; draft PRs review code changes.
 
