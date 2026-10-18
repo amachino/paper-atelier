@@ -1,6 +1,6 @@
 # Roadmap and stage gates
 
-Stages are ordered learning goals, not deadlines. Move forward only when the gate is evidenced; unresolved failures become issues with fixtures. Individual task state belongs in GitHub issues.
+Stages are ordered learning goals, not deadlines. Move forward only when the gate is evidenced; unresolved failures become issues with fixtures. Individual task state belongs in the maintainer's task tracker (access may be private).
 
 | Stage | Bounded outcome | Gate before expanding |
 | --- | --- | --- |

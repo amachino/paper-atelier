@@ -15,7 +15,7 @@ A quiet, fast, source-faithful scientific reader that works across papers and de
 
 The existing personal paper site is the proving ground. Next, test a minimal browser reading layer for existing arXiv HTML. A local-first library and web experience can follow once import and source identity are reliable. Native Mac, iOS, and Android clients and optional collaboration are later decisions, contingent on demonstrated need and stable shared foundations.
 
-See [ROADMAP.md](ROADMAP.md) for gates and [STATUS.md](STATUS.md) for the current resume point. GitHub issues track individual work; these documents do not duplicate their status.
+See [ROADMAP.md](ROADMAP.md) for gates and [STATUS.md](STATUS.md) for the current resume point. the maintainer's task tracker track individual work; these documents do not duplicate their status.
 
 ## Not current commitments
 

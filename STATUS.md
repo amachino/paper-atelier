@@ -15,18 +15,18 @@ Last documented checkpoint: **2026-10-18**. This file describes the checkpoint, 
 
 Input is an arXiv HTML snapshot, not arbitrary LaTeX. Figure/table column classifications and author affiliations still rely on source-document metadata. One cases-spacing adapter is exact-source-specific. There is no generic import UI, extension, library database, annotation system, account/sync, native app, or collaboration service.
 
-Next bounded milestone: the unfamiliar third-paper local audit in [ROADMAP.md](ROADMAP.md). Do not begin a new product release or publicly redistribute third-party source content as a side effect. [PRODUCT.md](PRODUCT.md) owns scope; [ARCHITECTURE.md](ARCHITECTURE.md) owns design decisions; GitHub issues own task status.
+Next bounded milestone: the unfamiliar third-paper local audit in [ROADMAP.md](ROADMAP.md). Do not begin a new product release or publicly redistribute third-party source content as a side effect. [PRODUCT.md](PRODUCT.md) owns scope; [ARCHITECTURE.md](ARCHITECTURE.md) owns design decisions; the maintainer's task tracker own task status.
 
 ## Resume checklist
 
-1. Read this file, the linked design documents, relevant open issues and draft PRs, and recent commits. Confirm the next task still matches the latest approved scope.
+1. Read this file, the linked design documents, relevant task records and draft PRs, and recent commits. Confirm the next task still matches the latest approved scope.
 2. Use a clean checkout of the actual remote branch. Inspect `git status`; preserve uncommitted work. Do not use a remembered commit as permission to overwrite newer work.
 3. Follow README toolchain instructions, run `npm ci`, `npm run build`, and `npm test`. Review generated changes and distinguish pre-existing failures from new ones.
-4. Pick one bounded issue, record acceptance criteria, and create `feat/<issue>-<slug>`, `fix/<issue>-<slug>`, or `docs/<issue>-<slug>`. Use a draft PR for work in progress. Do not force-push shared branches or silently change Pages settings.
+4. Pick one bounded task, record acceptance criteria, and create `feat/<task>-<slug>`, `fix/<task>-<slug>`, or `docs/<task>-<slug>`. Use a draft PR for work in progress. Do not force-push shared branches or silently change Pages settings.
 5. Keep source changes and regenerated `docs/` together when relevant. `docs/assets/figures/` contains source inputs: do not delete it as build cleanup. Never commit credentials, private notes, browser profiles, local logs, or an unlicensed imported corpus.
 6. Run relevant unit/preservation checks and actual browser QA for UI changes. Record exact commit, viewport/browser, passed/failed/not-run coverage, and limitations in the PR. Mathematical correctness is not established by successful rendering alone.
 7. Publication is a distinct checkpoint: merge/deploy only within explicit authorization, verify the remote commit and Pages result, then verify served content/assets. Direct-to-main was used for the initial authorized site iterations; future multi-day changes should normally use reviewable branches/PRs. Branch protection is not claimed to be configured.
-8. Before stopping: update the issue/PR with what changed, tests, remaining work/blockers, next exact action, and commit. Update this file only for a meaningful checkpoint; keep roadmap state in issues and preserve historical reports.
+8. Before stopping: update the task record/PR with what changed, tests, remaining work/blockers, next exact action, and commit. Update this file only for a meaningful checkpoint; keep roadmap state in issues and preserve historical reports.
 
 ## Documentation ownership
 
