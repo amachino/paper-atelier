@@ -62,3 +62,6 @@ article .ltx_abstract p{text-align:justify;text-align-last:start;hyphens:auto;wo
 /* Restore LaTeXML equation-row baselines while keeping row-spanning numbers centered. */
 .ltx_eqn_table tr.ltx_align_baseline > td:not(.ltx_align_middle){vertical-align:baseline}
 .ltx_eqn_table td.ltx_align_middle{vertical-align:middle}
+/* Long DOI/URL labels must remain readable at Large on narrow phones. */
+article a.ltx_href,.author-details{overflow-wrap:anywhere}
+@media(max-width:350px){.reader-settings-sizes label{flex-direction:column;gap:4px;min-height:64px;padding:9px 4px}}
