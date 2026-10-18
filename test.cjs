@@ -65,7 +65,7 @@ for (const cssFile of ['assets/reader.css', 'assets/katex/katex.min.css']) {
 }
 function scientificText(document) {
   const article = document.querySelector('article').cloneNode(true);
-  for (const element of article.querySelectorAll('.rendered-math,.fallback-math,math,script,summary,img,object,.ltx_authors,.paper-author-header,.paper-affiliations,.paper-contact-notes,.ltx_title > .ltx_tag')) element.remove();
+  for (const element of article.querySelectorAll('.rendered-math,.fallback-math,.semantic-unit,math,script,summary,img,object,.ltx_authors,.paper-author-header,.paper-affiliations,.paper-contact-notes,.ltx_title > .ltx_tag')) element.remove();
   return article.textContent.replace(/\s+/g, ' ').trim();
 }
 for (const paper of provenance) {
@@ -96,12 +96,20 @@ for (const paper of provenance) {
     assert.equal(actual.querySelectorAll('td').length,table.querySelectorAll('td').length);
     assert.equal(actual.querySelectorAll('th').length,table.querySelectorAll('th').length);
   }
+  for(const normalization of report.normalizations){
+    const math=output.getElementById(normalization.id);
+    assert.equal(math.outerHTML,source.getElementById(normalization.id).outerHTML);
+    assert.equal(math.parentNode.hidden,true);
+    assert.equal(math.parentNode.getAttribute('aria-hidden'),'true');
+    assert.equal(math.parentNode.parentNode.querySelector('.semantic-unit-text').textContent,normalization.text);
+  }
+  assert.equal(output.querySelectorAll('main > .notice').length,0);
   const sourceMath = [...source.querySelectorAll('math')];
   assert.equal(sourceMath.length, paper.mathCount);
   assert.equal(output.querySelectorAll('math').length, paper.mathCount, `${paper.slug}: all expressions retained`);
   assert.equal(output.querySelectorAll('.rendered-math').length, report.converted);
   assert.equal(output.querySelectorAll('.fallback-math').length, report.nativeFallbacks);
-  assert.equal(report.converted + report.nativeFallbacks, paper.mathCount);
+  assert.equal(report.converted + report.nativeFallbacks + report.semanticUnits, paper.mathCount);
   assert.equal(scientificText(output), scientificText(source), `${paper.slug}: scientific prose/captions/citations unchanged`);
   for (const original of source.querySelectorAll('[id]')) assert(output.getElementById(original.id), `${paper.slug}: source ID ${original.id} retained`);
   for (const math of sourceMath) {
@@ -128,15 +136,15 @@ for (const paper of provenance) {
     assert(Number(img.getAttribute('width')) > 0 && Number(img.getAttribute('height')) > 0, `Intrinsic figure dimensions: ${figure.file}`);
   }
 }
-assert.deepEqual(audit.total, {math:1220, converted:1217, repaired:12, nativeFallbacks:3});
+assert.deepEqual(audit.total, {math:1220, converted:1217, repaired:12, nativeFallbacks:0, semanticUnits:3});
 assert.equal(repairs.length, 12);
-assert.deepEqual(audit.papers.flatMap(p => p.fallbacks.map(f => f.id)), ['S4.T1.m8','S4.T1.m10','A3.SS4.p1.m4']);
+assert.deepEqual(audit.papers.flatMap(p => p.normalizations.map(f => f.id)), ['S4.T1.m8','S4.T1.m10','A3.SS4.p1.m4']);
 const readerCss = fs.readFileSync('docs/assets/reader.css','utf8');
 assert(readerCss.includes('cite.ltx_cite{font-style:normal}'), 'Numeric citation labels upright');
 assert(readerCss.includes('@media(max-width:350px){article section > .ltx_para > p.ltx_p{text-align:start}}'), 'Smallest viewport prose start-aligned');
 assert(readerCss.includes('p.ltx_p{text-align:justify;'), 'Desktop prose justified');
 for (const license of ['KaTeX','STIX-Two-Text','STIX-Two-Math']) assert(fs.statSync(`docs/assets/LICENSE-${license}.txt`).size > 500);
-console.log(JSON.stringify({passed:true, pages:stats, math:audit.total, checks:['all local assets, links and fragments','unique and preserved source IDs','all original scientific prose and TeX annotations','12 exact rendering-only repairs','3 unchanged original MathML unit fallbacks','37 byte-identical figures with intrinsic dimensions','mobile typography rules and upright citations','three-page public boundary']}, null, 2));
+console.log(JSON.stringify({passed:true, pages:stats, math:audit.total, checks:['all local assets, links and fragments','unique and preserved source IDs','all original scientific prose and TeX annotations','12 exact rendering-only repairs','3 semantic unit normalizations with unchanged original MathML','37 byte-identical figures with intrinsic dimensions','mobile typography rules and upright citations','three-page public boundary']}, null, 2));
 
 // Preferences have standalone source-level tests; generated controller must match.
 assert.equal(fs.readFileSync('docs/assets/settings.js','utf8'), fs.readFileSync('settings.js','utf8'));

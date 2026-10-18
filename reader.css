@@ -136,3 +136,6 @@ figure.ltx_table .ltx_tabular{width:100%;table-layout:auto}
 /* Dense count/probability matrices keep all columns legible at default size. */
 figure.table-dense .ltx_tabular{font-size:max(13px,.8em)}
 figure.table-dense .ltx_tabular td,figure.table-dense .ltx_tabular th{padding-inline:2px}
+/* Semantically marked simple units render upright in the reader's text font. */
+.semantic-unit-text{font-family:inherit;font-style:normal;white-space:nowrap}
+.semantic-unit-source[hidden]{display:none!important}

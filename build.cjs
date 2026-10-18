@@ -85,54 +85,10 @@ for (const paper of provenance) {
   const nav = [...article.querySelectorAll('h2')].filter(h => h.id || h.parentNode.id).map(h => `<a href="#${escape(h.id || h.parentNode.id)}">${escape(h.textContent.trim())}</a>`).join('');
   const tocLinks = [...article.querySelectorAll('h2,h3')].filter(h=>h.id||h.parentNode.id).map(h=>`<a class="toc-level-${h.tagName.toLowerCase()}" href="#${escape(h.id||h.parentNode.id)}">${escape(h.textContent.trim())}</a>`).join('');
   const tocMarkup = `<button type="button" class="reader-toc-trigger" id="reader-toc-open" aria-label="Open table of contents" aria-haspopup="dialog" aria-controls="reader-toc" aria-expanded="false" hidden><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 5h2M10 5h10M4 12h2M10 12h10M4 19h2M10 19h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button><dialog class="reader-toc-dialog" id="reader-toc" aria-labelledby="reader-toc-title"><div class="reader-toc-heading"><h2 id="reader-toc-title">Contents</h2><button type="button" id="reader-toc-close" autofocus>Close</button></div><nav aria-label="Table of contents"><a class="all-papers-link" href="index.html">← All papers</a>${tocLinks}</nav></dialog>`;
-  const report = {paper: paper.slug, source: paper.url, mathCount: article.querySelectorAll('math').length, converted: 0, repaired: 0, nativeFallbacks: 0, repairs: [], fallbacks: [], layoutAdjustments: []};
-  for (const math of [...article.querySelectorAll('math')]) {
-    const originalTex = math.querySelector('annotation[encoding="application/x-tex"]')?.textContent || math.getAttribute('alttext');
-    const repair = repairMap.get(`${paper.slug}:${math.id}`);
-    if (repair && repair.originalTex !== originalTex) throw new Error(`Repair source mismatch: ${paper.slug}:${math.id}`);
-    const renderInput = repair ? repair.renderInput : originalTex;
-    try {
-      if (!renderInput) throw new Error('No source TeX annotation');
-      const markup = katex.renderToString(renderInput, {throwOnError: true, strict: 'error', output: 'htmlAndMathml', displayMode: math.getAttribute('display') === 'block', trust: false, maxExpand: 1000});
-      const span = document.createElement('span');
-      span.className = 'rendered-math';
-      if (math.id) span.id = math.id;
-      span.innerHTML = markup;
-      // Recover the relation spacing omitted when LaTeXML splits the LHS and
-      // RHS into separate cells. Inspect the rendered atom; never rewrite TeX.
-      const firstBase = span.querySelector('.katex-html > .katex-base');
-      const firstAtom = firstBase && [...firstBase.children].find(child => !child.classList.contains('katex-strut'));
-      if (math.closest('.ltx_eqn_table') && math.closest('td.ltx_align_left') && firstAtom?.classList.contains('mrel')) {
-        span.classList.add('relation-start');
-        report.layoutAdjustments.push({id: math.id, kind: 'split-cell-leading-relation-spacing', space: '0.2778em'});
-      }
-
-      // Accessibility/source annotation remains the exact original, even when
-      // rendering requires an explicitly audited compatibility adjustment.
-      span.querySelector('annotation[encoding="application/x-tex"]').textContent = originalTex;
-      if (repair) {
-        span.setAttribute('data-render-input', renderInput);
-        span.setAttribute('data-math-repair', repair.reason);
-        report.repairs.push({id: math.id, originalTex, renderInput, reason: repair.reason});
-        report.repaired++;
-      }
-      math.replaceWith(span);
-      report.converted++;
-    } catch (error) {
-      if (repair) throw new Error(`Approved repair did not render (${math.id}): ${error.message}`);
-      const span = document.createElement('span');
-      span.className = 'fallback-math';
-      span.setAttribute('title', 'Original MathML retained');
-      span.setAttribute('data-fallback', 'Original MathML');
-      math.parentNode.insertBefore(span, math);
-      span.appendChild(math);
-      report.fallbacks.push({id: math.id, originalTex, renderInput, reason: error.message});
-      report.nativeFallbacks++;
-    }
-  }
+  const report = require('./math-renderer.cjs')(document,article,paper,repairMap);
   if (report.mathCount !== paper.mathCount) throw new Error(`Math count changed: ${paper.slug}`);
-  const notice = report.nativeFallbacks ? `<p class="notice">${report.converted} of ${report.mathCount} expressions use build-time KaTeX. ${report.nativeFallbacks} unit expressions retain the original MathML, marked by a dotted underline. <a href="math-audit.json">Rendering audit</a>.</p>` : '';
-  const output = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="${escape(title)}. Responsive reading edition with build-time mathematics."><title>${escape(title)}</title><link rel="stylesheet" href="assets/reader.css?v=${readerCssVersion}"><link rel="stylesheet" href="assets/katex/katex.min.css"><script src="assets/settings.js?v=${readerSettingsVersion}"></script><script src="assets/anchor.js" defer></script><script src="assets/toc.js?v=${readerTocVersion}" defer></script></head><body><header class="topbar">${tocMarkup}<nav><a href="https://arxiv.org/abs/${paper.arxivId}">arXiv</a><a href="https://arxiv.org/pdf/${paper.arxivId}">PDF</a>${settingsMarkup}</nav></header><div class="layout"><aside aria-label="On this page"><a class="all-papers-link" href="index.html">← All papers</a><div class="eyebrow">ON THIS PAGE</div>${nav}<a href="#top">Back to top ↑</a></aside><main id="top">${notice}${article.outerHTML}<footer><p><a class="all-papers-link" href="index.html">← All papers</a></p>Content and figures from <a href="${paper.url}">arXiv ${paper.arxivId}</a>. Original authors retain their rights. Presentation changed; scientific text and units preserved. <a href="math-audit.json">Rendering audit</a> · <a href="NOTICE.md">Rights and notices</a>.</footer></main></div></body></html>\n`;
+  const notice = '';
+  const output = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="${escape(title)}. Responsive reading edition with build-time mathematics."><title>${escape(title)}</title><link rel="stylesheet" href="assets/reader.css?v=${readerCssVersion}"><link rel="stylesheet" href="assets/katex/katex.min.css"><script src="assets/settings.js?v=${readerSettingsVersion}"></script><script src="assets/anchor.js" defer></script><script src="assets/toc.js?v=${readerTocVersion}" defer></script></head><body><header class="topbar">${tocMarkup}<nav><a href="https://arxiv.org/abs/${paper.arxivId}">arXiv</a><a href="https://arxiv.org/pdf/${paper.arxivId}">PDF</a>${settingsMarkup}</nav></header><div class="layout"><aside aria-label="On this page"><a class="all-papers-link" href="index.html">← All papers</a><div class="eyebrow">ON THIS PAGE</div>${nav}<a href="#top">Back to top ↑</a></aside><main id="top">${notice}${article.outerHTML}<footer><p><a class="all-papers-link" href="index.html">← All papers</a></p>Content and figures from <a href="${paper.url}">arXiv ${paper.arxivId}</a>. Original authors retain their rights. Presentation changed; scientific text and units preserved. <a href="NOTICE.md">Rights and notices</a>.</footer></main></div></body></html>\n`;
   fs.writeFileSync(`docs/${paper.slug}.html`, output);
   reports.push(report);
 }
@@ -162,5 +118,5 @@ for (const font of ['stix-two-text-latin-400-normal.woff2', 'stix-two-text-latin
 copy('node_modules/@fontsource/stix-two-math/files/stix-two-math-latin-400-normal.woff2', 'docs/assets/fonts/stix-two-math-latin-400-normal.woff2');
 for (const [source, name] of [['katex/LICENSE', 'KaTeX'], ['@fontsource/stix-two-text/LICENSE', 'STIX-Two-Text'], ['@fontsource/stix-two-math/LICENSE', 'STIX-Two-Math']]) copy(`node_modules/${source}`, `docs/assets/LICENSE-${name}.txt`);
 fs.writeFileSync('docs/.nojekyll', '');
-fs.writeFileSync('docs/math-audit.json', JSON.stringify({renderer: 'KaTeX 0.19.0 (JavaScript, build time)', input: 'Versioned arXiv HTML article snapshots and their original TeX annotations', papers: reports, total: {math: reports.reduce((n, p) => n + p.mathCount, 0), converted: reports.reduce((n, p) => n + p.converted, 0), repaired: reports.reduce((n, p) => n + p.repaired, 0), nativeFallbacks: reports.reduce((n, p) => n + p.nativeFallbacks, 0)}}, null, 2) + '\n');
+fs.writeFileSync('docs/math-audit.json', JSON.stringify({renderer: 'KaTeX 0.19.0 (JavaScript, build time)', input: 'Versioned arXiv HTML article snapshots and their original TeX annotations', papers: reports, total: {math: reports.reduce((n, p) => n + p.mathCount, 0), converted: reports.reduce((n, p) => n + p.converted, 0), repaired: reports.reduce((n, p) => n + p.repaired, 0), nativeFallbacks: reports.reduce((n, p) => n + p.nativeFallbacks, 0), semanticUnits: reports.reduce((n,p)=>n+p.semanticUnits,0)}}, null, 2) + '\n');
 console.log(reports.map(({paper, mathCount, converted, repaired, nativeFallbacks}) => ({paper, mathCount, converted, repaired, nativeFallbacks})));

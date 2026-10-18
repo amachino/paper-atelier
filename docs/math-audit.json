@@ -9,6 +9,8 @@
       "converted": 895,
       "repaired": 1,
       "nativeFallbacks": 0,
+      "semanticUnits": 0,
+      "normalizations": [],
       "repairs": [
         {
           "id": "A7.E64.m1",
@@ -262,7 +264,43 @@
       "mathCount": 325,
       "converted": 322,
       "repaired": 11,
-      "nativeFallbacks": 3,
+      "nativeFallbacks": 0,
+      "semanticUnits": 3,
+      "normalizations": [
+        {
+          "id": "S4.T1.m8",
+          "originalTex": "\\mathrm{\\SIUnitSymbolMicro s}",
+          "originalMathML": "<math id=\"S4.T1.m8\" class=\"ltx_Math\" alttext=\"\\mathrm{\\SIUnitSymbolMicro s}\" display=\"inline\" intent=\":literal\"><semantics><mrow class=\"ltx_unit\"><mi mathvariant=\"normal\">µ</mi><mo lspace=\"0em\" rspace=\"0em\">​</mo><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">\\mathrm{\\SIUnitSymbolMicro s}</annotation></semantics></math>",
+          "text": "µs",
+          "unit": "µs",
+          "quantity": null,
+          "ruleVersion": "latexml-simple-si-unit/v1",
+          "renderer": "semantic HTML text",
+          "trigger": "KaTeX unsupported input"
+        },
+        {
+          "id": "S4.T1.m10",
+          "originalTex": "\\mathrm{\\SIUnitSymbolMicro s}",
+          "originalMathML": "<math id=\"S4.T1.m10\" class=\"ltx_Math\" alttext=\"\\mathrm{\\SIUnitSymbolMicro s}\" display=\"inline\" intent=\":literal\"><semantics><mrow class=\"ltx_unit\"><mi mathvariant=\"normal\">µ</mi><mo lspace=\"0em\" rspace=\"0em\">​</mo><mi>s</mi></mrow><annotation encoding=\"application/x-tex\">\\mathrm{\\SIUnitSymbolMicro s}</annotation></semantics></math>",
+          "text": "µs",
+          "unit": "µs",
+          "quantity": null,
+          "ruleVersion": "latexml-simple-si-unit/v1",
+          "renderer": "semantic HTML text",
+          "trigger": "KaTeX unsupported input"
+        },
+        {
+          "id": "A3.SS4.p1.m4",
+          "originalTex": "1.024\\text{\\,}\\mathrm{\\SIUnitSymbolMicro s}",
+          "originalMathML": "<math id=\"A3.SS4.p1.m4\" class=\"ltx_Math\" alttext=\"1.024\\text{\\,}\\mathrm{\\SIUnitSymbolMicro s}\" display=\"inline\" intent=\":literal\"><semantics><mrow><mn>1.024</mn><mtext>&#160;</mtext><mrow class=\"ltx_unit\"><mi mathvariant=\"normal\">µ</mi><mo lspace=\"0em\" rspace=\"0em\">​</mo><mi>s</mi></mrow></mrow><annotation encoding=\"application/x-tex\">1.024\\text{\\,}\\mathrm{\\SIUnitSymbolMicro s}</annotation></semantics></math>",
+          "text": "1.024 µs",
+          "unit": "µs",
+          "quantity": "1.024",
+          "ruleVersion": "latexml-simple-si-unit/v1",
+          "renderer": "semantic HTML text",
+          "trigger": "KaTeX unsupported input"
+        }
+      ],
       "repairs": [
         {
           "id": "S3.F6.m12",
@@ -331,26 +369,7 @@
           "reason": "Supply the source SI degree symbol macro locally"
         }
       ],
-      "fallbacks": [
-        {
-          "id": "S4.T1.m8",
-          "originalTex": "\\mathrm{\\SIUnitSymbolMicro s}",
-          "renderInput": "\\mathrm{\\SIUnitSymbolMicro s}",
-          "reason": "KaTeX parse error: Undefined control sequence: \\SIUnitSymbolMicro at position 9: \\mathrm{\\̲S̲I̲U̲n̲i̲t̲S̲y̲m̲b̲o̲l̲M̲i̲c̲r̲o̲ ̲s}"
-        },
-        {
-          "id": "S4.T1.m10",
-          "originalTex": "\\mathrm{\\SIUnitSymbolMicro s}",
-          "renderInput": "\\mathrm{\\SIUnitSymbolMicro s}",
-          "reason": "KaTeX parse error: Undefined control sequence: \\SIUnitSymbolMicro at position 9: \\mathrm{\\̲S̲I̲U̲n̲i̲t̲S̲y̲m̲b̲o̲l̲M̲i̲c̲r̲o̲ ̲s}"
-        },
-        {
-          "id": "A3.SS4.p1.m4",
-          "originalTex": "1.024\\text{\\,}\\mathrm{\\SIUnitSymbolMicro s}",
-          "renderInput": "1.024\\text{\\,}\\mathrm{\\SIUnitSymbolMicro s}",
-          "reason": "KaTeX parse error: Undefined control sequence: \\SIUnitSymbolMicro at position 23: …ext{\\,}\\mathrm{\\̲S̲I̲U̲n̲i̲t̲S̲y̲m̲b̲o̲l̲M̲i̲c̲r̲o̲ ̲s}"
-        }
-      ],
+      "fallbacks": [],
       "layoutAdjustments": [
         {
           "id": "A3.Ex1.m2",
@@ -364,6 +383,7 @@
     "math": 1220,
     "converted": 1217,
     "repaired": 12,
-    "nativeFallbacks": 3
+    "nativeFallbacks": 0,
+    "semanticUnits": 3
   }
 }

@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "node build.cjs",
-    "test": "node test.cjs",
+    "test": "node test.cjs && node semantic-units-test.cjs",
     "manifest": "node scripts/manifest.cjs"
   },
   "dependencies": {

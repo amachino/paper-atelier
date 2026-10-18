@@ -1,0 +1,52 @@
+'use strict';
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const {parseHTML} = require('linkedom');
+const {normalize, inspect, RULE_VERSION} = require('./semantic-units.cjs');
+const parse = body => parseHTML(`<math><semantics>${body}<annotation encoding="application/x-tex">untouched \\source</annotation></semantics></math>`).document.querySelector('math');
+const micro = '<mrow class="ltx_unit"><mi mathvariant="normal">µ</mi><mo lspace="0em" rspace="0em">&#x200b;</mo><mi>s</mi></mrow>';
+let count = 0;
+function check(body, expected) {
+ const node = parse(body), before = node.outerHTML;
+ const got = normalize(node);
+ assert.equal(got?.text ?? null, expected, body);
+ assert.equal(node.outerHTML, before, 'source mutated');
+ if (got) assert.equal(got.ruleVersion, RULE_VERSION);
+ node.id = 'totally-unrelated-renamed-id';
+ assert.equal(normalize(node)?.text ?? null, expected, 'ID affected recognition');
+ count++;
+}
+check(micro, 'µs');
+check(`<mrow><mn>1.024</mn><mtext>&#160;</mtext>${micro}</mrow>`, '1.024\u2009µs');
+check('<mi class="ltx_unit">ns</mi>', 'ns');
+check('<mrow><mn>100</mn><mi class="ltx_unit">MHz</mi></mrow>', '100\u2009MHz');
+check('<mrow><mn>−.25</mn><mtext> </mtext><mi class="ltx_unit">mK</mi></mrow>', '−.25\u2009mK');
+check('<mi class="ltx_unit">kg</mi>', 'kg');
+check('<mi class="ltx_unit">QW</mi>', 'QW');
+check('<mi>µ</mi>', null);
+check('<mrow><mi>µ</mi><mi>s</mi></mrow>', null);
+check('<mi class="ltx_unit">mkg</mi>', null);
+check('<mi class="ltx_unit">µvariable</mi>', null);
+check('<mrow class="ltx_unit"><mi>m</mi><mo>&#x2062;</mo><mi>s</mi></mrow>', null);
+check('<mrow class="ltx_unit"><mi>m</mi><mi>s</mi></mrow>', null);
+check('<mi class="ltx_unit">dBm</mi>', null);
+check('<mi class="ltx_unit" mathvariant="italic">s</mi>', null);
+check('<mrow class="ltx_unit"><mi>m</mi><mo>/</mo><mi>s</mi></mrow>', null);
+check('<msup class="ltx_unit"><mi>s</mi><mn>2</mn></msup>', null);
+check(`<mrow><mi>x</mi><mtext> </mtext>${micro}</mrow>`, null);
+check(`<mrow><mn>1e3</mn><mtext> </mtext>${micro}</mrow>`, null);
+check(`<mrow><mn>1</mn><mo>+</mo>${micro}</mrow>`, null);
+check(`<mrow><mn>1</mn><mtext>approximately</mtext>${micro}</mrow>`, null);
+check(`<mrow><mn>1</mn>${micro}<mo>+</mo><mi>x</mi></mrow>`, null);
+check('<mi class="ltx_unit">µs<script>bad</script></mi>', null);
+const source = parseHTML(fs.readFileSync('sources/qubex.html', 'utf8')).document;
+const failures = ['S4.T1.m8','S4.T1.m10','A3.SS4.p1.m4'].map(id=>({id}));
+for (const failure of failures) {
+ const node = source.getElementById(failure.id), before = node.outerHTML;
+ assert.ok(normalize(node), `source fallback rejected: ${failure.id}`);
+ assert.equal(node.outerHTML, before);
+ count++;
+}
+assert.equal(inspect(parse('<mi>x</mi>')).result, null);
+assert.ok(inspect(parse('<mi>x</mi>')).reason);
+console.log(`${count} unit normalizer fixtures passed; source DOM unchanged; ID-independent.`);
