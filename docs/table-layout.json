@@ -1,0 +1,835 @@
+{
+  "schema_version": 1,
+  "coordinate_system": {
+    "units": "PDF points (1/72 inch)",
+    "origin": "page top left",
+    "bounds_order": [
+      "x0",
+      "y0",
+      "x1",
+      "y1"
+    ],
+    "page_dimensions_pt": [
+      612,
+      792
+    ]
+  },
+  "methodology": "Exhaustive actual numbered TABLE captions in the original v1 PDFs were matched to figure.ltx_table and native table.ltx_tabular IDs in the source HTML. Classification uses native table horizontal-rule x extents relative to original body columns, matching caption and table text, plus visual inspection of all five affected rendered PDF pages. It does not use aspect ratio or current HTML width. Two-column denotes observed physical spanning; literal TeX table* environments were not inspected. Equations and numbered Figures, including the table-like Qubex Figure 18, are excluded.",
+  "papers": {
+    "bswap": {
+      "arxiv_id": "2610.21936v1",
+      "html_url": "https://arxiv.org/html/2610.21936v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.21936v1",
+      "pdf_sha256": "1f32ad72778adeefb515fecb56d767f95cd9d0f883838aedaec66764475162dd",
+      "source_html_sha256": "be8f3936f60b8401c6602587320c0db8016a3c24e97cf5dae62d51e459a87a89",
+      "body_column_bounds_x_pt": [
+        [
+          54,
+          299.09
+        ],
+        [
+          317.01,
+          562.1
+        ]
+      ],
+      "nominal_body_column_width_pt": 245.09,
+      "nominal_two_column_span_pt": 508.1,
+      "tables": [
+        {
+          "number": 1,
+          "pdf_label": "TABLE I",
+          "html_id": "S2.T1",
+          "html_figure_id": "S2.T1",
+          "html_table_id": "S2.T1.2",
+          "html_container_tag": "figure",
+          "html_container_class": "ltx_table",
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 4,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=4",
+          "table_bounds_pt": [
+            54.0,
+            607.61,
+            299.08,
+            720.37
+          ],
+          "table_rule_bounds_pt": [
+            54.0,
+            607.61,
+            299.08,
+            720.37
+          ],
+          "table_rule_width_pt": 245.08,
+          "table_text_bounds_pt": [
+            58.98,
+            614.44,
+            294.13,
+            715.19
+          ],
+          "caption_bounds_pt": [
+            91.41,
+            595.67,
+            261.68,
+            605.64
+          ],
+          "figure_bounds_pt": [
+            54.0,
+            595.67,
+            299.08,
+            720.37
+          ],
+          "caption": "Table 1: Parameters of the \\mathrm{Q}_{\\mathrm{A}}\u2013\\mathrm{Q}_{\\mathrm{B}} pair.",
+          "pdf_caption": "TABLE I. Parameters of the QA\u2013QB pair.",
+          "horizontal_rules": [
+            {
+              "bounds_pt": [
+                54.0,
+                607.61,
+                299.08,
+                607.61
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                609.6,
+                299.08,
+                609.6
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                624.94,
+                299.08,
+                624.94
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                677.14,
+                299.08,
+                677.14
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                718.38,
+                299.08,
+                718.38
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                720.37,
+                299.08,
+                720.37
+              ],
+              "stroke_width_pt": 0.398
+            }
+          ],
+          "visual_verification": {
+            "rendered_page": "/tmp/paper-tables/bswap-p4.png",
+            "inspected": true
+          },
+          "html_data_fingerprint_sha256": "ee926c81d78ce517bd656ae786d5fd38e221413834bce21e03bd94a87b0ad007",
+          "html_row_count": 8,
+          "html_cell_count": 21,
+          "confidence": "high",
+          "ambiguity": null,
+          "latex_environment": null
+        },
+        {
+          "number": 2,
+          "pdf_label": "TABLE II",
+          "html_id": "S4.T2",
+          "html_figure_id": "S4.T2",
+          "html_table_id": "S4.T2.2",
+          "html_container_tag": "figure",
+          "html_container_class": "ltx_table",
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 7,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=7",
+          "table_bounds_pt": [
+            54.0,
+            659.52,
+            299.08,
+            720.37
+          ],
+          "table_rule_bounds_pt": [
+            54.0,
+            660.43,
+            299.08,
+            720.37
+          ],
+          "table_rule_width_pt": 245.08,
+          "table_text_bounds_pt": [
+            55.99,
+            659.52,
+            297.13,
+            715.0
+          ],
+          "caption_bounds_pt": [
+            53.67,
+            627.57,
+            299.09,
+            657.46
+          ],
+          "figure_bounds_pt": [
+            53.67,
+            627.57,
+            299.09,
+            720.37
+          ],
+          "caption": "Table 2: CNOT and SWAP implementations. Durations T include local operations and ramps. Fidelities \\mathcal{F} are obtained from IRB, with one bootstrap standard error in parentheses.",
+          "pdf_caption": "TABLE II. CNOT and SWAP implementations. Durations T include local operations and ramps. Fidelities F are obtained from IRB, with one bootstrap standard error in parentheses.",
+          "horizontal_rules": [
+            {
+              "bounds_pt": [
+                54.0,
+                660.43,
+                299.08,
+                660.43
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                662.43,
+                299.08,
+                662.43
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                690.4,
+                299.08,
+                690.4
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                718.38,
+                299.08,
+                718.38
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                720.37,
+                299.08,
+                720.37
+              ],
+              "stroke_width_pt": 0.398
+            }
+          ],
+          "visual_verification": {
+            "rendered_page": "/tmp/paper-tables/bswap-p7.png",
+            "inspected": true
+          },
+          "html_data_fingerprint_sha256": "02bc5572f70aa027857da01fe1e88d5362640c39e773e46b704720d75dc07706",
+          "html_row_count": 4,
+          "html_cell_count": 18,
+          "confidence": "high",
+          "ambiguity": null,
+          "latex_environment": null
+        },
+        {
+          "number": 3,
+          "pdf_label": "TABLE III",
+          "html_id": "A7.T3",
+          "html_figure_id": "A7.T3",
+          "html_table_id": "A7.T3.2",
+          "html_container_tag": "figure",
+          "html_container_class": "ltx_table",
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 15,
+          "pdf_page_url": "https://arxiv.org/pdf/2610.21936v1#page=15",
+          "table_bounds_pt": [
+            54.0,
+            272.75,
+            299.08,
+            378.36
+          ],
+          "table_rule_bounds_pt": [
+            54.0,
+            272.75,
+            299.08,
+            378.36
+          ],
+          "table_rule_width_pt": 245.08,
+          "table_text_bounds_pt": [
+            55.99,
+            274.26,
+            297.09,
+            372.49
+          ],
+          "caption_bounds_pt": [
+            104.64,
+            262.55,
+            248.48,
+            271.52
+          ],
+          "figure_bounds_pt": [
+            54.0,
+            262.55,
+            299.08,
+            378.36
+          ],
+          "caption": "Table 3: Ideal interaction times.",
+          "pdf_caption": "TABLE III. Ideal interaction times.",
+          "horizontal_rules": [
+            {
+              "bounds_pt": [
+                54.0,
+                272.75,
+                299.08,
+                272.75
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                274.74,
+                299.08,
+                274.74
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                294.39,
+                299.08,
+                294.39
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                376.37,
+                299.08,
+                376.37
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                378.36,
+                299.08,
+                378.36
+              ],
+              "stroke_width_pt": 0.398
+            }
+          ],
+          "visual_verification": {
+            "rendered_page": "/tmp/paper-tables/bswap-p15.png",
+            "inspected": true
+          },
+          "html_data_fingerprint_sha256": "75972a4295784288d973279e95bb51193b36ab78bae564d15619da66d49efa33",
+          "html_row_count": 4,
+          "html_cell_count": 12,
+          "confidence": "high",
+          "ambiguity": null,
+          "latex_environment": null
+        }
+      ],
+      "single_column_numbers": [
+        1,
+        2,
+        3
+      ],
+      "two_column_numbers": [],
+      "single_column_html_ids": [
+        "S2.T1",
+        "S4.T2",
+        "A7.T3"
+      ],
+      "full_width_html_ids": []
+    },
+    "qubex": {
+      "arxiv_id": "2606.13010v1",
+      "html_url": "https://arxiv.org/html/2606.13010v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.13010v1",
+      "pdf_sha256": "3fc91ad6704936cf56da396f681e7518bd19676a2cfa137d01f8d7c4363e705d",
+      "source_html_sha256": "947900fd471fc41f82326107d54feee4f87491368e32e2f2c946e1de1e70eb8f",
+      "body_column_bounds_x_pt": [
+        [
+          54,
+          299.09
+        ],
+        [
+          317.01,
+          562.1
+        ]
+      ],
+      "nominal_body_column_width_pt": 245.09,
+      "nominal_two_column_span_pt": 508.1,
+      "tables": [
+        {
+          "number": 1,
+          "pdf_label": "TABLE I",
+          "html_id": "S4.T1",
+          "html_figure_id": "S4.T1",
+          "html_table_id": "S4.T1.2",
+          "html_container_tag": "figure",
+          "html_container_class": "ltx_table",
+          "classification": "two-column",
+          "recommended_desktop_layout": "full-width",
+          "observed_pdf_column": "both",
+          "pdf_page": 8,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=8",
+          "table_bounds_pt": [
+            54.0,
+            432.91,
+            562.09,
+            505.24
+          ],
+          "table_rule_bounds_pt": [
+            54.0,
+            432.91,
+            562.09,
+            505.24
+          ],
+          "table_rule_width_pt": 508.09,
+          "table_text_bounds_pt": [
+            54.0,
+            437.64,
+            560.11,
+            499.31
+          ],
+          "caption_bounds_pt": [
+            116.43,
+            420.81,
+            499.68,
+            429.77
+          ],
+          "figure_bounds_pt": [
+            54.0,
+            420.81,
+            562.09,
+            505.24
+          ],
+          "caption": "Table 1: Physical parameters of qubits highlighted in the focused demonstrations of Sec. IV.",
+          "pdf_caption": "TABLE I. Physical parameters of qubits highlighted in the focused demonstrations of Sec. IV.",
+          "horizontal_rules": [
+            {
+              "bounds_pt": [
+                54.0,
+                432.91,
+                562.09,
+                432.91
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                435.3,
+                562.09,
+                435.3
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                448.15,
+                562.09,
+                448.15
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                502.85,
+                562.09,
+                502.85
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                505.24,
+                562.09,
+                505.24
+              ],
+              "stroke_width_pt": 0.398
+            }
+          ],
+          "visual_verification": {
+            "rendered_page": "/tmp/paper-tables/qubex-p8.png",
+            "inspected": true
+          },
+          "html_data_fingerprint_sha256": "af84139d0c615b1e6c4ef8ae14a194ec2e126096e45bf72ab100ce2f169e4b23",
+          "html_row_count": 6,
+          "html_cell_count": 42,
+          "confidence": "high",
+          "ambiguity": null,
+          "latex_environment": null
+        },
+        {
+          "number": 2,
+          "pdf_label": "TABLE II",
+          "html_id": "A3.T2",
+          "html_figure_id": "A3.T2",
+          "html_table_id": "A3.T2.2",
+          "html_container_tag": "figure",
+          "html_container_class": "ltx_table",
+          "classification": "two-column",
+          "recommended_desktop_layout": "full-width",
+          "observed_pdf_column": "both",
+          "pdf_page": 18,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=18",
+          "table_bounds_pt": [
+            54.0,
+            94.07,
+            562.09,
+            177.72
+          ],
+          "table_rule_bounds_pt": [
+            54.0,
+            94.07,
+            562.09,
+            176.85
+          ],
+          "table_rule_width_pt": 508.09,
+          "table_text_bounds_pt": [
+            54.0,
+            98.8,
+            560.11,
+            177.72
+          ],
+          "caption_bounds_pt": [
+            53.67,
+            61.04,
+            562.41,
+            90.93
+          ],
+          "figure_bounds_pt": [
+            53.67,
+            61.04,
+            562.41,
+            177.72
+          ],
+          "caption": "Table 2: Resolved hardware frequency settings auto-generated by Qubex for a Q28-centered set of control and readout targets. Labels of the form Q28\u2013Q25 denote CR-drive settings for a CR operation with Q28 as the control qubit and Q25 as the target qubit; RQ28 denotes the readout-frequency target for Q28. All frequencies are in megahertz.",
+          "pdf_caption": "TABLE II. Resolved hardware frequency settings auto-generated by Qubex for a Q28-centered set of control and readout targets. Labels of the form Q28\u2013Q25 denote CR-drive settings for a CR operation with Q28 as the control qubit and Q25 as the target qubit; RQ28 denotes the readout-frequency target for Q28. All frequencies are in megahertz.",
+          "horizontal_rules": [
+            {
+              "bounds_pt": [
+                54.0,
+                94.07,
+                562.09,
+                94.07
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                96.46,
+                562.09,
+                96.46
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                109.31,
+                562.09,
+                109.31
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                174.46,
+                562.09,
+                174.46
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                176.85,
+                562.09,
+                176.85
+              ],
+              "stroke_width_pt": 0.398
+            }
+          ],
+          "visual_verification": {
+            "rendered_page": "/tmp/paper-tables/qubex-p18.png",
+            "inspected": true
+          },
+          "html_data_fingerprint_sha256": "a7b24de36a17d61d6b29a64681d895b4f315c275c02590d3bcb0b1ab4719866f",
+          "html_row_count": 7,
+          "html_cell_count": 49,
+          "confidence": "high",
+          "ambiguity": null,
+          "latex_environment": null
+        },
+        {
+          "number": 3,
+          "pdf_label": "TABLE III",
+          "html_id": "A3.T3",
+          "html_figure_id": "A3.T3",
+          "html_table_id": "A3.T3.2",
+          "html_container_tag": "figure",
+          "html_container_class": "ltx_table",
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "left",
+          "pdf_page": 18,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=18",
+          "table_bounds_pt": [
+            54.0,
+            220.04,
+            299.08,
+            376.86
+          ],
+          "table_rule_bounds_pt": [
+            54.0,
+            220.04,
+            299.08,
+            376.86
+          ],
+          "table_rule_width_pt": 245.08,
+          "table_text_bounds_pt": [
+            54.0,
+            224.77,
+            297.1,
+            372.23
+          ],
+          "caption_bounds_pt": [
+            53.67,
+            196.98,
+            300.64,
+            216.41
+          ],
+          "figure_bounds_pt": [
+            53.67,
+            196.98,
+            300.64,
+            376.86
+          ],
+          "caption": "Table 3: Pulse parameters for the calibrated CR benchmark in Fig. 12(b).",
+          "pdf_caption": "TABLE III. Pulse parameters for the calibrated CR bench- mark in Fig. 12(b).",
+          "horizontal_rules": [
+            {
+              "bounds_pt": [
+                54.0,
+                220.04,
+                299.08,
+                220.04
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                222.43,
+                299.08,
+                222.43
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                235.28,
+                299.08,
+                235.28
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                374.46,
+                299.08,
+                374.46
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                54.0,
+                376.86,
+                299.08,
+                376.86
+              ],
+              "stroke_width_pt": 0.398
+            }
+          ],
+          "visual_verification": {
+            "rendered_page": "/tmp/paper-tables/qubex-p18.png",
+            "inspected": true
+          },
+          "html_data_fingerprint_sha256": "11372e793cfd5419fb1d304d412e64002b76c351befc54b1f7d7418d85c97e88",
+          "html_row_count": 14,
+          "html_cell_count": 28,
+          "confidence": "high",
+          "ambiguity": null,
+          "latex_environment": null
+        },
+        {
+          "number": 4,
+          "pdf_label": "TABLE IV",
+          "html_id": "A3.T4",
+          "html_figure_id": "A3.T4",
+          "html_table_id": "A3.T4.2",
+          "html_container_tag": "figure",
+          "html_container_class": "ltx_table",
+          "classification": "single-column",
+          "recommended_desktop_layout": "float-wrap",
+          "observed_pdf_column": "right",
+          "pdf_page": 18,
+          "pdf_page_url": "https://arxiv.org/pdf/2606.13010v1#page=18",
+          "table_bounds_pt": [
+            317.01,
+            230.0,
+            562.09,
+            282.28
+          ],
+          "table_rule_bounds_pt": [
+            317.01,
+            230.0,
+            562.09,
+            281.41
+          ],
+          "table_rule_width_pt": 245.08,
+          "table_text_bounds_pt": [
+            317.01,
+            234.74,
+            560.15,
+            282.28
+          ],
+          "caption_bounds_pt": [
+            316.68,
+            196.98,
+            563.38,
+            226.87
+          ],
+          "figure_bounds_pt": [
+            316.68,
+            196.98,
+            563.38,
+            282.28
+          ],
+          "caption": "Table 4: Assignment matrix for the JPA-pump-enabled multilevel-readout measurement on Q10. Entries show counts, with row-normalized assignment probabilities in parentheses.",
+          "pdf_caption": "TABLE IV. Assignment matrix for the JPA-pump-enabled multilevel-readout measurement on Q10. Entries show counts, with row-normalized assignment probabilities in parentheses.",
+          "horizontal_rules": [
+            {
+              "bounds_pt": [
+                317.01,
+                230.0,
+                562.09,
+                230.0
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                317.01,
+                232.39,
+                562.09,
+                232.39
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                317.01,
+                245.25,
+                562.09,
+                245.25
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                317.01,
+                279.02,
+                562.09,
+                279.02
+              ],
+              "stroke_width_pt": 0.398
+            },
+            {
+              "bounds_pt": [
+                317.01,
+                281.41,
+                562.09,
+                281.41
+              ],
+              "stroke_width_pt": 0.398
+            }
+          ],
+          "visual_verification": {
+            "rendered_page": "/tmp/paper-tables/qubex-p18.png",
+            "inspected": true
+          },
+          "html_data_fingerprint_sha256": "06264b0f5a0c698a69ff00f9e0934473cdff1d56707889f62eda8bff0f668f66",
+          "html_row_count": 4,
+          "html_cell_count": 25,
+          "confidence": "high",
+          "ambiguity": null,
+          "latex_environment": null
+        }
+      ],
+      "single_column_numbers": [
+        3,
+        4
+      ],
+      "two_column_numbers": [
+        1,
+        2
+      ],
+      "single_column_html_ids": [
+        "A3.T3",
+        "A3.T4"
+      ],
+      "full_width_html_ids": [
+        "S4.T1",
+        "A3.T2"
+      ]
+    }
+  },
+  "ambiguities": [],
+  "implementation_guidance": [
+    "Apply float-wrap only to the five single-column figure.ltx_table containers on desktop; keep the two original two-column tables full-width.",
+    "Apply width:100% to the actual native table.ltx_tabular in its content container, not just to its outer figure. Avoid display:block on the table if it prevents its table box from filling the container.",
+    "Preserve all original table cells, header/row structure, colspans, rowspans, scientific values, signs, units, and MathML. These are layout-only classifications.",
+    "Do not treat table-based equation layouts or table-like numbered Figures as actual numbered Tables.",
+    "Native cell text/font metrics can slightly overhang PDF horizontal rules vertically; table_bounds_pt is their union, while table_rule_bounds_pt records the exact layout-rule extent."
+  ]
+}

@@ -127,3 +127,9 @@ footer a.all-papers-link{display:inline-flex;align-items:center;min-height:48px;
 .reader-settings-dialog button,.reader-settings-choices label{border-color:var(--control-border)}
 .reader-settings-choices label:has(input:checked){border-color:var(--accent)}
 .notice{border-left-color:var(--control-border)}
+/* Original single-column tables share figure placement, with automatic columns. */
+figure.ltx_table .ltx_tabular{width:100%;table-layout:auto}
+@media(min-width:1200px){
+  article figure.table-single{float:right;width:46%;max-width:420px;margin:8px 0 24px 30px;padding:16px;clear:right}
+  article figure.table-wide{float:none;width:auto;max-width:none;clear:both}
+}

@@ -7,6 +7,7 @@ const katex = require('katex');
 const root = __dirname;
 process.chdir(root);
 const provenance = JSON.parse(fs.readFileSync('sources/provenance.json', 'utf8'));
+const tableLayout = JSON.parse(fs.readFileSync('sources/table-layout.json', 'utf8'));
 const figureLayout = JSON.parse(fs.readFileSync('sources/figure-layout.json', 'utf8'));
 const repairs = JSON.parse(fs.readFileSync('sources/math-repairs.json', 'utf8'));
 const repairMap = new Map(repairs.map(r => [`${r.paper}:${r.id}`, r]));
@@ -71,6 +72,12 @@ for (const paper of provenance) {
     node.setAttribute('data-original-column-span', figure.classification === 'two-column' ? '2' : '1');
   }
   for (const group of figurePlan.groups) article.querySelector(`[id="${group.html_id}"]`).classList.add('figure-pair');
+  for(const table of tableLayout.papers[paper.slug].tables){
+    const node=article.querySelector(`[id="${table.html_id}"]`);
+    if(!node||!node.classList.contains('ltx_table'))throw new Error(`Missing classified table: ${table.html_id}`);
+    node.classList.add(table.classification==='single-column'?'table-single':'table-wide');
+    node.setAttribute('data-original-column-span',table.classification==='single-column'?'1':'2');
+  }
   const titleNode = article.querySelector('h1').cloneNode(true);
   for (const br of titleNode.querySelectorAll('br')) br.replaceWith(document.createTextNode(' '));
   const title = titleNode.textContent.replace(/\s+/g, ' ').trim();
@@ -136,6 +143,7 @@ copy('settings.js', 'docs/assets/settings.js');
 fs.writeFileSync('docs/index.html', fs.readFileSync('index.html', 'utf8').replace('<!-- reader-settings -->', settingsMarkup).replace('assets/reader.css', `assets/reader.css?v=${readerCssVersion}`).replace('assets/settings.js', `assets/settings.js?v=${readerSettingsVersion}`));
 copy('NOTICE.md', 'docs/NOTICE.md');
 copy('sources/figure-layout.json', 'docs/figure-layout.json');
+copy('sources/table-layout.json', 'docs/table-layout.json');
 // Ship CSS and WOFF2 fonts only. KaTeX itself runs only in Node during build.
 let katexCss = fs.readFileSync('node_modules/katex/dist/katex.min.css', 'utf8');
 katexCss = katexCss.replace(/src:([^;}]+)/g, (_, value) => {

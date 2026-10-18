@@ -89,6 +89,13 @@ for (const paper of provenance) {
   assert.equal(output.querySelectorAll('#reader-toc-open').length, 1);
   assert.equal(output.querySelectorAll('#reader-toc nav a[href^="#"]').length, output.querySelectorAll('article h2,article h3').length);
   assert.equal(output.querySelectorAll('script[src^="assets/toc.js?v="]').length, 1);
+  assert.equal(output.querySelectorAll('figure.table-single').length, paper.slug==='bswap'?3:2);
+  assert.equal(output.querySelectorAll('figure.table-wide').length, paper.slug==='bswap'?0:2);
+  for(const table of source.querySelectorAll('figure.ltx_table')){
+    const actual=output.getElementById(table.id);
+    assert.equal(actual.querySelectorAll('td').length,table.querySelectorAll('td').length);
+    assert.equal(actual.querySelectorAll('th').length,table.querySelectorAll('th').length);
+  }
   const sourceMath = [...source.querySelectorAll('math')];
   assert.equal(sourceMath.length, paper.mathCount);
   assert.equal(output.querySelectorAll('math').length, paper.mathCount, `${paper.slug}: all expressions retained`);
