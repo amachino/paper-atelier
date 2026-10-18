@@ -6,7 +6,7 @@ Two responsive reading editions of quantum computing papers, with JavaScript KaT
 - `docs/bswap.html`
 - `docs/qubex.html`
 
-No client-side math renderer, analytics, CDN, or runtime service is required. Text settings offer STIX serif or the system sans-serif font and body sizes from 12–24 px in half-pixel steps. Preferences are shared across both papers using only localStorage in the same browser; Reset restores responsive defaults. Browser zoom remains enabled. The math fonts are unchanged, with inline math inheriting the surrounding text size. No preference is transmitted.
+No client-side math renderer, analytics, CDN, or runtime service is required. Appearance settings offer STIX serif or the system sans-serif font, exactly three responsive text sizes (Small/Medium/Large), and Light/Dark themes. On phones the sizes are 14.5/17/20 px with line heights 1.25/1.45/1.55; desktop sizes are 19/22/25 px (Small is 18 px on intermediate screens). Native radio controls sit in a modal dialog presented as a phone bottom sheet. Original scientific figure colors are preserved on white panels. Valid earlier numeric preferences migrate to the closest preset. Preferences are shared across both papers using only localStorage in the same browser; Reset restores Small, Serif, and Light defaults. Browser zoom remains enabled. The math fonts are unchanged, with inline math inheriting the surrounding text size. No preference is transmitted.
 
 The small `anchor.js` helper corrects initial fragment positioning after local fonts load without interrupting a reader who has interacted with the page. Prose is justified with automatic English hyphenation. At widths of 600 px and below, text uses 14.5 px STIX Two Text and a 1.25 line-height; at 350 px and below it is start-aligned. Citation labels remain upright, figures have intrinsic dimensions, and wide equation/table overflow stays local.
 
@@ -47,3 +47,5 @@ For a project repository, choose **Deploy from a branch**, branch `main`, folder
 ## Rights
 
 The scientific content and figures are not MIT-licensed by this repository. Both arXiv source pages identify the arXiv perpetual non-exclusive license; authors and other relevant rightsholders retain their rights. See `NOTICE.md` and the bundled dependency license copies under `docs/assets/`.
+
+Reader CSS and settings JavaScript URLs carry content hashes so HTML updates cannot silently reuse an older resource version. Equation-table baseline alignment preserves the source row alignment while row-spanning equation numbers remain vertically centered.

@@ -12,6 +12,7 @@ const repairMap = new Map(repairs.map(r => [`${r.paper}:${r.id}`, r]));
 const reports = [];
 const settingsMarkup = fs.readFileSync('settings.html', 'utf8').trim();
 const sha256 = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
+const readerSettingsVersion = sha256(fs.readFileSync('settings.js')).slice(0,12);
 const readerCssVersion = sha256(fs.readFileSync('reader.css')).slice(0,12);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const copy = (from, to) => { fs.mkdirSync(path.dirname(to), {recursive:true}); fs.copyFileSync(from, to); };
@@ -110,7 +111,7 @@ for (const paper of provenance) {
   }
   if (report.mathCount !== paper.mathCount) throw new Error(`Math count changed: ${paper.slug}`);
   const notice = report.nativeFallbacks ? `<p class="notice">${report.converted} of ${report.mathCount} expressions use build-time KaTeX. ${report.nativeFallbacks} unit expressions retain the original MathML, marked by a dotted underline. <a href="math-audit.json">Rendering audit</a>.</p>` : '';
-  const output = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="${escape(title)}. Responsive reading edition with build-time mathematics."><title>${escape(title)}</title><link rel="stylesheet" href="assets/reader.css?v=${readerCssVersion}"><link rel="stylesheet" href="assets/katex/katex.min.css"><script src="assets/settings.js"></script><script src="assets/anchor.js" defer></script></head><body><header class="topbar"><a class="home-link" href="index.html">Papers</a><nav><a href="https://arxiv.org/abs/${paper.arxivId}">arXiv</a><a href="https://arxiv.org/pdf/${paper.arxivId}">PDF</a>${settingsMarkup}</nav></header><div class="layout"><aside aria-label="On this page"><div class="eyebrow">ON THIS PAGE</div>${nav}<a href="#top">Back to top ↑</a></aside><main id="top">${notice}${article.outerHTML}<footer>Content and figures from <a href="${paper.url}">arXiv ${paper.arxivId}</a>. Original authors retain their rights. Presentation changed; scientific text and units preserved. <a href="math-audit.json">Rendering audit</a> · <a href="NOTICE.md">Rights and notices</a>.</footer></main></div></body></html>\n`;
+  const output = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="${escape(title)}. Responsive reading edition with build-time mathematics."><title>${escape(title)}</title><link rel="stylesheet" href="assets/reader.css?v=${readerCssVersion}"><link rel="stylesheet" href="assets/katex/katex.min.css"><script src="assets/settings.js?v=${readerSettingsVersion}"></script><script src="assets/anchor.js" defer></script></head><body><header class="topbar"><a class="home-link" href="index.html">Papers</a><nav><a href="https://arxiv.org/abs/${paper.arxivId}">arXiv</a><a href="https://arxiv.org/pdf/${paper.arxivId}">PDF</a>${settingsMarkup}</nav></header><div class="layout"><aside aria-label="On this page"><div class="eyebrow">ON THIS PAGE</div>${nav}<a href="#top">Back to top ↑</a></aside><main id="top">${notice}${article.outerHTML}<footer>Content and figures from <a href="${paper.url}">arXiv ${paper.arxivId}</a>. Original authors retain their rights. Presentation changed; scientific text and units preserved. <a href="math-audit.json">Rendering audit</a> · <a href="NOTICE.md">Rights and notices</a>.</footer></main></div></body></html>\n`;
   fs.writeFileSync(`docs/${paper.slug}.html`, output);
   reports.push(report);
 }
@@ -118,7 +119,7 @@ for (const paper of provenance) {
 copy('reader.css', 'docs/assets/reader.css');
 copy('anchor.js', 'docs/assets/anchor.js');
 copy('settings.js', 'docs/assets/settings.js');
-fs.writeFileSync('docs/index.html', fs.readFileSync('index.html', 'utf8').replace('<!-- reader-settings -->', settingsMarkup).replace('assets/reader.css', `assets/reader.css?v=${readerCssVersion}`));
+fs.writeFileSync('docs/index.html', fs.readFileSync('index.html', 'utf8').replace('<!-- reader-settings -->', settingsMarkup).replace('assets/reader.css', `assets/reader.css?v=${readerCssVersion}`).replace('assets/settings.js', `assets/settings.js?v=${readerSettingsVersion}`));
 copy('NOTICE.md', 'docs/NOTICE.md');
 // Ship CSS and WOFF2 fonts only. KaTeX itself runs only in Node during build.
 let katexCss = fs.readFileSync('node_modules/katex/dist/katex.min.css', 'utf8');

@@ -37,15 +37,18 @@ for (const [file, document] of documents) {
       }
     }
   }
-  for (const script of document.querySelectorAll('script')) assert(['assets/anchor.js','assets/settings.js'].includes(script.getAttribute('src')), `${file}: unexpected script`);
-  assert.equal(document.querySelectorAll('script[src="assets/settings.js"]').length, 1, `${file}: reading preferences script`);
-  assert(document.querySelector('#reader-settings > summary'), `${file}: keyboard-native settings disclosure`);
-  assert(document.querySelector('label[for="reader-font-family"]'), `${file}: font label`);
-  assert(document.querySelector('label[for="reader-font-size"]'), `${file}: size label`);
+  for (const script of document.querySelectorAll('script')) assert(['assets/anchor.js','assets/settings.js'].includes(script.getAttribute('src').split('?')[0]), `${file}: unexpected script`);
+  assert.equal(document.querySelectorAll('script[src^="assets/settings.js"]').length, 1, `${file}: reading preferences script`);
+  assert.equal(document.getElementById('reader-settings').tagName.toLowerCase(), 'dialog', `${file}: native settings dialog`);
+  assert.equal(document.getElementById('reader-settings-open').getAttribute('aria-haspopup'), 'dialog');
+  assert.equal(document.getElementById('reader-settings').getAttribute('aria-labelledby'), 'reader-settings-title');
   assert.equal(document.getElementById('reader-settings-reset').getAttribute('type'), 'button');
   assert.equal(document.getElementById('reader-settings-status').getAttribute('aria-live'), 'polite');
-  const sizes = [...document.querySelectorAll('#reader-font-size option')].map(n => n.getAttribute('value'));
-  assert.deepEqual(sizes, ['auto', ...Array.from({length:25}, (_,i) => String(12+i/2))]);
+  for (const [name, values] of Object.entries({'reader-size':['small','medium','large'],'reader-font':['serif','sans'],'reader-theme':['light','dark']})) {
+    const radios = [...document.querySelectorAll(`input[name="${name}"]`)];
+    assert.deepEqual(radios.map(n=>n.getAttribute('value')), values);
+    for (const radio of radios) assert(radio.closest('label') && radio.closest('fieldset').querySelector('legend'), `${file}: labeled grouped radio`);
+  }
   assert(!/maximum-scale|minimum-scale|user-scalable/.test(document.querySelector('meta[name="viewport"]').getAttribute('content')), `${file}: browser zoom unrestricted`);
   assert(!document.querySelector('#mode-switch,script[src*="qa-observer"]'), `${file}: comparison UI removed`);
   stats.push({page:file, bytes:fs.statSync('docs/' + file).size, math:document.querySelectorAll('math').length, figures:document.querySelectorAll('figure').length});
@@ -111,80 +114,9 @@ assert(readerCss.includes('p.ltx_p{text-align:justify;'), 'Desktop prose justifi
 for (const license of ['KaTeX','STIX-Two-Text','STIX-Two-Math']) assert(fs.statSync(`docs/assets/LICENSE-${license}.txt`).size > 500);
 console.log(JSON.stringify({passed:true, pages:stats, math:audit.total, checks:['all local assets, links and fragments','unique and preserved source IDs','all original scientific prose and TeX annotations','12 exact rendering-only repairs','3 unchanged original MathML unit fallbacks','37 byte-identical figures with intrinsic dimensions','mobile typography rules and upright citations','three-page public boundary']}, null, 2));
 
-// Execute the preferences controller against small DOM/storage stubs. This is
-// a Node unit test, not browser rendering or layout validation.
-const vm = require('node:vm');
-const settingsScript = fs.readFileSync('docs/assets/settings.js', 'utf8');
-assert.equal(settingsScript, fs.readFileSync('settings.js', 'utf8'));
-assert(!/fetch\s*\(|XMLHttpRequest|sendBeacon|document\.cookie/.test(settingsScript), 'Settings do not transmit preferences');
-function settingsHarness(initial, unavailable = false) {
-  const key = 'paper-atelier.reader-settings.v1';
-  const saved = new Map(initial === undefined ? [] : [[key, initial]]);
-  const events = new Map(), style = new Map();
-  let focused = false;
-  const control = () => ({value:'', hidden:true, open:true, textContent:'', events:{}, addEventListener(type,handler){this.events[type]=handler;}});
-  const ids = Object.fromEntries(['reader-settings','reader-font-family','reader-font-size','reader-settings-reset','reader-settings-status'].map(id=>[id,control()]));
-  ids['reader-settings'].querySelector = () => ({focus(){focused=true;}});
-  const root = {dataset:{},style:{setProperty(k,v){style.set(k,v);},removeProperty(k){style.delete(k);}}};
-  const document = {documentElement:root,readyState:'loading',getElementById:id=>ids[id],addEventListener(type,handler){events.set(type,handler);}};
-  const localStorage = {
-    getItem(k){if(unavailable)throw Error('blocked');return saved.get(k)??null;},
-    setItem(k,v){if(unavailable)throw Error('blocked');saved.set(k,v);},
-    removeItem(k){if(unavailable)throw Error('blocked');saved.delete(k);}
-  };
-  const window = {addEventListener(type,handler){events.set(type,handler);}};
-  vm.runInNewContext(settingsScript, {document,window,localStorage});
-  // Preferences are applied before DOMContentLoaded.
-  events.get('DOMContentLoaded')();
-  return {ids,root,style,saved,key,events,focused:()=>focused};
-}
-const defaults = settingsHarness();
-assert.equal(defaults.root.dataset.readerFont,'serif');
-assert(!defaults.style.has('--reader-font-size'));
-assert.equal(defaults.ids['reader-settings'].hidden,false);
-assert.equal(defaults.ids['reader-font-size'].value,'auto');
-defaults.ids['reader-font-family'].value='sans';
-defaults.ids['reader-font-family'].events.change();
-assert.equal(defaults.root.dataset.readerFont,'sans');
-for(const size of ['12','14.5','24']) {
-  defaults.ids['reader-font-size'].value=size;
-  defaults.ids['reader-font-size'].events.change();
-  assert.equal(defaults.style.get('--reader-font-size'),size+'px');
-}
-const restored = settingsHarness(defaults.saved.get(defaults.key));
-assert.equal(restored.root.dataset.readerFont,'sans');
-assert.equal(restored.style.get('--reader-font-size'),'24px');
-restored.ids['reader-settings-reset'].events.click();
-assert.equal(restored.root.dataset.readerFont,'serif');
-assert(!restored.style.has('--reader-font-size'));
-assert(!restored.saved.has(restored.key));
-assert.equal(restored.ids['reader-font-size'].value,'auto');
-restored.events.get('storage')({key:restored.key,newValue:JSON.stringify({font:'sans',size:16.5})});
-assert.equal(restored.ids['reader-font-size'].value,'16.5');
-assert.equal(restored.style.get('--reader-font-size'),'16.5px');
-restored.events.get('storage')({key:restored.key,newValue:null});
-assert.equal(restored.root.dataset.readerFont,'serif');
-assert(!restored.style.has('--reader-font-size'));
-let prevented=false;
-restored.ids['reader-settings'].events.keydown({key:'Escape',preventDefault(){prevented=true;}});
-assert.equal(restored.ids['reader-settings'].open,false);
-assert(restored.focused() && prevented);
-for(const value of ['invalid JSON','null',JSON.stringify({font:'unknown',size:99}),JSON.stringify({size:'24; color:red'}),JSON.stringify({size:14.3})]) {
-  const bad=settingsHarness(value);
-  assert.equal(bad.root.dataset.readerFont,'serif');
-  assert(!bad.style.has('--reader-font-size'));
-}
-const blocked=settingsHarness(undefined,true);
-blocked.ids['reader-font-size'].value='20';
-blocked.ids['reader-font-size'].events.change();
-assert.equal(blocked.style.get('--reader-font-size'),'20px');
-assert(blocked.ids['reader-settings-status'].textContent.includes('unavailable'));
-assert(readerCss.includes('--reader-default-size:14.5px'));
-assert(readerCss.includes('--reader-default-size:19px'));
-assert(readerCss.includes('font-size:var(--reader-font-size,var(--reader-default-size))'));
-assert(readerCss.includes('math{font-family:'));
-assert(readerCss.includes('.katex{font-size:1.05em!important}'));
-console.log('Reading preferences passed: controls, size bounds, persistence, cross-page restore, reset, storage failure, Escape focus, and unchanged math-font rules. Browser layout is not asserted.');
+// Preferences have standalone source-level tests; generated controller must match.
+assert.equal(fs.readFileSync('docs/assets/settings.js','utf8'), fs.readFileSync('settings.js','utf8'));
+require('./settings-test.cjs');
 
 for (const name of ['index.html','bswap.html','qubex.html']) { const html = fs.readFileSync('docs/'+name,'utf8'); assert(!/Paper Atelier|PAPER ATELIER|PHYSICS, WITH ROOM|Made for reading/.test(html), 'No promotional branding: '+name); }
 

@@ -13,25 +13,39 @@ article figcaption p,article .ltx_note_content p{text-align:start;text-align-las
 
 .rendered-math{position:relative}.paper-link{display:inline-block;font:13px system-ui;padding:10px 14px;border:1px solid var(--rule);text-decoration:none}.paper-link:hover{background:var(--accent);color:white}.home h2 a{text-decoration:none}.home .intro{text-wrap:pretty}
 
-/* Reader preferences affect text; KaTeX and native MathML keep their math fonts. */
-:root{--reader-default-size:19px;--reader-text-font:'STIX Two Text',Georgia,serif}
+/* Reader preferences affect prose; math fonts and original figure colors stay intact. */
+:root{--reader-default-size:19px;--reader-text-font:'STIX Two Text',Georgia,serif;--surface:#fff;--control:#eef2ec;--selected:#dcebe1;--notice:#f0ede4;--fallback:#a77621}
 :root[data-reader-font="sans"]{--reader-text-font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+:root[data-reader-size="medium"]{--reader-font-size:22px}
+:root[data-reader-size="large"]{--reader-font-size:25px}
+:root[data-reader-theme="dark"]{color-scheme:dark;--paper:#141b18;--ink:#edf2ed;--muted:#b4c1b7;--accent:#8ed7ba;--rule:#53695b;--surface:#202b24;--control:#26392e;--selected:#334b3e;--notice:#28382e;--fallback:#d3b371}
 body{font-family:var(--reader-text-font);font-size:var(--reader-font-size,var(--reader-default-size))}
 .ltx_abstract p{font-size:var(--reader-font-size,18px)}
+.paper-card{background:var(--surface)}.notice{background:var(--notice)}.fallback-math{border-color:var(--fallback)}
+.katex,math{color:inherit}
+figure{--ink:#242b2c;--muted:#505b57;--accent:#236657;--rule:#d9dfd8;background:#fff;color:#242b2c}
+figure img{background:#fff;filter:none}figure figcaption{color:#505b57}
 @media(max-width:900px){:root{--reader-default-size:18px}}
-@media(max-width:600px){:root{--reader-default-size:14.5px}.ltx_abstract p{font-size:var(--reader-font-size,14.5px)}}
-.reader-settings{position:relative;font:14px/1.45 system-ui;letter-spacing:normal;color:var(--ink)}
-.reader-settings summary{display:list-item;cursor:pointer;min-height:44px;padding:12px 8px;white-space:nowrap;border:1px solid var(--rule);border-radius:3px}
-.reader-settings[open] summary{background:#eef2ec}
-.reader-settings-panel{position:absolute;right:0;top:calc(100% + 8px);z-index:30;width:min(19rem,calc(100vw - 36px));padding:18px;background:var(--paper);border:1px solid var(--rule);border-radius:4px;box-shadow:0 8px 30px #24322b22}
-.reader-settings fieldset{border:0;padding:0;margin:0;min-width:0}
-.reader-settings legend{font-weight:650;margin-bottom:14px}
-.reader-settings label{display:block;margin:12px 0 5px}
-.reader-settings select,.reader-settings button{display:block;width:100%;min-height:44px;border:1px solid #9ca9a0;border-radius:3px;padding:9px;background:white;color:var(--ink);font:16px/1.4 system-ui}
-.reader-settings button{cursor:pointer;margin-top:17px;background:#eef2ec}
-.reader-settings :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.reader-settings .reader-settings-help{font:12px/1.5 system-ui;color:var(--muted);margin:13px 0 0;hyphens:none}
+@media(max-width:600px){:root{--reader-default-size:14.5px;--reader-line-height:1.25}:root[data-reader-size="medium"]{--reader-font-size:17px;--reader-line-height:1.45}:root[data-reader-size="large"]{--reader-font-size:20px;--reader-line-height:1.55}body{line-height:var(--reader-line-height)}.ltx_abstract p{font-size:var(--reader-font-size,14.5px);line-height:var(--reader-line-height)}}
+.reader-settings-trigger,.reader-settings-dialog button{min-height:44px;padding:10px 15px;border:1px solid var(--rule);border-radius:6px;background:var(--control);color:var(--ink);font:16px/1.4 system-ui;cursor:pointer}
+.reader-settings-trigger{white-space:nowrap}
+.reader-settings-dialog{width:min(28rem,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 48px);margin:auto;padding:24px;border:1px solid var(--rule);border-radius:14px;background:var(--paper);color:var(--ink);font:16px/1.45 system-ui;letter-spacing:normal;box-shadow:0 12px 60px #0005;overflow:auto;overscroll-behavior:contain;text-align:start}
+.reader-settings-dialog::backdrop{background:#0008}
+.reader-settings-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px}
+.reader-settings-heading h2{font:600 21px/1.3 system-ui;margin:0;clear:none}
+.reader-settings-dialog p{font:14px/1.5 system-ui;hyphens:none;color:var(--muted);margin:0 0 18px}
+.reader-settings-dialog fieldset{border:0;padding:0;margin:20px 0;min-width:0}
+.reader-settings-dialog legend{font-weight:600;margin-bottom:9px}
+.reader-settings-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.reader-settings-sizes{grid-template-columns:repeat(3,minmax(0,1fr))}
+.reader-settings-choices label{display:flex;align-items:center;justify-content:center;gap:7px;min-height:48px;padding:10px 8px;border:1px solid var(--rule);border-radius:7px;background:var(--surface);cursor:pointer;font:15px/1.35 system-ui}
+.reader-settings-choices label:has(input:checked){background:var(--selected);border-color:var(--accent)}
+.reader-settings-choices input{margin:0;accent-color:var(--accent);width:17px;height:17px;flex:none}
+.reader-settings-dialog .reader-settings-reset{width:100%;margin:0 0 16px}
+.reader-settings-dialog .reader-settings-help{font-size:12px;margin:0}
+.reader-settings-trigger:focus-visible,.reader-settings-dialog :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media(max-width:600px){.reader-settings-dialog{position:fixed;inset:auto 0 0;width:100%;max-height:calc(100dvh - 16px);margin:0;padding:22px 20px calc(22px + env(safe-area-inset-bottom));border-radius:18px 18px 0 0;border-bottom:0}.reader-settings-choices label{min-height:48px}.reader-settings-heading h2{font-size:20px}}
 
 /* Plain paper index. */
 .home-link{font-weight:500;color:var(--ink)}.paper-list{max-width:880px;margin:40px auto;padding:0 24px}.paper-list h1{font-size:28px;letter-spacing:normal}.paper-list h2{font-size:21px;margin:30px 0 12px;line-height:1.4}.paper-list p{font:15px/1.6 system-ui}.paper-list footer{margin-top:36px}
@@ -44,3 +58,7 @@ article .ltx_abstract p{text-align:justify;text-align-last:start;hyphens:auto;wo
 @media(max-width:350px){article .ltx_abstract p{text-align:start}}
 /* Keep long paper titles proportionate to the compact mobile text. */
 @media(max-width:600px){article > h1.ltx_title_document{font-size:24px;line-height:1.22;letter-spacing:-.015em;margin-bottom:22px;text-wrap:pretty}}
+
+/* Restore LaTeXML equation-row baselines while keeping row-spanning numbers centered. */
+.ltx_eqn_table tr.ltx_align_baseline > td:not(.ltx_align_middle){vertical-align:baseline}
+.ltx_eqn_table td.ltx_align_middle{vertical-align:middle}
