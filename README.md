@@ -1,5 +1,7 @@
 # Papers
 
+Start/resume work: [STATUS](STATUS.md). Product direction: [PRODUCT](PRODUCT.md), [ROADMAP](ROADMAP.md), [ARCHITECTURE](ARCHITECTURE.md). Individual tasks and progress live in GitHub issues and draft PRs.
+
 Two responsive reading editions of quantum computing papers, with JavaScript KaTeX run **at build time**. The public site contains only an index and the recommended reader for each paper:
 
 - `docs/index.html`
