@@ -15,7 +15,7 @@ Last documented checkpoint: **2026-10-18**. This file describes the checkpoint, 
 
 Input is an arXiv HTML snapshot, not arbitrary LaTeX. Figure/table column classifications and author affiliations still rely on source-document metadata. One cases-spacing adapter is exact-source-specific. There is no generic import UI, extension, library database, annotation system, account/sync, native app, or collaboration service.
 
-Next bounded milestone: the unfamiliar third-paper local audit in [ROADMAP.md](ROADMAP.md). Do not begin a new product release or publicly redistribute third-party source content as a side effect. [PRODUCT.md](PRODUCT.md) owns scope; [ARCHITECTURE.md](ARCHITECTURE.md) owns design decisions; the maintainer's task tracker own task status.
+Next bounded milestone: the unfamiliar third-paper local audit in [ROADMAP.md](ROADMAP.md). Do not begin a new product release or publicly redistribute third-party source content as a side effect. [PRODUCT.md](PRODUCT.md) owns scope; [ARCHITECTURE.md](ARCHITECTURE.md) owns design decisions; the maintainer's task tracker owns task status.
 
 ## Resume checklist
 
