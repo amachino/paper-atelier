@@ -127,6 +127,17 @@ function inspect(mathNode) {
   const input = source(mathNode);
   if (input.reason) return fail(input.reason);
   const {originalTex, presentation} = input;
+  // Inherited typography and semantic intent are outside the closed grammar.
+  // Do not silently discard them while matching only leaf text.
+  for (const node of [mathNode, ...mathNode.querySelectorAll('*')]) {
+    if (tag(node) === 'annotation') continue;
+    const container = [...node.children].length > 0;
+    if (['style','mathsize','mathcolor','mathbackground','scriptlevel','dir'].some(attr => node.hasAttribute(attr)) ||
+        (container && node.hasAttribute('mathvariant')) ||
+        (node.hasAttribute('intent') && !(node === mathNode && node.getAttribute('intent') === ':literal'))) {
+      return fail('unsupported-presentation-attributes');
+    }
+  }
   let parsed;
   let ruleVersion;
   let renderInput;
@@ -161,6 +172,9 @@ function inspect(mathNode) {
   if (!matchPresentation(presentation, parsed)) return fail('tex-mathml-semantics-mismatch');
   return {result:{
     ruleVersion, renderInput, macros:Object.freeze(macros),
+    reason:ruleVersion === RULES.dollars
+      ? 'Remove redundant quantity delimiters after independent TeX/MathML agreement'
+      : 'Supply a render-local degree macro after independent TeX/MathML agreement',
     originalTex, originalMathML:mathNode.outerHTML,
     evidence:{quantity:parsed.quantity, unit:parsed.unit, prefix:parsed.prefix.kind},
   }, reason:null, version:VERSION};

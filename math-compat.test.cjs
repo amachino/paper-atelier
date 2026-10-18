@@ -7,6 +7,8 @@ const {parseHTML} = require('linkedom');
 const katex = require('katex');
 const {inspect, RULES} = require('./math-compat.cjs');
 const tex = String.raw;
+const CORPUS = process.env.PAPER_READER_CORPUS ||
+  (fs.existsSync(path.join(__dirname,'sources/provenance.json')) ? __dirname : null);
 function math(input, presentation, attrs = {}) {
   const {document} = parseHTML(`<math><semantics>${presentation}<annotation encoding="application/x-tex"></annotation></semantics></math>`);
   const node = document.querySelector('math');
@@ -142,8 +144,8 @@ test('local degree macro does not leak to later renders', () => {
   assert.throws(() => katex.renderToString(tex`\SIUnitSymbolDegree`,{strict:'error',throwOnError:true}), /Undefined control sequence/);
 });
 
-test('read-only corpus audit replaces 11 exact fixes with equivalent visual trees', {skip:!process.env.PAPER_READER_CORPUS}, () => {
-  const root=process.env.PAPER_READER_CORPUS;
+test('read-only corpus audit replaces 11 exact fixes with equivalent visual trees', {skip:!CORPUS}, () => {
+  const root=CORPUS;
   const papers=JSON.parse(fs.readFileSync(path.join(root,'sources/provenance.json'),'utf8'));
   const legacy=JSON.parse(fs.readFileSync(path.join(root,'sources/math-repairs.json'),'utf8'));
   const acceptedRules=[];
@@ -176,4 +178,20 @@ test('read-only corpus audit replaces 11 exact fixes with equivalent visual tree
   assert.equal(acceptedRules.filter(rule=>rule===RULES.dollars).length,7);
   assert.equal(acceptedRules.filter(rule=>rule===RULES.degree).length,4);
   assert.equal(untouchedLegacy,1);
+});
+
+test('reject inherited presentation styles and nonliteral semantic intent', () => {
+  for (const [selector,attribute,value] of [
+    ['math','mathvariant','bold'],
+    ['mrow','mathvariant','bold'],
+    ['mrow','style','font-weight: bold'],
+    ['mi','mathsize','2em'],
+    ['math','intent',':function'],
+    ['mrow','scriptlevel','1'],
+  ]) {
+    const node=math(positives[0][1],positives[0][2]);
+    const target=selector==='math'?node:node.querySelector(selector);
+    target.setAttribute(attribute,value);
+    assert.equal(inspect(node).reason,'unsupported-presentation-attributes');
+  }
 });
